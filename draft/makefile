@@ -23,7 +23,7 @@ clean :
 	\rm *.aux
 	\rm *.log
 	\rm *.dvi
-	\rm *Notes.bib
 	\rm *.out
+	\rm *Notes.bib
 #	\rm *.bbl	
 #	\rm *.blg	
