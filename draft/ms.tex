@@ -1,0 +1,151 @@
+% EOD Documentation Paper #3
+% Project initiated Dec 22 2013
+
+\documentclass{emulateapj}
+\usepackage{amsmath,amssymb}
+\usepackage{xspace}
+\usepackage{graphicx}
+\bibliographystyle{apj} 
+\usepackage{epstopdf}  
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{verbatim}
+\usepackage{morefloats} % somehow need this to have lots of figures
+                        % and tables?
+% for attractive links:
+\usepackage[colorlinks,urlcolor=blue,citecolor=black,linkcolor=blue]{hyperref}
+%\usepackage[nolists]{endfloat} % put floats at end - doesn't work
+\interfootnotelinepenalty=10000 % Do not want cross-page footnote!
+
+\usepackage{CJK} 
+
+% definition of symbols
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ergcms{erg~cm$^{-2}$~s$^{-1}$}
+\def\ergs{erg~s$^{-1}$}
+\def\msun{M_{\odot}}
+\def\lsun{L_{\odot}}
+\def\etal{~et~al.~}
+\def\degree{^{\circ}}
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\micron{$\mu$m}
+\def\percm2{{\rm cm^{-2}}}
+\def\peryr{yr$^{-1}$}
+
+
+\maxdeadcycles=1000 % need this to have bunch of figures on each page
+                    % at end
+
+\slugcomment{}
+\shorttitle{}
+\shortauthors{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{CJK*}{UTF8}{gbsn}
+
+\title{}
+
+% leading authors
+\author{Eunkyu Han\altaffilmark{1,2}}
+\author{Sharon X. Wang\altaffilmark{1,2,3}}
+\author{Jason T. Wright\altaffilmark{1,2,3}}
+\author{Ming Zhao\altaffilmark{1,2}}
+
+\altaffiltext{1}{Department of Astronomy \& Astrophysics, 525 Davey
+  Lab, The Pennsylvania State University, University Park, PA 16802, USA;
+  Send correspondence to Eunkyu Han at hek90625@gmail.com.}
+\altaffiltext{2}{Center for Exoplanets and Habitable Worlds, The
+  Pennsylvania State University, University Park, PA 16802, USA}
+\altaffiltext{3}{Astrobiology Research Center, The
+  Pennsylvania State University, University Park, PA 16802, USA} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+
+\end{abstract}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}\label{sec:intro}
+
+The introduction Section...
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References:
+%\newpage
+%\input{references.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN FIGURES AND STUFF
+\begin{comment} % empty right now, so comment out
+\newpage
+
+%----------------------------------------------------------------
+% Figure: 
+\begin{figure*}[!th]
+  \center
+\includegraphics[angle=0.,scale=0.9]{f1.eps}  
+\caption{
+  \label{fig:f1}}
+\end{figure*}
+%----------------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tables
+
+
+%----------------------------------------------------------------
+% Table: 
+\renewcommand{\arraystretch}{1.3} % more row spacing for the table
+\begin{turnpage}
+\begin{center}
+\begin{deluxetable*}{@{\hspace{-5mm}}c@{\hspace{-5mm}}llllccc}
+%\rotate
+\tabletypesize{\scriptsize}
+\tablewidth{0pt}
+\tablecaption{\label{tab:basic}}
+\tablehead{
+%-------------  
+% FIRST ROW  
+% submm stuff  
+\colhead{} & \colhead{} &
+\colhead{$S_{870 \mu{\rm m}}$} &
+% xray stuff
+\multicolumn{2}{c}{\xray\ Position\tablenotemark{b}}  & \colhead{\cdfs} & \colhead{\ecdfs} &
+\colhead{$f_{X}/10^{-15}$} \\ \cline{4-5}
+%-------------
+% SECOND ROW
+% submm stuff  
+\colhead{ALESS SMG Full Name\tablenotemark{a}} & \colhead{ID\tablenotemark{a}} &
+\colhead{(mJy)} &
+% xray stuff
+\colhead{$\alpha_{\rm J2000.0}$}  &  \colhead{$\delta_{\rm J2000.0}$}
+& \colhead{Cat \& ID\tablenotemark{b}} & \colhead{Cat \& ID\tablenotemark{b}} &
+\colhead{erg cm$^{-2}$ s$^{-1}$\tablenotemark{c}} 
+}
+\startdata
+ALESS J$033213.85-275600.3  $ & 011.1 & $  7.3 \pm 0.4 $ & 03 32 13.85 & $ -27 $ 56 00.44 & M 197 & M 332 &  1.69 
+\enddata
+%
+\tablenotetext{a}{}
+%
+\end{deluxetable*}
+\end{center}
+\end{turnpage}
+%----------------------------------------------------------------
+
+\end{comment}
+
+
+\end{CJK*}
+
+
+\end{document}
