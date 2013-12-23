@@ -1,0 +1,74 @@
+========================================================================
+Supplementary information and general updates since Wright 2011:
+
+Equinox of coordinates:
+(from Jason's reply to Don's inquiry)
+Unfortunately, this may be variable, but will usually be Equinox 2000.  We check our stars against SIMBAD, but for some of the fainter objects that are not in the database when they are published (such as the microlensing planets) we may need to rely on the coordinates given in the discovery paper, and these are likely from the epoch of discovery (since a proper motion may not be well known).
+
+New planets discovered via microlensing, timing, and imaging. (Microlensing and Imaging not in EOD due to orbital parameter quality.)
+
+Added KOIs, not just Kepler planets.
+
+
+========================================================================
+Items in Wright 2011 Table 1, but no long exist /is changed in the actual website table:
+
+OTHERNAME - This is now listed as other name of planet instead of star.
+FREEZE_ECC - gone?
+DISCMETH - replaced by planetdiscmeth and stardiscmeth
+S - changed to SHK
+MASSREF, MASSURL, DISTREF, DISTURL, TRANSITREF, TRANSITURL, BINARYREF, BINARYURL - don't exist explicitly any more?
+
+
+========================================================================
+Items not included in Wright 2011 EOD paper, Table 1:
+
+---------------------
+Planet Information:
+
+KEPID
+KOI
+KDE
+EOD
+MICROLENSING
+IMAGING
+TIMING
+ASTROMETRY
+
+---------------------
+Stellar Parameters
+
+DIST
+GAMMA
+
+---------------------
+Orbit Parameter
+
+MASS
+SEP
+BIGOM
+
+---------------------
+Transit Parameters
+
+DR
+RR
+
+---------------------
+SE Depth
+
+SE
+SEDEPTH J H KS KP 36 45 58 80
+
+---------------------
+Fit and References
+
+PLANETDISCMETH
+STARDISCMETH
+
+---------------------
+Stellar Properties
+
+RSTAR
+RHOSTAR
+KP
