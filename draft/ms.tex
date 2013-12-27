@@ -3,7 +3,7 @@
 
 %\documentclass{emulateapj}
 % Requirement of PASP to use preprint and aastex
-\documentclass[12pt,preprint]{aastex}
+\documentclass[11pt,preprint]{aastex}
 \usepackage{amsmath,amssymb}
 \usepackage{xspace}
 \usepackage{graphicx}
@@ -91,7 +91,6 @@ included in Wright\etal2011
 Figure: Figure of single planet page, to show updated transit
 parameters and RV curves etc.?
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Inclusion of the Kepler Planet Candidates and Other Exoplanets on Exoplanets.org}\label{sec:kepler}
 
@@ -115,9 +114,135 @@ vs. EOD planet properties, such as mass-period, mass-radius?
 %\input{references.tex}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table
+\clearpage
+
+\begin{deluxetable}{llll}
+\tabletypesize{\scriptsize}
+\rotate
+\tablewidth{0pt}
+\tablecaption{Fields of Exoplanet Orbit Database}
+\tablehead{
+  \colhead{Field} & \colhead{Data Type} & \colhead{Meaning} &
+  \colhead{Related Fields\tablenotemark{a}}
+}
+\startdata
+\sidehead{\textbf{Planet Information}}
+NAME\dotfill & String & Name of planet &  \\
+OTHERNAME\dotfill & String & Other commonly used name of planet &  \\
+COMP\dotfill & String & Component name of planet ($b$, $c$, etc.) &  \\
+HD\dotfill & String & &  \\
+HR\dotfill & String & &  \\
+HIPP\dotfill & String & & \\
+SAO\dotfill & & & \\
+GL\dotfill & & & \\
+BINARY\dotfill & & & BINARYREF BINARYURL \\
+RA, RA\_STRING\dotfill & & & \\
+DEC, DEC\_STRING\dotfill & & & \\
+KEPID\dotfill & & & \\
+KOI\dotfill & & & \\
+KDE\dotfill & & & \\
+EOD\dotfill & & & \\
+MICROLENSING\dotfill & & & \\ 
+IMAGING\dotfill & & & \\
+TIMING\dotfill & & & \\
+ASTROMETRY\dotfill & & & \\
+\sidehead{\textbf{Stellar Parameters}}
+BMV\dotfill & & & \\
+V\dotfill & & & VREF,VURL \\
+J\dotfill & & & \\
+H\dotfill & & & \\
+KS\dotfill & & & \\
+DIST\dotfill & & & DISTUPPER,DISTLOWER,UDIST,DISTREF,DISTURL \\
+PAR\dotfill & & & PARUPPER,PARLOWER,UPAR \\
+VSINI\dotfill & & & VSINIUPPER,VSINILOWER,UVSINI,VSINIREF,VSINIURL \\
+GAMMA\dotfill & & & GAMMAUPPER,GAMMALOWER,UGAMMA,GAMMAREF,GAMMAURL \\
+\sidehead{\textbf{Orbit Parameters}}
+PER\dotfill & & & PERUPPER,PERLOWER,UPER,PERREF,PERURL \\
+ECC\dotfill & & & ECCUPPER,ECCLOWER,UECC,ECCREF,ECCURL \\
+OM\dotfill & & & OMUPPER,OMLOWER,UOM,OMREF,OMURL \\
+K\dotfill & & & KUPPER,KLOWER,UK,KREF,KURL \\
+T0\dotfill & & & T0UPPER,T0LOWER,UT0,T0REF,T0URL \\
+DVDT\dotfill & & & DVDTUPPER,DVDTLOWER,UDVDT,DVDTREF,DVDTURL \\
+I\dotfill & & & IUPPER,ILOWER,UI,IREF,IURL \\
+MSINI\dotfill & & & MSINIUPPER,MSINILOWER,UMSINI,MSINIREF,MSINIURL \\
+A\dotfill & & & AUPPER,ALOWER,UA,AREF,AURL \\
+MASS\dotfill & & & MASSUPPER,MASSLOWER,UMASS,MASSREF,MASSURL \\
+SEP\dotfill & & & SEPUPPER,SEPLOWER,USEP,SEPREF,SEPURL \\
+TREND\dotfill  & & & \\
+LAMBDA\dotfill & & & LAMBDAUPPER,LAMBDALOWER,ULAMBDA,LAMBDAREF,LAMBDAURL \\
+BIGOM\dotfill & & & BIGOMUPPER,BIGOMLOWER,UBIGOM,BIGOMREF,BIGOMURL \\
+FREEZE\_ECC\dotfill & & & \\
+\sidehead{\textbf{Transit Parameters}}
+DEPTH\dotfill & & & DEPTHUPPER,DEPTHLOWER,UDEPTH,DEPTHREF,DEPTHURL \\
+T14\dotfill & & & T14UPPER,T14LOWER,UT14,T14REF,T14URL \\
+TT\dotfill & & & TTUPPER,TTLOWER,UTT,TTREF,TTURL \\
+R\dotfill & & & RUPPER,RLOWER,UR,RREF,RURL \\
+AR\dotfill & & & ARUPPER,ARLOWER,UAR,ARREF,ARURL \\
+B\dotfill & & & BUPPER,BLOWER,UB,BREF,BURL \\
+DENSITY\dotfill & & &
+DENSITYUPPER,DENSITYLOWER,UDENSITY,DENSITYREF,DENSITYURL \\
+GRAVITY\dotfill & & &
+GRAVITYUPPER,GRAVITYLOWER,UGRAVITY,GRAVITYREF,GRAVITYURL \\
+TRANSIT\dotfill & & & TRANSITREF,TRANSITURL \\
+DR\dotfill & & & DRUPPER,DRLOWER,UDR,DRREF,DRURL \\
+RR\dotfill & & & RRUPPER,RRLOWER,URR,RRREF,RRURL \\
+\sidehead{\textbf{Secondary Eclipse}}
+SE\dotfill & & & SEREF,SEURL \\
+SEDEPTHJ\dotfill & & &
+SEDEPTHJUPPER,SEDEPTHJLOWER,USEDEPTHJ,SEDEPTHJREF,SEDEPTHJURL \\
+SEDEPTHH\dotfill & & &
+SEDEPTHHUPPER,SEDEPTHHLOWER,USEDEPTHH,SEDEPTHHREF,SEDEPTHHURL \\
+SEDEPTHKS\dotfill & & &
+SEDEPTHKSUPPER,SEDEPTHKSLOWER,USEDEPTHKS,SEDEPTHKSREF,SEDEPTHKSURL \\
+SEDEPTHKP\dotfill & & &
+SEDEPTHKPUPPER,SEDEPTHKPLOWER,USEDEPTHKP,SEDEPTHKPREF,SEDEPTHKPURL \\
+SEDEPTH36\dotfill & & &
+SEDEPTH36UPPER,SEDEPTH36LOWER,USEDEPTH36,SEDEPTH36REF,SEDEPTH36URL \\
+SEDEPTH45\dotfill & & &
+SEDEPTH45UPPER,SEDEPTH45LOWER,USEDEPTH45,SEDEPTH45REF,SEDEPTH45URL \\
+SEDEPTH58\dotfill & & & 
+SEDEPTH58UPPER,SEDEPTH58LOWER,USEDEPTH58,SEDEPTH58REF,SEDEPTH58URL \\
+SEDEPTH80\dotfill & & &
+SEDEPTH80UPPER,SEDEPTH80LOWER,USEDEPTH80,SEDEPTH80REF,SEDEPTH80URL \\
+SET\dotfill & & & SETUPPER,SETLOWER,USET,SETREF,SETURL \\
+\sidehead{\textbf{Fit \& References}}
+RMS\dotfill & & & \\
+CHI2\dotfill & & & \\
+NOBS\dotfill & & & \\
+NCOMP\dotfill & & & \\
+MULT\dotfill & & & \\
+PLANETDISCMETH\dotfill & & & \\
+STARDISCMETH\dotfill & & & \\
+DATE\dotfill & & & \\
+FIRSTREF\dotfill & & & FIRSTURL \\
+ORBREF\dotfill & & & ORBURL \\
+\sidehead{\textbf{Stellar Properties}}
+STAR\dotfill & & & \\
+MSTAR\dotfill & & & MSTARUPPER,MSTARLOWER,UMSTAR,MSTARREF,MSTARURL \\
+RSTAR\dotfill & & & RSTARUPPER,RSTARLOWER,URSTAR,RSTARREF,RSTARURL \\
+TEFF\dotfill & & & TEFFUPPER,TEFFLOWER,UTEFF,TEFFREF,TEFFURL \\
+RHOSTAR\dotfill & & &
+RHOSTARUPPER,RHOSTARLOWER,URHOSTAR,RHOSTARREF,RHOSTARURL \\
+LOGG\dotfill & & & LOGGUPPER,LOGGLOWER,ULOGG,LOGGREF,LOGGURL \\
+FE\dotfill & & & FEUPPER,FELOWER,UFE,FEREF,FEURL \\
+SHK\dotfill & & & \\
+RHK\dotfill & & & \\
+KP\dotfill & & & \\
+SPECREF\dotfill & & & SPECURL \\
+\sidehead{\textbf{Links}}
+JSNAME\dotfill & & & EPEURL \\
+ETDNAME\dotfill & & & ETDURL \\
+SIMBADNAME\dotfill & & & SIMBADURL \\
+EANAME\dotfill & & & EAURL \\
+\enddata
+\tablenotetext{a}{XU, XUPPER, XLOWER, XREF, XURL etc.}
+\end{deluxetable}
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{CJK*}
-
 
 \end{document}
