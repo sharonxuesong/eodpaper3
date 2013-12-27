@@ -13,6 +13,9 @@ General LaTex manuscript prep guidelines:
 - any secondary AASTeX files must be included in the main file with \input commands
 Source: http://www.press.uchicago.edu/journals/pasp/elec_submit.html?journal=pasp
 
+More details on style guide, e.g. table format etc.:
+http://www.press.uchicago.edu/journals/pasp/instruct.html?journal=pasp
+
 
 #############################################################
 		END OF FILE

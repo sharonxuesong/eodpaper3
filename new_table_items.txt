@@ -8,35 +8,35 @@ Ordered by categories (organized in the same way as the interactive table):
 -------------------------
 Planet Information
 -------------------------
-ASTROMETRY,
-BINARY,BINARYREF,BINARYURL,
-COMP,
-RA,RA_STRING,
-DEC,DEC_STRING,
-EOD,
 NAME,
 OTHERNAME,
+COMP,
 HD,
 HR,
 HIPP,
 SAO,
 GL,
+BINARY,BINARYREF,BINARYURL,
+RA,RA_STRING,
+DEC,DEC_STRING,
 KEPID,
 KOI,
 KDE,
+EOD,
 MICROLENSING,
 IMAGING,
 TIMING,
+ASTROMETRY,
 
 -------------------------
 Stellar Parameters
 -------------------------
 BMV,
-DIST,DISTUPPER,DISTLOWER,UDIST,DISTREF,DISTURL,
 V,VREF,VURL,
 J,
 H,
 KS,
+DIST,DISTUPPER,DISTLOWER,UDIST,DISTREF,DISTURL,
 PAR,PARUPPER,PARLOWER,UPAR,
 VSINI,VSINIUPPER,VSINILOWER,UVSINI,VSINIREF,VSINIURL,
 GAMMA,GAMMAUPPER,GAMMALOWER,UGAMMA,GAMMAREF,GAMMAURL,
@@ -44,12 +44,12 @@ GAMMA,GAMMAUPPER,GAMMALOWER,UGAMMA,GAMMAREF,GAMMAURL,
 -------------------------
 Orbit Parameters
 -------------------------
-DVDT,DVDTUPPER,DVDTLOWER,UDVDT,DVDTREF,DVDTURL,
-ECC,ECCUPPER,ECCLOWER,UECC,ECCREF,ECCURL,
 PER,PERUPPER,PERLOWER,UPER,PERREF,PERURL,
+ECC,ECCUPPER,ECCLOWER,UECC,ECCREF,ECCURL,
 OM,OMUPPER,OMLOWER,UOM,OMREF,OMURL,
 K,KUPPER,KLOWER,UK,KREF,KURL,
 T0,T0UPPER,T0LOWER,UT0,T0REF,T0URL,
+DVDT,DVDTUPPER,DVDTLOWER,UDVDT,DVDTREF,DVDTURL,
 I,IUPPER,ILOWER,UI,IREF,IURL,
 MSINI,MSINIUPPER,MSINILOWER,UMSINI,MSINIREF,MSINIURL,
 A,AUPPER,ALOWER,UA,AREF,AURL,
@@ -126,9 +126,9 @@ EANAME,EAURL,
 -------------------------
 Orphans...
 -------------------------
-FREEZE_ECC, ; was in Wright 2011, but not in our table any more.
-SET,SETUPPER,SETLOWER,USET,SETREF,SETURL,
-SPECREF,SPECURL,
+FREEZE_ECC, ; was in Wright 2011, but not in our interactive table.
+SET,SETUPPER,SETLOWER,USET,SETREF,SETURL, ; SE timing
+SPECREF,SPECURL, ; general spec reference, Jason: "source of most of the spectroscopic parameters listed for convenience; actual references in the REF fields take precedence over this one".
 
 
 Columns available for the interactive table are listed here:
@@ -150,10 +150,10 @@ Added KOIs, not just Kepler planets.
 Items in Wright 2011 Table 1, but no long exist /is changed in the actual website table:
 
 OTHERNAME - This is now listed as other name of planet instead of star.
-FREEZE_ECC - gone?
-DISCMETH - replaced by planetdiscmeth and stardiscmeth
-S - changed to SHK
-SPSTAR - stellar type of star (unvetted), gone.
+FREEZE_ECC - gone? no. still in csv table.
+DISCMETH - replaced by planetdiscmeth and stardiscmeth.
+S - changed to SHK.
+SPSTAR - stellar type of star (unvetted), gone because unvetted.
 NSTEDID - replaced by EANAME (Exoplanet Archive).
 
 
