@@ -26,6 +26,7 @@
 \def\eeq{\end{equation}}
 \def\ergcms{erg~cm$^{-2}$~s$^{-1}$}
 \def\ergs{erg~s$^{-1}$}
+\def\mps{m~s$^{-1}$}
 \def\msun{M_{\odot}}
 \def\lsun{L_{\odot}}
 \def\etal{~et~al.~}
@@ -86,7 +87,7 @@ Restrict the updates in this section on EOD updates.
 Parameter updates, new table parameters etc. What other updates are there?
 
 Table: complete list of table parameters. Highlight the ones not
-included in Wright\etal2011
+included in \cite{Wright2011}.
 
 Figure: Figure of single planet page, to show updated transit
 parameters and RV curves etc.?
@@ -111,7 +112,7 @@ vs. EOD planet properties, such as mass-period, mass-radius?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % References:
 %\newpage
-%\input{references.tex}
+\input{references.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -130,16 +131,18 @@ vs. EOD planet properties, such as mass-period, mass-radius?
 \startdata
 \sidehead{\textbf{Planet Information}}
 NAME\dotfill & String & Name of planet &  \\
-OTHERNAME\dotfill & String & Other commonly used name of planet &  \\
+OTHERNAME\tablenotemark{b}\dotfill & String & Other commonly used name of planet &  \\
 COMP\dotfill & String & Component name of planet ($b$, $c$, etc.) &  \\
-HD\dotfill & String & &  \\
-HR\dotfill & String & &  \\
-HIPP\dotfill & String & & \\
-SAO\dotfill & & & \\
-GL\dotfill & & & \\
-BINARY\dotfill & & & BINARYREF BINARYURL \\
-RA, RA\_STRING\dotfill & & & \\
-DEC, DEC\_STRING\dotfill & & & \\
+HD\dotfill & Long Integer & Henry Draper number of sar &  \\
+HR\dotfill & Integer & Bright Star Catalog number of star &  \\
+HIPP\dotfill & Long Integer & \textit{Hipparcos} catalog number of star & \\
+SAO\dotfill & Long Integer & SAO catalog number of star & \\
+GL\dotfill & Float & GJ or Gliese catalog number of star & \\
+BINARY\dotfill & Boolean & Star known ot be binary? & BINARYREF BINARYURL \\
+RA, RA\_STRING\dotfill & Double, String & J2000 right ascension in decimal hours and in
+sexagesimal string & \\
+DEC, DEC\_STRING\dotfill & Double, String & J2000 declination in decimal degrees and in
+sexagesimal string & \\
 KEPID\dotfill & & & \\
 KOI\dotfill & & & \\
 KDE\dotfill & & & \\
@@ -149,43 +152,48 @@ IMAGING\dotfill & & & \\
 TIMING\dotfill & & & \\
 ASTROMETRY\dotfill & & & \\
 \sidehead{\textbf{Stellar Parameters}}
-BMV\dotfill & & & \\
-V\dotfill & & & VREF,VURL \\
-J\dotfill & & & \\
-H\dotfill & & & \\
-KS\dotfill & & & \\
+BMV\dotfill & Float & $B-V$ color & \\
+V\dotfill & Float & $V$ magnitude & VREF,VURL \\
+J\dotfill & Float & $J$ magnitude & \\
+H\dotfill & Float & $H$ magnitude & \\
+KS\dotfill & Float & $K_S$ magnitude & \\
 DIST\dotfill & & & DISTUPPER,DISTLOWER,UDIST,DISTREF,DISTURL \\
-PAR\dotfill & & & PARUPPER,PARLOWER,UPAR \\
-VSINI\dotfill & & & VSINIUPPER,VSINILOWER,UVSINI,VSINIREF,VSINIURL \\
+PAR\dotfill & Float & Parallax in mas & PARUPPER,PARLOWER,UPAR \\
+VSINI\dotfill & Float & Projected equatorial rotational velocity of
+star & VSINIUPPER,VSINILOWER,UVSINI,VSINIREF,VSINIURL \\
 GAMMA\dotfill & & & GAMMAUPPER,GAMMALOWER,UGAMMA,GAMMAREF,GAMMAURL \\
 \sidehead{\textbf{Orbit Parameters}}
-PER\dotfill & & & PERUPPER,PERLOWER,UPER,PERREF,PERURL \\
-ECC\dotfill & & & ECCUPPER,ECCLOWER,UECC,ECCREF,ECCURL \\
-OM\dotfill & & & OMUPPER,OMLOWER,UOM,OMREF,OMURL \\
-K\dotfill & & & KUPPER,KLOWER,UK,KREF,KURL \\
-T0\dotfill & & & T0UPPER,T0LOWER,UT0,T0REF,T0URL \\
-DVDT\dotfill & & & DVDTUPPER,DVDTLOWER,UDVDT,DVDTREF,DVDTURL \\
-I\dotfill & & & IUPPER,ILOWER,UI,IREF,IURL \\
-MSINI\dotfill & & & MSINIUPPER,MSINILOWER,UMSINI,MSINIREF,MSINIURL \\
-A\dotfill & & & AUPPER,ALOWER,UA,AREF,AURL \\
+PER\dotfill & Double & Orbital period in days & PERUPPER,PERLOWER,UPER,PERREF,PERURL \\
+ECC\dotfill & Float & Orbital eccentricity & ECCUPPER,ECCLOWER,UECC,ECCREF,ECCURL \\
+OM\dotfill & Float & Argument of periastron in degrees & OMUPPER,OMLOWER,UOM,OMREF,OMURL \\
+K\dotfill & Float & Semiamplitude of stellar reflex motion in \mps & KUPPER,KLOWER,UK,KREF,KURL \\
+T0\dotfill & Double & Epoch of periastron in HJD\tablenotemark{c} $-2,440,000$ & T0UPPER,T0LOWER,UT0,T0REF,T0URL \\
+DVDT\dotfill & Float & Magnitude of linear trend in \mps\ day$^{-1}$ & DVDTUPPER,DVDTLOWER,UDVDT,DVDTREF,DVDTURL \\
+I\dotfill & Float & Orbital inclination in degrees (ZZZ for transiting
+systems only ZZZ still true?) & IUPPER,ILOWER,UI,IREF,IURL \\
+MSINI\dotfill & Float & Minimum mass (as calculated from the mass
+function) in $M_{\rm Jup}$ & MSINIUPPER,MSINILOWER,UMSINI,MSINIREF,MSINIURL \\
+A\dotfill & Float & Orbital semimajor axis in AU & AUPPER,ALOWER,UA,AREF,AURL \\
 MASS\dotfill & & & MASSUPPER,MASSLOWER,UMASS,MASSREF,MASSURL \\
 SEP\dotfill & & & SEPUPPER,SEPLOWER,USEP,SEPREF,SEPURL \\
-TREND\dotfill  & & & \\
-LAMBDA\dotfill & & & LAMBDAUPPER,LAMBDALOWER,ULAMBDA,LAMBDAREF,LAMBDAURL \\
+TREND\dotfill  & Boolean & Linear trend in fit? & \\
+LAMBDA\dotfill & Float & Projected spin-orbit misalignment & LAMBDAUPPER,LAMBDALOWER,ULAMBDA,LAMBDAREF,LAMBDAURL \\
 BIGOM\dotfill & & & BIGOMUPPER,BIGOMLOWER,UBIGOM,BIGOMREF,BIGOMURL \\
-FREEZE\_ECC\dotfill & & & \\
+FREEZE\_ECC\dotfill & Boolean & Eccentricity frozen in fit? & \\
 \sidehead{\textbf{Transit Parameters}}
-DEPTH\dotfill & & & DEPTHUPPER,DEPTHLOWER,UDEPTH,DEPTHREF,DEPTHURL \\
-T14\dotfill & & & T14UPPER,T14LOWER,UT14,T14REF,T14URL \\
-TT\dotfill & & & TTUPPER,TTLOWER,UTT,TTREF,TTURL \\
-R\dotfill & & & RUPPER,RLOWER,UR,RREF,RURL \\
-AR\dotfill & & & ARUPPER,ARLOWER,UAR,ARREF,ARURL \\
-B\dotfill & & & BUPPER,BLOWER,UB,BREF,BURL \\
-DENSITY\dotfill & & &
+DEPTH\dotfill & Float & $(R_p/R_*)^2$ & DEPTHUPPER,DEPTHLOWER,UDEPTH,DEPTHREF,DEPTHURL \\
+T14\dotfill & Float & Time of transit from first to fourth contact in days & T14UPPER,T14LOWER,UT14,T14REF,T14URL \\
+TT\dotfill & Float & Epoch of transit center in
+HJD\tablenotemark{c} $-2,440,000$ & TTUPPER,TTLOWER,UTT,TTREF,TTURL \\
+R\dotfill & Float & Radius of the planet in Jupiter radii & RUPPER,RLOWER,UR,RREF,RURL \\
+AR\dotfill & $(a/R_*)$ & & ARUPPER,ARLOWER,UAR,ARREF,ARURL \\
+B\dotfill & Float & Impact parameter of transit & BUPPER,BLOWER,UB,BREF,BURL \\
+DENSITY\dotfill & Float & Density of planet in g cc$^{-1}$ &
 DENSITYUPPER,DENSITYLOWER,UDENSITY,DENSITYREF,DENSITYURL \\
-GRAVITY\dotfill & & &
+GRAVITY\dotfill & Float & $\log{g}$ (surface gravity) of the planet
+calculated from transit parameters &
 GRAVITYUPPER,GRAVITYLOWER,UGRAVITY,GRAVITYREF,GRAVITYURL \\
-TRANSIT\dotfill & & & TRANSITREF,TRANSITURL \\
+TRANSIT\dotfill & Boolean & Is the planet known to transit? & TRANSITREF,TRANSITURL \\
 DR\dotfill & & & DRUPPER,DRLOWER,UDR,DRREF,DRURL \\
 RR\dotfill & & & RRUPPER,RRLOWER,URR,RRREF,RRURL \\
 \sidehead{\textbf{Secondary Eclipse}}
@@ -207,37 +215,47 @@ SEDEPTH58UPPER,SEDEPTH58LOWER,USEDEPTH58,SEDEPTH58REF,SEDEPTH58URL \\
 SEDEPTH80\dotfill & & &
 SEDEPTH80UPPER,SEDEPTH80LOWER,USEDEPTH80,SEDEPTH80REF,SEDEPTH80URL \\
 SET\dotfill & & & SETUPPER,SETLOWER,USET,SETREF,SETURL \\
+& & & \\
 \sidehead{\textbf{Fit \& References}}
-RMS\dotfill & & & \\
-CHI2\dotfill & & & \\
-NOBS\dotfill & & & \\
-NCOMP\dotfill & & & \\
-MULT\dotfill & & & \\
-PLANETDISCMETH\dotfill & & & \\
-STARDISCMETH\dotfill & & & \\
-DATE\dotfill & & & \\
-FIRSTREF\dotfill & & & FIRSTURL \\
-ORBREF\dotfill & & & ORBURL \\
+RMS\dotfill & Float & Root-mean-square residuals to orbital RV fit & \\
+CHI2\dotfill & Float & $\chi_{\nu}^2$ to orbital RV fit & \\
+NOBS\dotfill & Integer & Number of observations used in fit & \\
+NCOMP\dotfill & Integer & Number of planetary companions known & \\
+MULT\dotfill & Boolean & Multiple planets in system? & \\
+PLANETDISCMETH\dotfill & String & Method of discovery of planet & \\
+STARDISCMETH\dotfill & String & Method of discovery for the first
+planet in the system & \\
+DATE\dotfill & Integer & Year of publication of FIRSTREF & \\
+ZZZ MONTH ZZZ\dotfill & Integer & Month of publication of FIRSTREF & \\
+FIRSTREF\dotfill & String & First peer-reviewed publication of
+planetary orbit & FIRSTURL \\
+ORBREF\dotfill & String & Peer-reviewed origin of orbital parameters & ORBURL \\
 \sidehead{\textbf{Stellar Properties}}
 STAR\dotfill & & & \\
-MSTAR\dotfill & & & MSTARUPPER,MSTARLOWER,UMSTAR,MSTARREF,MSTARURL \\
+MSTAR\dotfill & Float & Mass of host star & MSTARUPPER,MSTARLOWER,UMSTAR,MSTARREF,MSTARURL \\
 RSTAR\dotfill & & & RSTARUPPER,RSTARLOWER,URSTAR,RSTARREF,RSTARURL \\
-TEFF\dotfill & & & TEFFUPPER,TEFFLOWER,UTEFF,TEFFREF,TEFFURL \\
+TEFF\dotfill & Float & Effective temperature of host star & TEFFUPPER,TEFFLOWER,UTEFF,TEFFREF,TEFFURL \\
 RHOSTAR\dotfill & & &
 RHOSTARUPPER,RHOSTARLOWER,URHOSTAR,RHOSTARREF,RHOSTARURL \\
-LOGG\dotfill & & & LOGGUPPER,LOGGLOWER,ULOGG,LOGGREF,LOGGURL \\
-FE\dotfill & & & FEUPPER,FELOWER,UFE,FEREF,FEURL \\
-SHK\dotfill & & & \\
-RHK\dotfill & & & \\
+LOGG\dotfill & Float & Spectroscopic $\log{g}$ (surface gravity) of
+host star & LOGGUPPER,LOGGLOWER,ULOGG,LOGGREF,LOGGURL \\
+FE\dotfill & Float & Iron abundance (or metallicity) of star & FEUPPER,FELOWER,UFE,FEREF,FEURL \\
+SHK\dotfill & Float & Mount Wilson Ca \sc{II} $S$-value & \\
+RHK\dotfill & Float & Chromospheric activity of star as $R'_{HK}$ & \\
 KP\dotfill & & & \\
 SPECREF\dotfill & & & SPECURL \\
 \sidehead{\textbf{Links}}
-JSNAME\dotfill & & & EPEURL \\
-ETDNAME\dotfill & & & ETDURL \\
-SIMBADNAME\dotfill & & & SIMBADURL \\
+JSNAME\dotfill & String & Name of host star used in the Extrasolar
+Planets Encyclopaedia & EPEURL \\
+ETDNAME\dotfill & String & Name of host star used in the Exoplanet
+Transit Database & ETDURL \\
+SIMBADNAME\dotfill & String & Valid SIMBAD name of host star & SIMBADURL \\
 EANAME\dotfill & & & EAURL \\
 \enddata
 \tablenotetext{a}{XU, XUPPER, XLOWER, XREF, XURL etc.}
+\tablenotetext{b}{Originally as other commonly used name for star in \cite{Wright2011};
+  changed to other commonly used name for planet.}
+\tablenotetext{c}{ZZZ Is this now consistent? ZZZ}
 \end{deluxetable}
 
 
