@@ -24,6 +24,6 @@ clean :
 	\rm *.log
 	\rm *.dvi
 	\rm *.out
-	\rm *Notes.bib
+#	\rm *Notes.bib
 #	\rm *.bbl	
 #	\rm *.blg	
