@@ -155,6 +155,7 @@ DISCMETH - replaced by planetdiscmeth and stardiscmeth.
 S - changed to SHK.
 SPSTAR - stellar type of star (unvetted), gone because unvetted.
 NSTEDID - replaced by EANAME (Exoplanet Archive).
+MASSREF, MASSURL - originally for stellar mass reference, now for planet mass.
 
 
 ========================================================================
@@ -196,16 +197,39 @@ SE Depth
 
 SE
 SEDEPTH J H KS KP 36 45 58 80
+SET
 
 ---------------------
 Fit and References
 
 PLANETDISCMETH
 STARDISCMETH
+MONTH?
 
 ---------------------
 Stellar Properties
 
 RSTAR
-RHOSTAR
+ROSTAR
 KP
+
+---------------------
+Fields that now contain REF and URL:
+stellar parameters:
+V
+VSINI
+GAMMA
+
+all orbit pars except for trend and freeze_ecc.
+
+all transit parameters, except that transit originally has transitref in wright 2011.
+
+all SE parameters.
+
+stellar properties:
+MSTAR
+RSTAR
+TEFF
+RHOSTAR
+LOGG
+FE
