@@ -18,5 +18,41 @@ http://www.press.uchicago.edu/journals/pasp/instruct.html?journal=pasp
 
 
 #############################################################
+	Basic Commands for Updating Draft
+#############################################################
+0. Pull from repository, resolve and merge conflicts, if any.
+$ git pull origin master
+If there were conflicts and you resolved them, push first.
+If not sure about conflicts, just do whatever you want locally, and we can sit down and resolve the conflicts together some other time.
+1. Finish all the changes you want to make with ms.tex, and then generate LaTex pdf: ('$' symbol stands for terminal commands)
+$ make
+2. Clean all the LaTex secondary products before you commit to git locally:
+$ make clean
+$ git commit -am "Enter your documentation on what you did. No name needed."
+3. Push to remote:
+$ git push origin master
+
+
+#############################################################
+	Add New Literature Reference
+#############################################################
+1. Find the paper you want to add as reference on ADS in a listing format (not the page where you see just this paper; see below on how to get the right format if you can only locate this paper on its page).
+2. Select it and scroll down, enter the following code in Custom format:
+\\bibitem[%\2m%(y)]\{%za1%y} %\8l %\Y,%\j,%\V,%\p\n
+3. Click 'Retrieve selected record', you'll see something like this in the displayed screen or downloaded file:
+\bibitem[Schneider et al.(2011)]{Schneider2011} Schneider, J., Dedieu, C., 
+Le Sidaner, P., Savalle, R., \& Zolotukhin, I.\ 2011, \aap, 532, A79
+4. Add this /bibitem entry into the file /draft/references.tex. Note that the papers are ordered by first author alphabetically.
+
+If you only have the paper opened on its own page (example: http://adsabs.harvard.edu/abs/2011A%26A...532A..79S), then if you scroll down you'll see 'Preferred format for this abstract (see Preferences)'below the abstract.
+Click on 'Preferences', and set your preferences (this requires you login to ADS). Go down a little bit and you'll see 'Reference Format', where you have a lot of choices, like 'Default format', 'generic tagged abstracts' etc. Select Custom format  and enter the code below in the provided space:
+\\bibitem[%\2m%(y)]\{%za1%y} %\8l %\Y,%\j,%\V,%\p\n
+Save your preference.
+In the future, on a single paper page, you can just click on "Preferred format for this abstract", and the desired format of bibliography will show up.
+
+This format is ApJ format. I set it just because when you reference the paper, you don't have to use \cite{2011A%26A...532A..79S}, which is ugly and long and impossible to remember. But instead, this format allows you to cite papers by \cite{Schneider2011}, i.e. first author and year. This way you don't have to look up the ADS code to cite papers!
+
+
+#############################################################
 		END OF FILE
 #############################################################
