@@ -132,16 +132,16 @@ KOI
 
 KDE
 
-EOD
+EOD: Planets discovered by radial velocity and transit method are classified as EOD planets. They have robust orbital parameters such as PER, ECC, K, OM, and I.
 
-MICROLENSING, IMAGING, TIMING and ASTROMETRY
+MICROLENSING, IMAGING, TIMING and ASTROMETRY: We have added MICROLENS- ING, IMAGING, TIMING and ASTROMETRY fields for planets discovered by methods other than radial velocity and transit. These planets are categorized as ``Other Planets'' on exoplanets.org
 
 %------------------------------------------------------------------------------
 \subsection{Stellar Parameters}
 
 Added fields since \cite{Wright2011}:
 
-DIST
+DIST: actually, DIST is not added since Wright 2011 (It was just left out)
 
 GAMMA
 
@@ -150,7 +150,9 @@ GAMMA
 
 Added fields since \cite{Wright2011}:
 
-MASS: we use mass-radius relation to get mass.
+MASS: Previously, we only reported the minimum mass (MSINI) of the planets. We now report mass of the planet in the unit of Jupiter mass. If a planet is discovered by transit, the planet mass is given by the literature. However, if a planet is detected by radial velocity method, the minimum mass is given in which case we calculate the mass by dividing the minimum mass by the orbit inclination. MASS is set to MSINI if the orbital inclination is not given and the MASSREF is set to ``Set to MSINI; I unknown''
+
+MASS: we use mass-radius relation to get mass. =>stellar mass?
 
 SEP
 
@@ -158,6 +160,8 @@ BIGOM
 
 LAMBDA: the literature has conflicted definitions of LAMBDA, and we
 sorted it out and made sure it is consistent in EOD.
+
+LAMBDA: We report the projected spin-orbit misalignment of transiting systems. We follow the definition of Fabrycky and Winn 2009.
 
 I: it used to be for transit systems only. Now sometimes for
 non-transiting systems the values of I are also available.
