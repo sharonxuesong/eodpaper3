@@ -102,11 +102,13 @@ in 2013.
 Scope of EOD has changed in the following ways:
 
 1. Definition of planets: not strictly smaller than 24 \mjup\ any
-more? Or still true?
+more? Or still true? We still require smaller than 24 \mjup.
 
-2. Host stars: not only `normal stars' any more?
+2. Host stars: not only `normal stars' any more? Not any more -
+neutron stars are there (at least)! This requirement is completely gone.
 
-3. Change on definition of `well-determined' orbital parameters?
+3. Change on definition of `well-determined' orbital parameters? No. Still
+qualitative, still the same as described in Section~2 of \cite{Wright2011}.
 
 4. Inclusion of planets discovered beyond RV and transit.
 
@@ -119,22 +121,48 @@ on exoplanets.org. Some fields are not explicitly included in the
 interactive table (e.g., the URLs), but are explicitly listed in the
 downloadable {\tt .csv} file.\footnote{The entire dataset provided by
   exoplanets.org is available for download in a single CSV file at
-  \url{http://exoplanets.org/csv-files/exoplanets.csv}}
+  \url{http://exoplanets.org/csv-files/exoplanets.csv}} Make a note
+here that though we focus on EOD in this Section, the fields apply to
+all planets on exoplanets.org.
 
 %------------------------------------------------------------------------------
 \subsection{Planet Information}
 
 Added fields since \cite{Wright2011}:
 
-KEPID
+KEPID: None of EOD planets has KEPID! This is just something we copied
+from Exoplanet Archive...
 
 KOI
 
 KDE
 
-EOD: Planets discovered by radial velocity and transit method are classified as EOD planets. They have robust orbital parameters such as PER, ECC, K, OM, and I.
+EOD: Planets discovered by radial velocity and transit method are
+classified as EOD planets. They have robust orbital parameters such as
+PER, ECC, K, OM, and I. \textit{(Sharon's comments: You don't need to
+  describe why we include a planet in EOD -- this is covered at the
+  beginning of Section~\ref{sec:update} as we discuss the `scope of
+  EOD'. Just say what this flag is. Also, right now it includes RV,
+  Transit, and also some Timing planets. The first sentence sounds
+  like as long as a planet is discovered via RV and transit, it'll be
+  in EOD, which is not true, I think.)}
 
-MICROLENSING, IMAGING, TIMING and ASTROMETRY: We have added MICROLENS- ING, IMAGING, TIMING and ASTROMETRY fields for planets discovered by methods other than radial velocity and transit. These planets are categorized as ``Other Planets'' on exoplanets.org
+MICROLENSING, IMAGING, TIMING and ASTROMETRY: We have added MICROLENS-
+ING, IMAGING, TIMING and ASTROMETRY fields for planets discovered by
+methods other than radial velocity and transit. These planets are
+categorized as ``Other Planets'' on exoplanets.org. \textit{(Sharon's
+  comments: Instead of saying `discovered', we should say `detected'
+  -- some planets are detected by these methods but are not
+  necessarily discovered by them at the first place. Re-phrase the
+  last sentence -- not all of planets with any of these TRUE are in
+  `Other Planets', only some are, so maybe just note planets
+  discovered by these methods are not necessarily in EOD and direct
+  the reader to Section~\ref{sec:kepler} where we talk about `Other
+  Planets'. Remember Section~\ref{sec:update} is focuses on EOD
+  updates though the fields apply to all planets on
+  exoplanets.org. Need to note here that we require the detection to
+  be robust, as determined by the QUAlity Control Board of the
+  Exoplanet Database, QUACBED.)}
 
 %------------------------------------------------------------------------------
 \subsection{Stellar Parameters}
@@ -277,6 +305,11 @@ imaging, timing, astrometric motion. They can be displayed by check
 the `Other' option for the table. They are not included in the EOD
 (especially some microlensing and imaging planets) because of poorly
 characterized orbits...
+
+Also add our criteria for vetting IMAGING planets, which can be found
+here: http://exoplanets.org/methodology.html; do we have any similar
+criteria for Microlensing, timing and astrometry planets? Like mass
+cut etc.?
 
 Figure: some comparison figures of Kepler candidate properties
 vs. EOD planet properties, such as mass-period, mass-radius?
