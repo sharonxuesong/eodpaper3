@@ -91,6 +91,9 @@ stands, and a brief history of EOD.
 What this paper is about: an update on EOD and the services our
 website, exoplanets.org, provide.
 
+According to Google Analytics, $47,000$ people visited exoplanets.org
+in 2013.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Updates on the EOD}\label{sec:update}
@@ -109,10 +112,10 @@ more? Or still true?
 
 Purposes of EOD have not changed?
 
-We only report new additions and revised fields here. For details on
-other fields, see \cite{Wright2011}. We divide the fields into
-categories in consistency with the interactive table on
-exoplanets.org. Some fields are not explicitly included in the
+We only describe new additions and revised fields here, but list all
+fields. For details on other fields, see \cite{Wright2011}. We divide
+the fields into categories in consistency with the interactive table
+on exoplanets.org. Some fields are not explicitly included in the
 interactive table (e.g., the URLs), but are explicitly listed in the
 downloadable {\tt .csv} file.\footnote{The entire dataset provided by
   exoplanets.org is available for download in a single CSV file at
@@ -147,11 +150,17 @@ GAMMA
 
 Added fields since \cite{Wright2011}:
 
-MASSS
+MASS: we use mass-radius relation to get mass.
 
 SEP
 
 BIGOM
+
+LAMBDA: the literature has conflicted definitions of LAMBDA, and we
+sorted it out and made sure it is consistent in EOD.
+
+I: it used to be for transit systems only. Now sometimes for
+non-transiting systems the values of I are also available.
 
 %------------------------------------------------------------------------------
 \subsection{Transit Parameters}
@@ -190,16 +199,16 @@ KP
 \subsection{Uncertainties}
 
 We now report uncertainties for a certain field X as XUPPER, XLOWER
-and UX. XUPPER and XLOWER store the upper and lower ZZZ 1$\sigma$ ZZZ
+and UX. XUPPER and XLOWER store the upper and lower 1$\sigma$
 uncertainties, and they are different when the error bars are
-asymmetric. UX contains the ZZZ 1$\sigma$ ZZZ uncertainty, and it
+asymmetric. UX contains the 1$\sigma$ uncertainty, and it
 equals to $({\rm XUPPER+XLOWER})/2$ in the case of asymmetric error
 bars. Fields that have XUPPER, XLOWER and UX are: (list of fields).
 
 %------------------------------------------------------------------------------
 \subsection{References}
 
-Added field: ZZZ MONTH ZZZ, PLANETDISCMETH, STARDISCMETH.
+Added field: MONTH, PLANETDISCMETH, STARDISCMETH.
 
 The fields XREF and XURL store the peer-reviewed reference and link to
 the publication for the field X. The following fields now have XREF
@@ -207,6 +216,10 @@ and XURL: (previously in \citealt{Wright2011}) DIST, TRANSIT, BINARY;
 (new) fields in stellar parameters: V, VSINI, GAMMA; all orbit pars except for
 trend and freeze\_ecc; all transit parameters; all SE parameters;
 fields for stellar properties: MSTAR, RSTAR, TEFF, RHOSTAR, LOGG, FE.
+
+VREF is not the same as REF for J H KS, which do not have XREF
+fields. See \cite{Wright2011} for references of J H KS mags -- I think
+he mentioned it there.
 
 Other general reference fields: In \cite{Wright2011}: FIRSTREF,
 FIRSTURL, ORBREF, ORBURL. New: SPECREF, SPECURL contain source of most
@@ -224,7 +237,9 @@ OTHERNAME - This is now listed as other name of planet instead of star;
 DISCMETH - replaced by planetdiscmeth and stardiscmeth;
 
 S - changed to SHK; ZZZ What's the source for SHK and RHK? Still discovery
-paper and Butler 2006?
+paper and Butler 2006? ZZZ SHK is a poorly maintained field, and it is
+unreferenced at the moment though we plan to include propoer reference
+in the future.
 
 SPSTAR - stellar type of star (unvetted), gone;
 
@@ -337,8 +352,7 @@ OM\dotfill & Float & Argument of periastron in degrees & -UPPER, etc. \\
 K\dotfill & Float & Semiamplitude of stellar reflex motion in \mps & -UPPER, etc. \\
 T0\dotfill & Double & Epoch of periastron in HJD\tablenotemark{d}$-2,440,000$ & -UPPER, etc. \\
 DVDT\dotfill & Float & Magnitude of linear trend in \mps\ day$^{-1}$ & -UPPER, etc. \\
-I\dotfill & Float & Orbital inclination in degrees (ZZZ for transiting
-systems only) & -UPPER, etc. \\
+I\dotfill & Float & Orbital inclination in degrees & -UPPER, etc. \\
 MSINI\dotfill & Float & Minimum mass (as calculated from the mass
 function) in \mjup & -UPPER, etc. \\
 A\dotfill & Float & Orbital semimajor axis in AU & -UPPER, etc. \\
@@ -382,7 +396,7 @@ SEDEPTH58\dotfill & & Secondary eclipse depth in
 \spitzer\ IRAC3 5.8 \micron\ band & -UPPER, etc. \\
 SEDEPTH80\dotfill & & Secondary eclipse depth in
 \spitzer\ IRAC4 8.0 \micron\ band & -UPPER, etc. \\
-SET\dotfill & & ZZZ Epoch of secondary eclipse center in
+SET\dotfill & & Epoch of secondary eclipse center in
 HJD\tablenotemark{d}$-2,440,000$ & -UPPER, etc. \\
 %
 \sidehead{\textbf{Fit \& References}}
@@ -394,7 +408,7 @@ MULT\dotfill & Boolean & Multiple planets in system? & \nodata \\
 PLANETDISCMETH\dotfill & String & Method of discovery of planet & \nodata \\
 STARDISCMETH\dotfill & String & Method of discovery of first planet in system & \nodata \\
 DATE\dotfill & Integer & Year of publication of FIRSTREF & \nodata \\
-ZZZ MONTH ZZZ\dotfill & Integer & Month of publication of FIRSTREF & \nodata \\
+MONTH\dotfill & Integer & Month of publication of FIRSTREF & \nodata \\
 FIRSTREF\dotfill & String & First peer-reviewed publication of
 planetary orbit & FIRSTURL \\
 ORBREF\dotfill & String & Peer-reviewed origin of orbital parameters & ORBURL \\
@@ -430,7 +444,8 @@ where ``-" stands for the name of the field listed in the first
 column. They are...}
 \tablenotetext{c}{Originally as other commonly used name for star in \cite{Wright2011};
   changed to other commonly used name for planet.}
-\tablenotetext{d}{ZZZ Is this now consistent? ZZZ}
+\tablenotetext{d}{The same as in \cite{Wright2011}, HJD/BJD etc.\ are
+  still not consistent.}
 \end{deluxetable}
 
 
