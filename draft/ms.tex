@@ -150,9 +150,19 @@ GAMMA
 
 Added fields since \cite{Wright2011}:
 
-MASS: Previously, we only reported the minimum mass (MSINI) of the planets. We now report mass of the planet in the unit of Jupiter mass. If a planet is discovered by transit, the planet mass is given by the literature. However, if a planet is detected by radial velocity method, the minimum mass is given in which case we calculate the mass by dividing the minimum mass by the orbit inclination. MASS is set to MSINI if the orbital inclination is not given and the MASSREF is set to ``Set to MSINI; I unknown''
 
-MASS: test merging-conflicts
+MASS: Previously, we only reported the minimum mass (MSINI) of the
+planets. We now report mass of the planet in the unit of Jupiter
+mass. If a planet is discovered by transit, the planet mass is given
+by the literature. However, if a planet is detected by radial velocity
+method, the minimum mass is given in which case we calculate the mass
+by dividing the minimum mass by the orbit inclination. MASS is set to
+MSINI if the orbital inclination is not given and the MASSREF is set
+to ``Set to MSINI; I unknown''. 
+
+MASS: For KOIs without MSINI measured, Exoplanet Archive reports MASS
+based on converting radius into mass.
+
 
 SEP
 
