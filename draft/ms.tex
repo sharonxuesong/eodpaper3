@@ -124,9 +124,11 @@ downloadable {\tt .csv} file.\footnote{The entire dataset provided by
 %------------------------------------------------------------------------------
 \subsection{Planet Information}
 
+We report basic planet information to give our users general information of when, by whom and how the planets were discovered. Since \cite{Wright2011}, as more planets were discovered by different methods other than radial velocity and transit, we have expanded this information to better ingest those planets into our database. 
+
 Added fields since \cite{Wright2011}:
 
-KEPID
+KEPID: For KOIs, the Exoplanet Archive reports Kepler ID.
 
 KOI
 
@@ -134,7 +136,7 @@ KDE
 
 EOD: Planets discovered by radial velocity and transit method are classified as EOD planets. They have robust orbital parameters such as PER, ECC, K, OM, and I.
 
-MICROLENSING, IMAGING, TIMING and ASTROMETRY: We have added MICROLENS- ING, IMAGING, TIMING and ASTROMETRY fields for planets discovered by methods other than radial velocity and transit. These planets are categorized as ``Other Planets'' on exoplanets.org
+MICROLENSING, IMAGING, TIMING and ASTROMETRY: We have added MICROLENSING, IMAGING, TIMING and ASTROMETRY fields for planets discovered by methods other than radial velocity and transit. These planets are categorized as ``Other Planets'' on exoplanets.org
 
 %------------------------------------------------------------------------------
 \subsection{Stellar Parameters}
@@ -338,8 +340,8 @@ RA\dotfill & Double & J2000 right ascension in decimal hours & \nodata \\
 RA\_STRING\dotfill & String & J2000 right ascension in sexagesimal string & \nodata  \\
 DEC\dotfill & Double & J2000 declination in decimal degrees & \nodata \\
 DEC\_STRING\dotfill & String & J2000 declination in sexagesimal string & \nodata \\
-KEPID\dotfill & & The unique \kepler\ star identifier & \nodata \\
-KOI\dotfill & & KOI object number & \nodata \\
+KEPID\dotfill & Long Integer & The unique \kepler\ star identifier & \nodata \\
+KOI\dotfill & Float & KOI object number & \nodata \\
 KDE\dotfill & Boolean & If true, planet appears in the \kepler\ archive & \nodata \\
 EOD\dotfill & Boolean & If true, planet is included in the EOD & \nodata \\
 MICROLENSING\dotfill & Boolean & If true, planet was detected via microlensing & \nodata \\
@@ -353,11 +355,11 @@ V\dotfill & Float & $V$ magnitude & -REF,-URL \\
 J\dotfill & Float & $J$ magnitude & \nodata \\
 H\dotfill & Float & $H$ magnitude & \nodata \\
 KS\dotfill & Float & $K_S$ magnitude & \nodata \\
-DIST\dotfill & & Distance to host star based on parallax in parsecs & -UPPER, etc. \\
+DIST\dotfill & Float & Distance to host star based on parallax in parsecs & -UPPER, etc. \\
 PAR\dotfill & Float & Parallax in mas & -UPPER,-LOWER,U- \\
 VSINI\dotfill & Float & Projected equatorial rotational velocity of
 star in k\mps & -UPPER, etc. \\
-GAMMA\dotfill & & Systemic radial velocity in k\mps & -UPPER, etc. \\
+GAMMA\dotfill & Float & Systemic radial velocity in k\mps & -UPPER, etc. \\
 %
 \sidehead{\textbf{Orbit Parameters}}
 PER\dotfill & Double & Orbital period in days & -UPPER, etc. \\
@@ -370,11 +372,11 @@ I\dotfill & Float & Orbital inclination in degrees & -UPPER, etc. \\
 MSINI\dotfill & Float & Minimum mass (as calculated from the mass
 function) in \mjup & -UPPER, etc. \\
 A\dotfill & Float & Orbital semimajor axis in AU & -UPPER, etc. \\
-MASS\dotfill & & Mass of planet in \mjup & -UPPER, etc. \\
-SEP\dotfill & & Separation between host star and planet in AU & -UPPER, etc. \\
+MASS\dotfill & Float & Mass of planet in \mjup & -UPPER, etc. \\
+SEP\dotfill & Float & Separation between host star and planet in AU & -UPPER, etc. \\
 TREND\dotfill  & Boolean & Linear trend in fit? & \nodata \\
 LAMBDA\dotfill & Float & Projected spin-orbit misalignment in degrees & -UPPER, etc. \\
-BIGOM\dotfill & & Longitude of ascending node in degrees & -UPPER, etc. \\
+BIGOM\dotfill & Float & Longitude of ascending node in degrees & -UPPER, etc. \\
 FREEZE\_ECC\dotfill & Boolean & Eccentricity frozen in fit? & \nodata \\
 %
 \sidehead{\textbf{Transit Parameters}}
@@ -383,34 +385,34 @@ T14\dotfill & Float & Time of transit from first to fourth contact in days & -UP
 TT\dotfill & Float & Epoch of transit center in
 HJD\tablenotemark{d}$-2,440,000$ & -UPPER, etc. \\
 R\dotfill & Float & Radius of planet in Jupiter radii & -UPPER, etc. \\
-AR\dotfill & & $(a/R_*)$ & -UPPER, etc. \\
+AR\dotfill & Float & $(a/R_*)$ & -UPPER, etc. \\
 B\dotfill & Float & Impact parameter of transit & -UPPER, etc. \\
 DENSITY\dotfill & Float & Density of planet in g cc$^{-1}$ &
 -UPPER, etc. \\
 GRAVITY\dotfill & Float & $\log{g}$ (surface gravity) of planet in cgs unit &
 -UPPER, etc. \\
 TRANSIT\dotfill & Boolean & Is the planet known to transit? & -REF,-URL \\
-DR\dotfill & & Distance during transit in stellar radii & -UPPER, etc. \\
-RR\dotfill & & $(R_p/R_*)$ & -UPPER, etc. \\
+DR\dotfill & Float & Distance during transit in stellar radii & -UPPER, etc. \\
+RR\dotfill & Float & $(R_p/R_*)$ & -UPPER, etc. \\
 %
 \sidehead{\textbf{Secondary Eclipse}}
 SE\dotfill & Boolean & If true, at least one secondary eclipse has
 been detected & -REF,-URL \\
-SEDEPTHJ\dotfill & & Secondary eclipse depth in $J$ band & -UPPER, etc. \\
-SEDEPTHH\dotfill & & Secondary eclipse depth in $H$ band & -UPPER, etc. \\
-SEDEPTHKS\dotfill & & Secondary eclipse depth in $K_S$
+SEDEPTHJ\dotfill & Float & Secondary eclipse depth in $J$ band & -UPPER, etc. \\
+SEDEPTHH\dotfill & Float & Secondary eclipse depth in $H$ band & -UPPER, etc. \\
+SEDEPTHKS\dotfill & Float & Secondary eclipse depth in $K_S$
 band & -UPPER, etc. \\
-SEDEPTHKP\dotfill & & Secondary eclipse depth in the
+SEDEPTHKP\dotfill & Float & Secondary eclipse depth in the
 \kepler\ photometry band & -UPPER, etc. \\
-SEDEPTH36\dotfill & & Secondary eclipse depth in
+SEDEPTH36\dotfill & Float & Secondary eclipse depth in
 \spitzer\ IRAC1 3.6 \micron\ band & -UPPER, etc. \\
-SEDEPTH45\dotfill & & Secondary eclipse depth in
+SEDEPTH45\dotfill & Float & Secondary eclipse depth in
 \spitzer\ IRAC2 4.5 \micron\ band & -UPPER, etc. \\
-SEDEPTH58\dotfill & & Secondary eclipse depth in
+SEDEPTH58\dotfill & Float & Secondary eclipse depth in
 \spitzer\ IRAC3 5.8 \micron\ band & -UPPER, etc. \\
-SEDEPTH80\dotfill & & Secondary eclipse depth in
+SEDEPTH80\dotfill & Float & Secondary eclipse depth in
 \spitzer\ IRAC4 8.0 \micron\ band & -UPPER, etc. \\
-SET\dotfill & & Epoch of secondary eclipse center in
+SET\dotfill & Double & Epoch of secondary eclipse center in
 HJD\tablenotemark{d}$-2,440,000$ & -UPPER, etc. \\
 %
 \sidehead{\textbf{Fit \& References}}
@@ -430,16 +432,16 @@ ORBREF\dotfill & String & Peer-reviewed origin of orbital parameters & ORBURL \\
 \sidehead{\textbf{Stellar Properties}}
 STAR\dotfill & String & Standard name for host star & \nodata \\
 MSTAR\dotfill & Float & Mass of host star in solar mass & -UPPER, etc. \\
-RSTAR\dotfill & & Radius of host star in solar radii & -UPPER, etc. \\
+RSTAR\dotfill & Float & Radius of host star in solar radii & -UPPER, etc. \\
 TEFF\dotfill & Float & Effective temperature of host star & -UPPER, etc. \\
-RHOSTAR\dotfill & & Density of host star & -UPPER, etc. \\
+RHOSTAR\dotfill & Float & Density of host star & -UPPER, etc. \\
 LOGG\dotfill & Float & Spectroscopic $\log{g}$ (surface gravity) of
 host star in cgs unit & -UPPER, etc. \\
 FE\dotfill & Float & Iron abundance (or metallicity) of star & -UPPER, etc. \\
 SHK\dotfill & Float & Mount Wilson Ca \sc{II} $S$-value & \nodata \\
 RHK\dotfill & Float & Chromospheric activity of star as $R'_{HK}$ & \nodata \\
-KP\dotfill & & \kepler\ bandpass magnitude & \nodata \\
-SPECREF\dotfill & & Source of most of the spectroscopic parameters & SPECURL \\
+KP\dotfill & Float & \kepler\ bandpass magnitude & \nodata \\
+SPECREF\dotfill & String & Source of most of the spectroscopic parameters & SPECURL \\
 %
 \sidehead{\textbf{Links}}
 JSNAME\dotfill & String & Name of host star used in the Extrasolar
