@@ -30,6 +30,7 @@ $ make
 $ make clean
 $ git commit -am "Enter your documentation on what you did. No name needed."
 3. Push to remote:
+Repeat step 0 first then:
 $ git push origin master
 
 
