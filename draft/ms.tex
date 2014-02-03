@@ -138,14 +138,14 @@ KEPID: None of EOD planets has KEPID! This is just something we copied
 from Exoplanet Archive...
 
 
-KOI
+KOI: KOI represents `Kepler Objects of Interest', which are planet candidates that have not been confirmed. 
 
 KDE
 
 
-EOD: Planets discovered by radial velocity and transit method are
-classified as EOD planets. They have robust orbital parameters such as
-PER, ECC, K, OM, and I. \textit{(Sharon's comments: You don't need to
+EOD: EOD flag indicates planets with good Keplerian orbits. They have robust orbital parameters such as PER, ECC, K, OM, and I. 
+
+\textit{(Sharon's comments: You don't need to
   describe why we include a planet in EOD -- this is covered at the
   beginning of Section~\ref{sec:update} as we discuss the `scope of
   EOD'. Just say what this flag is. Also, right now it includes RV,
@@ -154,9 +154,10 @@ PER, ECC, K, OM, and I. \textit{(Sharon's comments: You don't need to
   in EOD, which is not true, I think.)}
 
 MICROLENSING, IMAGING, TIMING and ASTROMETRY: We have added MICROLENS-
-ING, IMAGING, TIMING and ASTROMETRY fields for planets discovered by
-methods other than radial velocity and transit. These planets are
-categorized as ``Other Planets'' on exoplanets.org. \textit{(Sharon's
+ING, IMAGING, TIMING and ASTROMETRY fields for planets detected by
+methods other than radial velocity and transit. Since planets detected by these methods do not have robust orbital parameters, they are categorized as ``Other Planets'' on exoplanets.org. However, if planets have follow up radial velocity or transit observations and thus have good orbital parameters, they have EOD flags. See Section~\ref{sec:kepler} for more information about `Other Planets'.
+
+\textit{(Sharon's
   comments: Instead of saying `discovered', we should say `detected'
   -- some planets are detected by these methods but are not
   necessarily discovered by them at the first place. Re-phrase the
@@ -177,6 +178,7 @@ categorized as ``Other Planets'' on exoplanets.org. \textit{(Sharon's
 Added fields since \cite{Wright2011}:
 
 DIST: actually, DIST is not added since Wright 2011 (It was just left out)
+We report distance of the host star in the unit of pc. 
 
 GAMMA
 
@@ -275,6 +277,8 @@ FIRSTURL, ORBREF, ORBURL. New: SPECREF, SPECURL contain source of most
 of the spectroscopic parameters listed for convenience; actual
 references in the REF fields take precedence over this one.
 
+We now report the month when the peer-reviewed paper is accepted to ApJ to better track of the trend in exoplanetary detections. Moreover, we report the discovery methods for the host star and the planet separately: STARDISCMETH and PLANETDISCMETH. See Section~ for more details. 
+
 
 %------------------------------------------------------------------------------
 \subsection{Revised and Removed Fields}
@@ -283,7 +287,7 @@ These include:
 
 OTHERNAME - This is now listed as other name of planet instead of star;
 
-DISCMETH - replaced by planetdiscmeth and stardiscmeth;
+DISCMETH - We have replaced DISCMETH with PLANETDISCMETH and STARDISCMETH to better report how the host star and the planet are detected. 
 
 S - changed to SHK; ZZZ What's the source for SHK and RHK? Still discovery
 paper and Butler 2006? ZZZ SHK is a poorly maintained field, and it is
