@@ -98,8 +98,6 @@ in 2013.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Updates on the EOD}\label{sec:update}
 
-TEST!
-
 Scope of EOD has changed in the following ways:
 
 1. Definition of planets: not strictly smaller than 24 \mjup\ any
@@ -129,9 +127,30 @@ all planets on exoplanets.org.
 %------------------------------------------------------------------------------
 \subsection{Planet Information}
 
-We report basic planet information to give our users general information of when, by whom and how the planets were discovered. Since \cite{Wright2011}, as more planets were discovered by different methods other than radial velocity and transit, we have expanded this information to better ingest those planets into our database. 
+We report basic planet information to give our users general
+information of when, by whom and how the planets were
+discovered. Since \cite{Wright2011}, as more planets were discovered
+by different methods other than radial velocity and transit, we have
+expanded this information to better ingest those planets into our
+database.
 
 Added fields since \cite{Wright2011}:
+
+\textit{Sharon: I don't think the first sentence is true... Looking at
+  the fields in the Planet Information section in the table, it
+  doesn't contain when who or how at all... The current way of
+  dividing fields into these categories is a bit weird, but we are
+  definitely not changing it in our paper or change the website any
+  time soon... I'm guessing you want to summarize what Planet
+  Information fields cover in the first sentence here, so maybe look
+  at the table and give a very general summary of what those fields
+  are.
+
+  I'm not sure what's the purpose of the second sentence... It sounds
+  like something we generally did for EOD. Maybe we should move it to
+  the paragraph above in the overview text for
+  Section~\ref{sec:update}. Think more about what the purpose of the
+  subsection overview should serve.}
 
 
 KEPID: None of EOD planets has KEPID! This is just something we copied
@@ -140,24 +159,66 @@ from Exoplanet Archive...
 
 KOI: KOI represents `Kepler Objects of Interest', which are planet candidates that have not been confirmed. 
 
-KDE
+\textit{Sharon: you need to say what KOI stores. When writing each
+  field, keep in mind you need to cover the following so that the
+  reader will completely understand: (1) what the field stands for
+  (e.g., in case of an abbreviation like KOI); (2) what the field
+  physically means, like `KOI' means planet candidates that have transit
+  signals as detected by \kepler\ but have not been confirmed, and
+  make sure to be thorough at what you say -- sometimes things are not
+  that obvious to an outsider reader, e.g., think if a cosmologist
+  would understand what you're saying when reading it; (3) what the
+  field actually contains, e.g. KOI contains the KOI number designated
+  by the \kepler\ team (right?), it is a floating point number, and
+  sometimes maybe even worth giving an example, e.g. KOI 30.1 or
+  something...; (4) why we added this new field, if this information
+  is helpful, or if it's a revised field since \cite{Wright2011}, what
+  is changed.
 
+  Also, use \keper\ (which is a defined symbol in our ms.tex file),
+  instead of typing out Kepler, since you need italic.
 
-EOD: EOD flag indicates planets with good Keplerian orbits. They have robust orbital parameters such as PER, ECC, K, OM, and I. 
+  Don't be afraid to write more! Being concise is important, but it's
+  always easier to trim down things than to add things on, especially
+  for a documentation type of paper like this. Let's be thorough at
+  first, then try to reach optimal conciseness. }
 
-\textit{(Sharon's comments: You don't need to
-  describe why we include a planet in EOD -- this is covered at the
-  beginning of Section~\ref{sec:update} as we discuss the `scope of
-  EOD'. Just say what this flag is. Also, right now it includes RV,
-  Transit, and also some Timing planets. The first sentence sounds
-  like as long as a planet is discovered via RV and transit, it'll be
-  in EOD, which is not true, I think.)}
+KDE: 
+
+EOD: EOD flag indicates planets with good Keplerian orbits. They have
+robust orbital parameters such as PER, ECC, K, OM, and I. 
+
+EOD: A planet with the EOD flag being true indicates that it has
+well-characterized orbital parameters such as PER, ECC, K, OM, and I
+and is thus included in the EOD. We added this field because
+exoplanets.org now also includes robustly discovered planets that do
+not have well-characterized orbits, and also \kepler\ planet
+candidates (see Section~\ref{sec:kepler} for more details).
+
+\textit{Sharon: I've provided my version here: the stuff I added on
+  top of your writing is what I think was missing and may make a
+  cosmologist wonder. ;)
+
+  Also, EOD doesn't require the orbit to be 'Keplerian', right? We do
+  include reported dynamic fits - they're definitely not
+  Keplerian. Am I right?
+
+  Note that I've covered all the 4 aspects I mentioned above. :)}
 
 MICROLENSING, IMAGING, TIMING and ASTROMETRY: We have added MICROLENS-
 ING, IMAGING, TIMING and ASTROMETRY fields for planets detected by
-methods other than radial velocity and transit. Since planets detected by these methods do not have robust orbital parameters, they are categorized as ``Other Planets'' on exoplanets.org. However, if planets have follow up radial velocity or transit observations and thus have good orbital parameters, they have EOD flags. See Section~\ref{sec:kepler} for more information about `Other Planets'.
+methods other than radial velocity and transit. Since planets detected
+by these methods do not have robust orbital parameters, they are
+categorized as ``Other Planets'' on exoplanets.org. However, if
+planets have follow up radial velocity or transit observations and
+thus have good orbital parameters, they have EOD flags. See
+Section~\ref{sec:kepler} for more information about `Other Planets'. 
 
-\textit{(Sharon's
+\textit{Sharon: you've changed `discovered' to `detected', but it's
+  still not an accurate description. Let's meet and discuss this in
+  person. 
+
+  old: Sharon's
   comments: Instead of saying `discovered', we should say `detected'
   -- some planets are detected by these methods but are not
   necessarily discovered by them at the first place. Re-phrase the
@@ -169,7 +230,7 @@ methods other than radial velocity and transit. Since planets detected by these 
   updates though the fields apply to all planets on
   exoplanets.org. Need to note here that we require the detection to
   be robust, as determined by the QUAlity Control Board of the
-  Exoplanet Database, QUACBED.)}
+  Exoplanet Database, QUACBED.}
 
 
 %------------------------------------------------------------------------------
@@ -277,7 +338,11 @@ FIRSTURL, ORBREF, ORBURL. New: SPECREF, SPECURL contain source of most
 of the spectroscopic parameters listed for convenience; actual
 references in the REF fields take precedence over this one.
 
-We now report the month when the peer-reviewed paper is accepted to ApJ to better track of the trend in exoplanetary detections. Moreover, we report the discovery methods for the host star and the planet separately: STARDISCMETH and PLANETDISCMETH. See Section~ for more details. 
+We now report the month when the peer-reviewed paper is accepted to
+ApJ to better track of the trend in exoplanetary detections. Moreover,
+we report the discovery methods for the host star and the planet
+separately: STARDISCMETH and PLANETDISCMETH. See Section~ for more
+details.  
 
 
 %------------------------------------------------------------------------------
