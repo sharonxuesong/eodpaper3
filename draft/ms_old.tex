@@ -1,0 +1,576 @@
+% EOD Documentation Paper #3
+% Project initiated Dec 22 2013
+
+%\documentclass{emulateapj}
+% Requirement of PASP to use preprint and aastex
+\documentclass[11pt,preprint]{aastex}
+\usepackage{amsmath,amssymb}
+\usepackage{xspace}
+\usepackage{graphicx}
+\bibliographystyle{apj} 
+\usepackage{epstopdf}  
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{verbatim}
+\usepackage{morefloats} % somehow need this to have lots of figures
+                        % and tables?
+% for attractive links:
+\usepackage[colorlinks,urlcolor=blue,citecolor=black,linkcolor=blue]{hyperref}
+%\usepackage[nolists]{endfloat} % put floats at end - doesn't work
+\interfootnotelinepenalty=10000 % Do not want cross-page footnote!
+
+\usepackage{CJK} 
+
+% definition of symbols
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ergcms{erg~cm$^{-2}$~s$^{-1}$}
+\def\ergs{erg~s$^{-1}$}
+\def\mps{m~s$^{-1}$}
+\def\msun{M_{\odot}}
+\def\lsun{L_{\odot}}
+\def\etal{~et~al.~}
+\def\degree{^{\circ}}
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\micron{$\mu$m}
+\def\percm2{{\rm cm^{-2}}}
+\def\peryr{yr$^{-1}$}
+\def\kepler{\textit{Kepler}}
+\def\spitzer{\textit{Spitzer}}
+\def\micron{$\mu$m}
+\def\mjup{$M_{\rm Jup}$}
+
+
+\maxdeadcycles=1000 % need this to have bunch of figures on each page
+                    % at end
+
+\slugcomment{}
+\shorttitle{}
+\shortauthors{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{CJK*}{UTF8}{gbsn}
+
+\title{Updates on the Exoplanet Orbit Database}
+
+% leading authors
+\author{Eunkyu Han\altaffilmark{1,2}}
+\author{Sharon X. Wang\altaffilmark{1,2,3}}
+\author{Jason T. Wright\altaffilmark{1,2,3}}
+\author{Ying Feng\altaffilmark{1,2}}
+\author{Ming Zhao\altaffilmark{1,2}}
+\author{Onsi Fakhouri}
+\author{and Friends}
+
+\altaffiltext{1}{Department of Astronomy \& Astrophysics, 525 Davey
+  Lab, The Pennsylvania State University, University Park, PA 16802, USA;
+  Send correspondence to datamaster@exoplanets.org.}
+\altaffiltext{2}{Center for Exoplanets and Habitable Worlds, The
+  Pennsylvania State University, University Park, PA 16802, USA}
+\altaffiltext{3}{Astrobiology Research Center, The
+  Pennsylvania State University, University Park, PA 16802, USA} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+
+\end{abstract}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}\label{sec:intro}
+
+Recent development of exoplanet discoveries, especially
+\kepler\ discoveries.
+
+The business of keeping track of exoplanet discoveries, where EOD
+stands, and a brief history of EOD.
+
+What this paper is about: an update on EOD and the services our
+website, exoplanets.org, provide.
+
+According to Google Analytics, $47,000$ people visited exoplanets.org
+in 2013.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Updates on the EOD}\label{sec:update}
+
+Scope of EOD has changed in the following ways:
+
+1. Definition of planets: not strictly smaller than 24 \mjup\ any
+more? Or still true? We still require smaller than 24 \mjup.
+
+2. Host stars: not only `normal stars' any more? Not any more -
+neutron stars are there (at least)! This requirement is completely gone.
+
+3. Change on definition of `well-determined' orbital parameters? No. Still
+qualitative, still the same as described in Section~2 of \cite{Wright2011}.
+
+4. Inclusion of planets discovered beyond RV and transit.
+
+Purposes of EOD have not changed?
+
+We only describe new additions and revised fields here, but list all
+fields. For details on other fields, see \cite{Wright2011}. We divide
+the fields into categories in consistency with the interactive table
+on exoplanets.org. Some fields are not explicitly included in the
+interactive table (e.g., the URLs), but are explicitly listed in the
+downloadable {\tt .csv} file.\footnote{The entire dataset provided by
+  exoplanets.org is available for download in a single CSV file at
+  \url{http://exoplanets.org/csv-files/exoplanets.csv}} Make a note
+here that though we focus on EOD in this Section, the fields apply to
+all planets on exoplanets.org.
+
+%------------------------------------------------------------------------------
+\subsection{Planet Information}
+
+We report basic planet information to give our users general
+information of when, by whom and how the planets were
+discovered. Since \cite{Wright2011}, as more planets were discovered
+by different methods other than radial velocity and transit, we have
+expanded this information to better ingest those planets into our
+database.
+
+Added fields since \cite{Wright2011}:
+
+\textit{Sharon: I don't think the first sentence is true... Looking at
+  the fields in the Planet Information section in the table, it
+  doesn't contain when who or how at all... The current way of
+  dividing fields into these categories is a bit weird, but we are
+  definitely not changing it in our paper or change the website any
+  time soon... I'm guessing you want to summarize what Planet
+  Information fields cover in the first sentence here, so maybe look
+  at the table and give a very general summary of what those fields
+  are.
+  I'm not sure what's the purpose of the second sentence... It sounds
+  like something we generally did for EOD. Maybe we should move it to
+  the paragraph above in the overview text for
+  Section~\ref{sec:update}. Think more about what the purpose of the
+  subsection overview should serve.}
+
+
+KEPID: None of EOD planets has KEPID! This is just something we copied
+from Exoplanet Archive...
+
+
+KOI: KOI represents `Kepler Objects of Interest' which is a star suspected to host transiting exoplanet. Transit signals are detected by \kepler\ but have not been confirmed to be planets. KOI field contains floating points that is consisted of a whole number designated to the host star followed by a decimal number denoting candidate planets. For example, KOI 102 is a star suspected to host multiple exoplanets and KOI 102.01 is an inner and KOI 102.02 is an outer planet candidate. Once the candidates are confirmed to be planets, the host star is designated \kepler\ followed by a hyphen and an integer. 
+\textit {I am not actually sure why we started reporting KOI numbers... maybe to better track of exoplanets?}
+
+\textit {Sharon: you need to say what KOI stores. When writing each
+  field, keep in mind you need to cover the following so that the
+  reader will completely understand: (1) what the field stands for
+  (e.g., in case of an abbreviation like KOI); (2) what the field
+  physically means, like `KOI' means planet candidates that have transit
+  signals as detected by \kepler\ but have not been confirmed, and
+  make sure to be thorough at what you say -- sometimes things are not
+  that obvious to an outsider reader, e.g., think if a cosmologist
+  would understand what you're saying when reading it; (3) what the
+  field actually contains, e.g. KOI contains the KOI number designated
+  by the \kepler\ team (right?), it is a floating point number, and
+  sometimes maybe even worth giving an example, e.g. KOI 30.1 or
+  something...; (4) why we added this new field, if this information
+  is helpful, or if it's a revised field since \cite{Wright2011}, what
+  is changed. Also, use \kepler\ (which is a defined symbol in our ms.tex file),
+  instead of typing out Kepler, since you need italic.
+  Don't be afraid to write more! Being concise is important, but it's
+  always easier to trim down things than to add things on, especially
+  for a documentation type of paper like this. Let's be thorough at
+  first, then try to reach optimal conciseness.}
+
+KDE: obselete field! Detele from the table.
+
+EOD: EOD flag indicates planets with good Keplerian orbits. They have
+robust orbital parameters such as PER, ECC, K, OM, and I. 
+
+EOD: A planet with the EOD flag being true indicates that it has
+well-characterized orbital parameters such as PER, ECC, K, OM, and I
+and is thus included in the EOD. We added this field because
+exoplanets.org now also includes robustly discovered planets that do
+not have well-characterized orbits, and also \kepler\ planet
+candidates (see Section~\ref{sec:kepler} for more details).
+
+\textit {Sharon: I've provided my version here: the stuff I added on
+  top of your writing is what I think was missing and may make a
+  cosmologist wonder. ;)
+  Also, EOD doesn't require the orbit to be 'Keplerian', right? We do
+  include reported dynamic fits - they're definitely not
+  Keplerian. Am I right?
+  Note that I've covered all the 4 aspects I mentioned above. :)}
+
+MICROLENSING, IMAGING, TIMING and ASTROMETRY: We have added MICROLENS-
+ING, IMAGING, TIMING and ASTROMETRY fields for planets detected by
+methods other than radial velocity and transit. Since planets detected
+by these methods do not have robust orbital parameters, they are
+categorized as ``Other Planets'' on exoplanets.org. However, if
+planets have follow up radial velocity or transit observations and
+thus have good orbital parameters, they have EOD flags. See
+Section~\ref{sec:kepler} for more information about `Other Planets'. 
+
+\textit {Sharon: you've changed `discovered' to `detected', but it's
+  still not an accurate description. Let's meet and discuss this in
+  person. 
+  old: Sharon's
+  comments: Instead of saying `discovered', we should say `detected'
+  -- some planets are detected by these methods but are not
+  necessarily discovered by them at the first place. Re-phrase the
+  last sentence -- not all of planets with any of these TRUE are in
+  `Other Planets', only some are, so maybe just note planets
+  discovered by these methods are not necessarily in EOD and direct
+  the reader to Section~\ref{sec:kepler} where we talk about `Other
+  Planets'. Remember Section~\ref{sec:update} is focuses on EOD
+  updates though the fields apply to all planets on
+  exoplanets.org. Need to note here that we require the detection to
+  be robust, as determined by the QUAlity Control Board of the
+  Exoplanet Database, QUACBED.}
+
+
+%------------------------------------------------------------------------------
+\subsection{Stellar Parameters}
+Stellar parameters section is consisted of 3 parts: Stellar properties, Stellar magnitudes, and Coordinates and Catalog. This section is to provide our users detailed information about the exoplanet hosting stars. Stellar properties section contains name, mass, and consistent set of metalicities (FE) , effective temperature (TEFF), surface gravity (LOGG), projected rotational velocity (VSINI), and the systematic radial velocity (GAMMA). Stellar magnitudes section includes optical magnitudes of the star (V and BMV) as well as 2MASS infrared (J, H, and K) and Kepler bandpass magnitude (KP). Coordinates and Catalog section includes the right ascension (RA) and the declination (DEC) of the host star, parallax (PAR) and distance (DIST) and the integers designated by different catalogs. 
+
+Added fields since \cite{Wright2011}:
+
+DIST is the distance of the host star in the unit of pc. It sometimes is calculated from the parallax that come from the Hipparcos data set by van Leeuwen (200).
+
+GAMMA is the newly added field under Stellar properties. It is the radial velocity of the center of mass of the planetary system and is reported in km/s.  
+
+ZZZ KP added?
+
+%------------------------------------------------------------------------------
+\subsection{Orbit Parameters}
+
+Added fields since \cite{Wright2011}:
+
+
+MASS: Previously, we only reported the minimum mass (MSINI) of the
+planets. We now report mass of the planet in the unit of Jupiter
+mass. If a planet is discovered by transit, the planet mass is given
+by the literature. However, if a planet is detected by radial velocity
+method, the minimum mass is given in which case we calculate the mass
+by dividing the minimum mass by the orbit inclination. MASS is set to
+MSINI if the orbital inclination is not given and the MASSREF is set
+to ``Set to MSINI; I unknown''. 
+
+MASS: For KOIs without MSINI measured, Exoplanet Archive reports MASS
+based on converting radius into mass.
+
+
+SEP
+
+BIGOM
+
+LAMBDA: the literature has conflicted definitions of LAMBDA, and we
+sorted it out and made sure it is consistent in EOD.
+
+LAMBDA: We report the projected spin-orbit misalignment of transiting systems. We follow the definition of Fabrycky and Winn 2009. 
+
+I: it used to be for transit systems only. Now sometimes for
+non-transiting systems the values of I are also available.
+
+%------------------------------------------------------------------------------
+\subsection{Transit Parameters}
+
+Added fields since \cite{Wright2011}:
+
+DR
+
+RR
+
+%------------------------------------------------------------------------------
+\subsection{Secondary Eclipse}
+
+This is a entire new set of fields since \cite{Wright2011}:
+
+SE
+
+SEDEPTH J H KS KP 36 45 58 80
+
+SET
+
+%------------------------------------------------------------------------------
+\subsection{Stellar Properties}
+
+Difference from Stellar Parameters: these are derived parameters based
+on spectroscopy and stellar models.
+Added fields since \cite{Wright2011}:
+
+RSTAR
+
+RHOSTAR
+
+KP
+
+%------------------------------------------------------------------------------
+\subsection{Uncertainties}
+
+We now report uncertainties for a certain field X as XUPPER, XLOWER
+and UX. XUPPER and XLOWER store the upper and lower 1$\sigma$
+uncertainties, and they are different when the error bars are
+asymmetric. UX contains the 1$\sigma$ uncertainty, and it
+equals to $({\rm XUPPER+XLOWER})/2$ in the case of asymmetric error
+bars. Fields that have XUPPER, XLOWER and UX are: (list of fields).
+
+%------------------------------------------------------------------------------
+\subsection{References}
+
+Added field: MONTH, PLANETDISCMETH, STARDISCMETH.
+
+The fields XREF and XURL store the peer-reviewed reference and link to
+the publication for the field X. The following fields now have XREF
+and XURL: (previously in \citealt{Wright2011}) DIST, TRANSIT, BINARY;
+(new) fields in stellar parameters: V, VSINI, GAMMA; all orbit pars except for
+trend and freeze\_ecc; all transit parameters; all SE parameters;
+fields for stellar properties: MSTAR, RSTAR, TEFF, RHOSTAR, LOGG, FE.
+
+VREF is not the same as REF for J H KS, which do not have XREF
+fields. See \cite{Wright2011} for references of J H KS mags -- I think
+he mentioned it there.
+
+Other general reference fields: In \cite{Wright2011}: FIRSTREF,
+FIRSTURL, ORBREF, ORBURL. New: SPECREF, SPECURL contain source of most
+of the spectroscopic parameters listed for convenience; actual
+references in the REF fields take precedence over this one.
+
+We now report the month when the peer-reviewed paper is accepted to
+ApJ to better track of the trend in exoplanetary detections. Moreover,
+we report the discovery methods for the host star and the planet
+separately: STARDISCMETH and PLANETDISCMETH. See Section~ for more
+details.  
+
+
+%------------------------------------------------------------------------------
+\subsection{Revised and Removed Fields}
+
+These include:
+
+OTHERNAME - This is now listed as other name of planet instead of star;
+** OTHTERNAME has always been the name of the star I think...?
+
+DISCMETH - We have replaced DISCMETH with PLANETDISCMETH and STARDISCMETH to better report how the host star and the planet are detected. 
+
+S - changed to SHK; ZZZ What's the source for SHK and RHK? Still discovery
+paper and Butler 2006? ZZZ SHK is a poorly maintained field, and it is
+unreferenced at the moment though we plan to include propoer reference
+in the future.
+
+SPSTAR - stellar type of star (unvetted), gone;
+
+NSTEDID - replaced by EANAME (Exoplanet Archive).
+
+MASSREF, MASSURL - originally for stellar mass reference, now for planet mass.
+
+%------------------------------------------------------------------------------
+Figure: Figure of single planet page, to show updated transit
+parameters and RV curves etc.?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Inclusion of the Kepler Planet Candidates and Other Exoplanets on Exoplanets.org}\label{sec:kepler}
+
+We now include \kepler\ candidates... They can be displayed by
+checking the `Kepler' option for the interactive data table.
+
+We also include robustly detected planets discovered microlensing,
+imaging, timing, astrometric motion. They can be displayed by check
+the `Other' option for the table. They are not included in the EOD
+(especially some microlensing and imaging planets) because of poorly
+characterized orbits...
+
+Also add our criteria for vetting IMAGING planets, which can be found
+here: http://exoplanets.org/methodology.html; do we have any similar
+criteria for Microlensing, timing and astrometry planets? Like mass
+cut etc.?
+
+Figure: some comparison figures of Kepler candidate properties
+vs. EOD planet properties, such as mass-period, mass-radius?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Updates on the Website}
+
+Onsi? Essential updates on the website.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion and Future}\label{sec:conclusion}
+
+Any planned future improvements and updates?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\acknowledgments
+
+NSF funding?
+
+SXW acknowledges support from PSARC.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References:
+%\newpage
+\input{references.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table
+\clearpage
+
+\begin{deluxetable}{llll}
+\tabletypesize{\scriptsize}
+%\rotate
+\tablewidth{0pt}
+\tablecaption{Fields of Exoplanet Orbit Database\label{tab:par}}
+\tablehead{
+  \colhead{Field\tablenotemark{a}} & \colhead{Data Type} & \colhead{Meaning} &
+  \colhead{Related Fields\tablenotemark{b}}
+}
+\startdata
+%
+\sidehead{\textbf{Planet Information}}
+NAME\dotfill & String & Name of planet & \nodata \\
+OTHERNAME\tablenotemark{c}\dotfill & String & Other commonly used name of planet & \nodata \\
+COMP\dotfill & String & Component name of planet ($b$, $c$, etc.) & \nodata \\
+HD\dotfill & Long Integer & Henry Draper number of sar & \nodata \\
+HR\dotfill & Integer & Bright Star Catalog number of star & \nodata \\
+HIPP\dotfill & Long Integer & \textit{Hipparcos} catalog number of
+star & \nodata \\
+SAO\dotfill & Long Integer & SAO catalog number of star & \nodata \\
+GL\dotfill & Float & GJ or Gliese catalog number of star & \nodata \\
+BINARY\dotfill & Boolean & Star known ot be binary? & -REF, -URL \\
+RA\dotfill & Double & J2000 right ascension in decimal hours & \nodata \\
+RA\_STRING\dotfill & String & J2000 right ascension in sexagesimal string & \nodata  \\
+DEC\dotfill & Double & J2000 declination in decimal degrees & \nodata \\
+DEC\_STRING\dotfill & String & J2000 declination in sexagesimal string & \nodata \\
+KEPID\dotfill & Long Integer & The unique \kepler\ star identifier & \nodata \\
+KOI\dotfill & Float & KOI object number & \nodata \\
+KDE\dotfill & Boolean & If true, planet appears in the \kepler\ archive & \nodata \\
+EOD\dotfill & Boolean & If true, planet is included in the EOD & \nodata \\
+MICROLENSING\dotfill & Boolean & If true, planet was detected via microlensing & \nodata \\
+IMAGING\dotfill & Boolean & If true, planet was detected via imaging & \nodata \\
+TIMING\dotfill & Boolean & If true, planet was detected via timing & \nodata \\
+ASTROMETRY\dotfill & Boolean & If true, planet was detected via astrometric motion & \nodata \\
+%
+\sidehead{\textbf{Stellar Parameters}}
+BMV\dotfill & Float & $B-V$ color & \nodata \\
+V\dotfill & Float & $V$ magnitude & -REF,-URL \\
+J\dotfill & Float & $J$ magnitude & \nodata \\
+H\dotfill & Float & $H$ magnitude & \nodata \\
+KS\dotfill & Float & $K_S$ magnitude & \nodata \\
+DIST\dotfill & Float & Distance to host star based on parallax in parsecs & -UPPER, etc. \\
+PAR\dotfill & Float & Parallax in mas & -UPPER,-LOWER,U- \\
+VSINI\dotfill & Float & Projected equatorial rotational velocity of
+star in k\mps & -UPPER, etc. \\
+GAMMA\dotfill & Float & Systemic radial velocity in k\mps & -UPPER, etc. \\
+%
+\sidehead{\textbf{Orbit Parameters}}
+PER\dotfill & Double & Orbital period in days & -UPPER, etc. \\
+ECC\dotfill & Float & Orbital eccentricity & -UPPER, etc. \\
+OM\dotfill & Float & Argument of periastron in degrees & -UPPER, etc. \\
+K\dotfill & Float & Semiamplitude of stellar reflex motion in \mps & -UPPER, etc. \\
+T0\dotfill & Double & Epoch of periastron in HJD\tablenotemark{d}$-2,440,000$ & -UPPER, etc. \\
+DVDT\dotfill & Float & Magnitude of linear trend in \mps\ day$^{-1}$ & -UPPER, etc. \\
+I\dotfill & Float & Orbital inclination in degrees & -UPPER, etc. \\
+MSINI\dotfill & Float & Minimum mass (as calculated from the mass
+function) in \mjup & -UPPER, etc. \\
+A\dotfill & Float & Orbital semimajor axis in AU & -UPPER, etc. \\
+MASS\dotfill & Float & Mass of planet in \mjup & -UPPER, etc. \\
+SEP\dotfill & Float & Separation between host star and planet in AU & -UPPER, etc. \\
+TREND\dotfill  & Boolean & Linear trend in fit? & \nodata \\
+LAMBDA\dotfill & Float & Projected spin-orbit misalignment in degrees & -UPPER, etc. \\
+BIGOM\dotfill & Float & Longitude of ascending node in degrees & -UPPER, etc. \\
+FREEZE\_ECC\dotfill & Boolean & Eccentricity frozen in fit? & \nodata \\
+%
+\sidehead{\textbf{Transit Parameters}}
+DEPTH\dotfill & Float & Transit depth, $(R_p/R_*)^2$ & -UPPER, etc. \\
+T14\dotfill & Float & Time of transit from first to fourth contact in days & -UPPER, etc. \\
+TT\dotfill & Float & Epoch of transit center in
+HJD\tablenotemark{d}$-2,440,000$ & -UPPER, etc. \\
+R\dotfill & Float & Radius of planet in Jupiter radii & -UPPER, etc. \\
+AR\dotfill & Float & $(a/R_*)$ & -UPPER, etc. \\
+B\dotfill & Float & Impact parameter of transit & -UPPER, etc. \\
+DENSITY\dotfill & Float & Density of planet in g cc$^{-1}$ &
+-UPPER, etc. \\
+GRAVITY\dotfill & Float & $\log{g}$ (surface gravity) of planet in cgs unit &
+-UPPER, etc. \\
+TRANSIT\dotfill & Boolean & Is the planet known to transit? & -REF,-URL \\
+DR\dotfill & Float & Distance during transit in stellar radii & -UPPER, etc. \\
+RR\dotfill & Float & $(R_p/R_*)$ & -UPPER, etc. \\
+%
+\sidehead{\textbf{Secondary Eclipse}}
+SE\dotfill & Boolean & If true, at least one secondary eclipse has
+been detected & -REF,-URL \\
+SEDEPTHJ\dotfill & Float & Secondary eclipse depth in $J$ band & -UPPER, etc. \\
+SEDEPTHH\dotfill & Float & Secondary eclipse depth in $H$ band & -UPPER, etc. \\
+SEDEPTHKS\dotfill & Float & Secondary eclipse depth in $K_S$
+band & -UPPER, etc. \\
+SEDEPTHKP\dotfill & Float & Secondary eclipse depth in the
+\kepler\ photometry band & -UPPER, etc. \\
+SEDEPTH36\dotfill & Float & Secondary eclipse depth in
+\spitzer\ IRAC1 3.6 \micron\ band & -UPPER, etc. \\
+SEDEPTH45\dotfill & Float & Secondary eclipse depth in
+\spitzer\ IRAC2 4.5 \micron\ band & -UPPER, etc. \\
+SEDEPTH58\dotfill & Float & Secondary eclipse depth in
+\spitzer\ IRAC3 5.8 \micron\ band & -UPPER, etc. \\
+SEDEPTH80\dotfill & Float & Secondary eclipse depth in
+\spitzer\ IRAC4 8.0 \micron\ band & -UPPER, etc. \\
+SET\dotfill & Double & Epoch of secondary eclipse center in
+HJD\tablenotemark{d}$-2,440,000$ & -UPPER, etc. \\
+%
+\sidehead{\textbf{Fit \& References}}
+RMS\dotfill & Float & Root-mean-square residuals to orbital RV fit & \nodata \\
+CHI2\dotfill & Float & $\chi_{\nu}^2$ to orbital RV fit & \nodata \\
+NOBS\dotfill & Integer & Number of observations used in fit & \nodata \\
+NCOMP\dotfill & Integer & Number of planetary companions known & \nodata \\
+MULT\dotfill & Boolean & Multiple planets in system? & \nodata \\
+PLANETDISCMETH\dotfill & String & Method of discovery of planet & \nodata \\
+STARDISCMETH\dotfill & String & Method of discovery of first planet in system & \nodata \\
+DATE\dotfill & Integer & Year of publication of FIRSTREF & \nodata \\
+MONTH\dotfill & Integer & Month of publication of FIRSTREF & \nodata \\
+FIRSTREF\dotfill & String & First peer-reviewed publication of
+planetary orbit & FIRSTURL \\
+ORBREF\dotfill & String & Peer-reviewed origin of orbital parameters & ORBURL \\
+%
+\sidehead{\textbf{Stellar Properties}}
+STAR\dotfill & String & Standard name for host star & \nodata \\
+MSTAR\dotfill & Float & Mass of host star in solar mass & -UPPER, etc. \\
+RSTAR\dotfill & Float & Radius of host star in solar radii & -UPPER, etc. \\
+TEFF\dotfill & Float & Effective temperature of host star & -UPPER, etc. \\
+RHOSTAR\dotfill & Float & Density of host star & -UPPER, etc. \\
+LOGG\dotfill & Float & Spectroscopic $\log{g}$ (surface gravity) of
+host star in cgs unit & -UPPER, etc. \\
+FE\dotfill & Float & Iron abundance (or metallicity) of star & -UPPER, etc. \\
+SHK\dotfill & Float & Mount Wilson Ca \sc{II} $S$-value & \nodata \\
+RHK\dotfill & Float & Chromospheric activity of star as $R'_{HK}$ & \nodata \\
+KP\dotfill & Float & \kepler\ bandpass magnitude & \nodata \\
+SPECREF\dotfill & String & Source of most of the spectroscopic parameters & SPECURL \\
+%
+\sidehead{\textbf{Links}}
+JSNAME\dotfill & String & Name of host star used in the Extrasolar
+Planets Encyclopaedia & EPEURL \\
+ETDNAME\dotfill & String & Name of planet used in the Exoplanet
+Transit Database & ETDURL \\
+SIMBADNAME\dotfill & String & Valid SIMBAD name of host star (or
+planet, if available) & SIMBADURL \\
+EANAME\dotfill & String & Name of planet used in the Exoplanet
+Archive database & EAURL \\
+\enddata
+\tablenotetext{a}{Fields in bold are updates or new additions from
+  \cite{Wright2011}. See Section~\ref{sec:update} for more details.}
+\tablenotetext{b}{-UPPER etc. means ``-UPPER, -LOWER, U-, -REF, -URL",
+where ``-" stands for the name of the field listed in the first
+column. They are...}
+\tablenotetext{c}{Originally as other commonly used name for star in \cite{Wright2011};
+  changed to other commonly used name for planet.}
+\tablenotetext{d}{The same as in \cite{Wright2011}, HJD/BJD etc.\ are
+  still not consistent.}
+\end{deluxetable}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{CJK*}
+
+\end{document}
