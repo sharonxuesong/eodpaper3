@@ -159,9 +159,28 @@ from Exoplanet Archive...
 KOI: KOI represents `Kepler Objects of Interest' which is a star suspected to host transiting exoplanet. Transit signals are detected by \kepler\ but have not been confirmed to be planets. KOI field contains floating points that is consisted of a whole number designated to the host star followed by a decimal number denoting candidate planets. For example, KOI 102 is a star suspected to host multiple exoplanets and KOI 102.01 is an inner and KOI 102.02 is an outer planet candidate. Once the candidates are confirmed to be planets, the host star is designated \kepler\ followed by a hyphen and an integer. 
 \textit {I am not actually sure why we started reporting KOI numbers... maybe to better track of exoplanets?}
 
+\textit {Sharon: you need to say what KOI stores. When writing each
+  field, keep in mind you need to cover the following so that the
+  reader will completely understand: (1) what the field stands for
+  (e.g., in case of an abbreviation like KOI); (2) what the field
+  physically means, like `KOI' means planet candidates that have transit
+  signals as detected by \kepler\ but have not been confirmed, and
+  make sure to be thorough at what you say -- sometimes things are not
+  that obvious to an outsider reader, e.g., think if a cosmologist
+  would understand what you're saying when reading it; (3) what the
+  field actually contains, e.g. KOI contains the KOI number designated
+  by the \kepler\ team (right?), it is a floating point number, and
+  sometimes maybe even worth giving an example, e.g. KOI 30.1 or
+  something...; (4) why we added this new field, if this information
+  is helpful, or if it's a revised field since \cite{Wright2011}, what
+  is changed. Also, use \kepler\ (which is a defined symbol in our ms.tex file),
+  instead of typing out Kepler, since you need italic.
+  Don't be afraid to write more! Being concise is important, but it's
+  always easier to trim down things than to add things on, especially
+  for a documentation type of paper like this. Let's be thorough at
+  first, then try to reach optimal conciseness.}
 
-
-KDE: 
+KDE: obselete field! Detele from the table.
 
 EOD: EOD flag indicates planets with good Keplerian orbits. They have
 robust orbital parameters such as PER, ECC, K, OM, and I. 
