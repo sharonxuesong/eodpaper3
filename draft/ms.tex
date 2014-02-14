@@ -152,11 +152,10 @@ Added fields since \cite{Wright2011}:
   subsection overview should serve.}
 
 
-KEPID: None of EOD planets has KEPID! This is just something we copied
-from Exoplanet Archive...
+KEPID stands for KEPler ID which is the integer number assigned for Kepler host stars. KEPID is only available for the unconfirmed KOIs which we import directly from the Exoplanet Archive. Therefore, none of the EOD planets and the Kepler planets do not have KEPID.
 
 
-KOI: KOI represents `Kepler Objects of Interest' which is a star suspected to host transiting exoplanet. Transit signals are detected by \kepler\ but have not been confirmed to be planets. KOI field contains floating points that is consisted of a whole number designated to the host star followed by a decimal number denoting candidate planets. For example, KOI 102 is a star suspected to host multiple exoplanets and KOI 102.01 is an inner and KOI 102.02 is an outer planet candidate. Once the candidates are confirmed to be planets, the host star is designated \kepler\ followed by a hyphen and an integer. 
+KOI stands for `Kepler Objects of Interest' which is a star suspected to host transiting exoplanet. Transit signals are detected by \kepler\ but have not been confirmed to be planets. KOI field contains floating points that is consisted of a whole number designated to the host star followed by a decimal number denoting candidate planets. For example, KOI 102 is a star suspected to host multiple exoplanets and KOI 102.01 is an inner and KOI 102.02 is an outer planet candidate. Once the candidates are confirmed to be planets, the host star is designated \kepler\ followed by a hyphen and an integer. 
 \textit {I am not actually sure why we started reporting KOI numbers... maybe to better track of exoplanets?}
 
 \textit {Sharon: you need to say what KOI stores. When writing each
@@ -182,9 +181,6 @@ KOI: KOI represents `Kepler Objects of Interest' which is a star suspected to ho
 
 KDE: obselete field! Detele from the table.
 
-EOD: EOD flag indicates planets with good Keplerian orbits. They have
-robust orbital parameters such as PER, ECC, K, OM, and I. 
-
 EOD: A planet with the EOD flag being true indicates that it has
 well-characterized orbital parameters such as PER, ECC, K, OM, and I
 and is thus included in the EOD. We added this field because
@@ -192,20 +188,11 @@ exoplanets.org now also includes robustly discovered planets that do
 not have well-characterized orbits, and also \kepler\ planet
 candidates (see Section~\ref{sec:kepler} for more details).
 
-\textit {Sharon: I've provided my version here: the stuff I added on
-  top of your writing is what I think was missing and may make a
-  cosmologist wonder. ;)
-  Also, EOD doesn't require the orbit to be 'Keplerian', right? We do
-  include reported dynamic fits - they're definitely not
-  Keplerian. Am I right?
-  Note that I've covered all the 4 aspects I mentioned above. :)}
 
-MICROLENSING, IMAGING, TIMING and ASTROMETRY: We have added MICROLENS-
-ING, IMAGING, TIMING and ASTROMETRY fields for planets detected by
-methods other than radial velocity and transit. Since planets detected
+MICROLENSING, IMAGING, TIMING and ASTROMETRY: We have added MICROLENSING, IMAGING, TIMING and ASTROMETRY flags which are boolean numbers. Any of these flag being true indicates that the planet is detected by the method. For example, MICROLENSING flag being 1 means the planet is detected by microlensing event. Planets primarily detected
 by these methods do not have robust orbital parameters, they are
-categorized as ``Other Planets'' on exoplanets.org. However, if
-planets have follow up radial velocity or transit observations and
+categorized as ``Other Planets'' on exoplanets.org. However, we require the detection to be robust, as determined by the QUAlity Control Board of the Exoplanet Database, QUACBED. 
+If planets have follow up radial velocity or transit observations and
 thus have good orbital parameters, they have EOD flags. See
 Section~\ref{sec:kepler} for more information about `Other Planets'. 
 
@@ -246,7 +233,7 @@ MASS: For KOIs without MSINI measured, Exoplanet Archive reports MASS
 based on converting radius into mass.
 
 
-SEP
+SEP is the projected separation between the host star and the planet in the unit of AU. For directly imaged planets, the literatures give the projected separation. If only the semi-major axis is given, then the separation is set to the semi-major axis and vice versa.  
 
 BIGOM
 
@@ -304,7 +291,10 @@ RHOSTAR is the density of the star in the unit of $g/cm^3$
 %------------------------------------------------------------------------------
 \subsection {Stellar Magnitudes}
 
-KP
+We provide the brightness of the host star measured in different wavelengths. We report optical magnitudes (V and B-V), 2MASS J,H, and K magnitudes centered at 1.2\micron, 1.7\micron, and 2.2\micron, respectively. 
+
+Added field: 
+KP is the stellar magnitude measured through the Kepler bandpass which covers 4000 angstroms to 8500 angstroms. 
 
 %------------------------------------------------------------------------------
 \subsection{Coordinates and Catalogs}
