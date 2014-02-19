@@ -228,32 +228,30 @@ Section~\ref{sec:kepler} for more information about `Other Planets'.
 
 %------------------------------------------------------------------------------
 \subsection{Orbit Parameters}
+We report the orbit parameters that determine the shape of the planet's orbit. Depending on the detection methods, different parameters are given by the literatures. For instance, if a planet is detected by the radial velocity method, we get the semi-amplitude, whereas the transit method gives the inclination of the orbit. 
 
 Added fields since \cite{Wright2011}:
 
 
-MASS: Previously, we only reported the minimum mass (MSINI) of the
-planets. We now report mass of the planet in the unit of Jupiter
-mass. If a planet is discovered by transit, the planet mass is given
-by the literature. However, if a planet is detected by radial velocity
+MASS is the mass of the planet in the unit of Jupiter mass. Previously, we only reported the minimum mass (MSINI) of the planets. We now report mass as well. If a planet is discovered by transit, the planet mass is given by the literature. However, if a planet is detected by radial velocity
 method, the minimum mass is given in which case we calculate the mass
 by dividing the minimum mass by the orbit inclination. MASS is set to
 MSINI if the orbital inclination is not given and the MASSREF is set
-to ``Set to MSINI; I unknown''. 
-
-MASS: For KOIs without MSINI measured, Exoplanet Archive reports MASS
-based on converting radius into mass.
+to ``Set to MSINI; I unknown''. For KOIs without MSINI measured, the Exoplanet Archive reports MASS which is derived from the mass-radius relation. 
 
 
-SEP is the projected separation between the host star and the planet in the unit of AU. For directly imaged planets, the literatures give the projected separation. If only the semi-major axis is given, then the separation is set to the semi-major axis and vice versa.  
+SEP is the projected separation between the host star and the planet in the unit of AU. For directly imaged planets, the literatures give the projected separation and we report this value. There are cases where only the semi-major axis is given without the projected separation, then SEP is set to the semi-major axis. For the cases where only the projected separation is given such as imaged planets, then the semi-major axis is set to SEP. 
 
-BIGOM
+BIGOM is the longitude of the ascending node, which together with other orbital parameters (PER, T0, K, OM, ECC and I) determines the the planet's orbit. 
+ZZ why did we start reporting this?
+We thought we would get them eventually but we haven't seen any paper that actually reports this.
 
 LAMBDA: We report the projected spin-orbit misalignment of transiting systems. We follow the definition of Fabrycky and Winn 2009. The spin-orbit angle is defined to be the angle between the stellar spin axis and the orbital axis. However, since the spin-orbit angle is not directly measurable, and therefore lambda, the projected spin-orbit angle was introduced. In the observer-oriented frame, Z axis points toward the observer, X axis points along the intersection of the sky plane and the planet's orbital plane, and Y axis completes a right handed-triad. Lambda is measured clockwise on the sky from the Y axis to the projected stellar rotational axis. While maintaining LAMBDA in our database, we figured out that literatures have conflicted definitions of LAMBDA with $\beta$, which is equal to $\lambda$ = -$\beta$. We sorted these cases out and made sure that LABDA is following the definition of Fabrycky and Winn 2009. 
 
 
 I: it used to be for transit systems only. Now sometimes for
 non-transiting systems the values of I are also available.
+ZZZ I was not added I think... and if the system has a follow-up transit observation?
 
 
 %------------------------------------------------------------------------------
