@@ -159,21 +159,6 @@ database.
 
 Added fields since \cite{Wright2011}:
 
-\textit{Sharon: I don't think the first sentence is true... Looking at
-  the fields in the Planet Information section in the table, it
-  doesn't contain when who or how at all... The current way of
-  dividing fields into these categories is a bit weird, but we are
-  definitely not changing it in our paper or change the website any
-  time soon... I'm guessing you want to summarize what Planet
-  Information fields cover in the first sentence here, so maybe look
-  at the table and give a very general summary of what those fields
-  are.
-  I'm not sure what's the purpose of the second sentence... It sounds
-  like something we generally did for EOD. Maybe we should move it to
-  the paragraph above in the overview text for
-  Section~\ref{sec:update}. Think more about what the purpose of the
-  subsection overview should serve.}
-
 
 KEPID stands for KEPler ID which is the integer number assigned for Kepler host stars. KEPID is only available for the unconfirmed KOIs which we import directly from the Exoplanet Archive. Therefore, none of the EOD planets and the Kepler planets do not have KEPID.
 
@@ -222,8 +207,7 @@ Section~\ref{sec:kepler} for more information about `Other Planets'.
 \textit {Sharon: you've changed `discovered' to `detected', but it's
   still not an accurate description. Let's meet and discuss this in
   person. 
-  old: Sharon's
-  comments: Instead of saying `discovered', we should say `detected'
+  old: Sharon's comments: Instead of saying `discovered', we should say `detected'
   -- some planets are detected by these methods but are not
   necessarily discovered by them at the first place. Re-phrase the
   last sentence -- not all of planets with any of these TRUE are in
@@ -257,12 +241,13 @@ BIGOM is the longitude of the ascending node, which together with other orbital 
 ZZ why did we start reporting this?
 We thought we would get them eventually but we haven't seen any paper that actually reports this.
 
-LAMBDA: We report the projected spin-orbit misalignment of transiting systems. We follow the definition of Fabrycky and Winn 2009. The spin-orbit angle is defined to be the angle between the stellar spin axis and the orbital axis. However, since the spin-orbit angle is not directly measurable, and therefore lambda, the projected spin-orbit angle was introduced. In the observer-oriented frame, Z axis points toward the observer, X axis points along the intersection of the sky plane and the planet's orbital plane, and Y axis completes a right handed-triad. Lambda is measured clockwise on the sky from the Y axis to the projected stellar rotational axis. While maintaining LAMBDA in our database, we figured out that literatures have conflicted definitions of LAMBDA with $\beta$, which is equal to $\lambda$ = -$\beta$. We sorted these cases out and made sure that LABDA is following the definition of Fabrycky and Winn 2009. 
+LAMBDA is the projected spin-orbit misalignment in the unit of degree. We report the projected spin-orbit misalignment of transiting systems. We follow the definition of Fabrycky and Winn 2009. The spin-orbit angle is defined to be the angle between the stellar spin axis and the orbital axis. However, since the spin-orbit angle is not directly measurable, and therefore lambda, the projected spin-orbit angle was introduced. In the observer-oriented frame, Z axis points toward the observer, X axis points along the intersection of the sky plane and the planet's orbital plane, and Y axis completes a right handed-triad. Lambda is measured clockwise on the sky from the Y axis to the projected stellar rotational axis. While maintaining LAMBDA in our database, we figured out that literatures have conflicted definitions of LAMBDA with $\beta$, which is equal to $\lambda$ = -$\beta$. We sorted these cases out and made sure that LABDA is following the definition of Fabrycky and Winn 2009. 
 
 
-I: it used to be for transit systems only. Now sometimes for
-non-transiting systems the values of I are also available.
-ZZZ I was not added I think... and if the system has a follow-up transit observation?
+I is the orbital inclination. This field is not newly added but we chose to describe it here since our database now has the inclination for planets detected by methods other than transit. Previously, only transiting systems used to have the inclination measured. However, now sometimes for
+non-transiting systems the values of I are also available. For instance, if the system was first detected by radial velocity and has a follow-up transit observation, then the inclination can be measured. To sum up, all the transiting planets have measured orbital inclination and currently, we also have one microlensing planet with measured inclination. *** give the example!
+
+you can only measure inclination with transit and imaging but there is only one microlensing planet with the inclination
 
 
 %------------------------------------------------------------------------------
@@ -272,18 +257,20 @@ Added fields since \cite{Wright2011}:
 
 DR
 
-RR
+RR is the ratio of the planetary radius and the stellar radius. Previously, we only reported the transit depth, which is the square of the planetary radius and the stellar radius.
+=== Why did we add this field? 
 
 %------------------------------------------------------------------------------
 \subsection{Secondary Eclipse}
+We have added an entire new set of fields for the secondary eclipse. Since \cite{Wright2011}, 
 
 This is a entire new set of fields since \cite{Wright2011}:
 
-SE
+SE flag indicates whether the system has detected secondary eclipse in any of the 2MASS J, H, and K$_s$, Kepler photometry band, and 4 Spitzer IRAC bands. SE is a boolean and being true indicates the system has detected secondary eclipse. 
 
-SEDEPTH J H KS KP 36 45 58 80
+SEDEPTH J H KS KP 36 45 58 80 fields are the secondary eclipse depth measured in the corresponding wavelength band. J, K, and K$_s$ are the depth measured in the 2MASS wavelength band in near infrared each centered at 1.25\micron, 1.65\micron, and 2.15\micron, respectively. KP is the depth measured in the Kepler photometry band which is centered at 
 
-SET
+SET is the epoch of secondary eclipse center in HJD. 
 
 %------------------------------------------------------------------------------
 
@@ -310,7 +297,7 @@ RHOSTAR is the density of the star in the unit of $g/cm^3$
 %------------------------------------------------------------------------------
 \subsection {Stellar Magnitudes}
 
-We provide the brightness of the host star measured in different wavelengths. We report optical magnitudes (V and B-V), 2MASS J,H, and K magnitudes centered at 1.2\micron, 1.7\micron, and 2.2\micron, respectively. 
+We provide the brightness of the host star measured in different wavelengths. We report optical magnitudes (V and B-V), 2MASS J,H, and K magnitudes centered at 1.25\micron, 1.65\micron, and 2.15\micron, respectively. 
 
 Added field: 
 KP is the stellar magnitude measured through the Kepler bandpass which covers 4000 angstroms to 8500 angstroms. 
