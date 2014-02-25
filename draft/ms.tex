@@ -148,24 +148,17 @@ here that though we focus on EOD in this Section, the fields apply to
 all planets on exoplanets.org.
 
 %------------------------------------------------------------------------------
-\subsection{Planet Information}
+\subsection{Discovery and References}
 
-We report basic planet information to give our users general
-information of when, by whom and how the planets were
-discovered. Since \cite{Wright2011}, as more planets were discovered
-by different methods other than radial velocity and transit, we have
-expanded this information to better ingest those planets into our
-database.
+We report general information of when, by whom and how the planets were
+discovered and provide the references. We describe the added fields since \cite{Wright2011} below. \\
 
-Added fields since \cite{Wright2011}:
+{\bf KEPID} stands for KEPler ID which is the integer number assigned for a Kepler host star. KEPID is only available for the unconfirmed KOI which we import directly from the Exoplanet Archive. Therefore, none of the EOD planets and the confirmed Kepler planets has KEPID.
 
 
-KEPID stands for KEPler ID which is the integer number assigned for Kepler host stars. KEPID is only available for the unconfirmed KOIs which we import directly from the Exoplanet Archive. Therefore, none of the EOD planets and the Kepler planets do not have KEPID.
+{\bf KOI} stands for Kepler Objects of Interest which is a star with transit signals detected by \kepler\ but have not been confirmed to due to exoplanets. The KOI field contains a floating point number that consist of a whole number designated to the host star followed by a decimal number denoting a candidate planet. For example, KOI 102 is a star suspected to host two exoplanets and KOI 102.01 is the inner planet candidate and KOI 102.02 is the outer one. Once a candidate is confirmed, the NAME field of the planet is replaced by the official \kepler\ ID ('Kepler' followed by a hyphen, an integer and a letter). The KOI number is used as OTHERNAME. None of the KOIs are in the EOD and for more information see Section~\ref{sec:kepler}. 
 
-
-KOI stands for `Kepler Objects of Interest' which is a star suspected to host transiting exoplanet. Transit signals are detected by \kepler\ but have not been confirmed to be planets. KOI field contains floating points that is consisted of a whole number designated to the host star followed by a decimal number denoting candidate planets. For example, KOI 102 is a star suspected to host multiple exoplanets and KOI 102.01 is an inner and KOI 102.02 is an outer planet candidate. Once the candidates are confirmed to be planets, the host star is designated \kepler\ followed by a hyphen and an integer. 
-\textit {I am not actually sure why we started reporting KOI numbers... maybe to better track of exoplanets?}
-
+\begin{comment}
 \textit {Sharon: you need to say what KOI stores. When writing each
   field, keep in mind you need to cover the following so that the
   reader will completely understand: (1) what the field stands for
@@ -186,39 +179,14 @@ KOI stands for `Kepler Objects of Interest' which is a star suspected to host tr
   always easier to trim down things than to add things on, especially
   for a documentation type of paper like this. Let's be thorough at
   first, then try to reach optimal conciseness.}
+ \end{comment}
 
 KDE: obselete field! Detele from the table.
 
-EOD: A planet with the EOD flag being true indicates that it has
-well-characterized orbital parameters such as PER, ECC, K, OM, and I
-and is thus included in the EOD. We added this field because
-exoplanets.org now also includes robustly discovered planets that do
-not have well-characterized orbits, and also \kepler\ planet
-candidates (see Section~\ref{sec:kepler} for more details).
+{\bf EOD} is a flag which indicates whether an exoplanet has well-characterized orbital parameters (e.g. period (PER)). EOD equals 1 means the exoplanet is in the EOD. We added this field because exoplanets.org now also includes robustly discovered planets that do not have well-characterized orbits, and also \kepler\ planet candidates (see Section~\ref{sec:kepler} for more details).
 
 
-MICROLENSING, IMAGING, TIMING and ASTROMETRY: We have added MICROLENSING, IMAGING, TIMING and ASTROMETRY flags which are boolean numbers. Any of these flag being true indicates that the planet is detected by the method. For example, MICROLENSING flag being 1 means the planet is detected by microlensing event. Planets primarily detected
-by these methods do not have robust orbital parameters, they are
-categorized as ``Other Planets'' on exoplanets.org. However, we require the detection to be robust, as determined by the QUAlity Control Board of the Exoplanet Database, QUACBED. 
-If planets have follow up radial velocity or transit observations and
-thus have good orbital parameters, they have EOD flags. See
-Section~\ref{sec:kepler} for more information about `Other Planets'. 
-
-\textit {Sharon: you've changed `discovered' to `detected', but it's
-  still not an accurate description. Let's meet and discuss this in
-  person. 
-  old: Sharon's comments: Instead of saying `discovered', we should say `detected'
-  -- some planets are detected by these methods but are not
-  necessarily discovered by them at the first place. Re-phrase the
-  last sentence -- not all of planets with any of these TRUE are in
-  `Other Planets', only some are, so maybe just note planets
-  discovered by these methods are not necessarily in EOD and direct
-  the reader to Section~\ref{sec:kepler} where we talk about `Other
-  Planets'. Remember Section~\ref{sec:update} is focuses on EOD
-  updates though the fields apply to all planets on
-  exoplanets.org. Need to note here that we require the detection to
-  be robust, as determined by the QUAlity Control Board of the
-  Exoplanet Database, QUACBED.}
+{\bf MICROLENSING, IMAGING, TIMING and ASTROMETRY} are flags which indicate that a planet detected via theses methods. For example, MICROLENSING $=$ 1 means the planet is detected by a microlensing event. However, we require the detection to be robust, as determined by the QUAlity Control Board of the Exoplanet Database, QUACBED. 
 
 
 %------------------------------------------------------------------------------
@@ -376,6 +344,16 @@ parameters and RV curves etc.?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Inclusion of the Kepler Planet Candidates and Other Exoplanets on Exoplanets.org}\label{sec:kepler}
+
+Since \cite{Wright2011}, as more planets were discovered
+by different methods other than radial velocity and transit, we have expanded this information to better ingest those planets into our database.
+
+Planets primarily detected by these methods do not have robust orbital parameters, they are categorized as ``Other Planets'' on exoplanets.org. 
+
+If planets have follow up radial velocity or transit observations and
+thus have good orbital parameters, they have EOD flags. See
+Section~\ref{sec:kepler} for more information about `Other Planets'. 
+
 
 We now include \kepler\ candidates... They can be displayed by
 checking the `Kepler' option for the interactive data table.
