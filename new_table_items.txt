@@ -21,7 +21,7 @@ RA,RA_STRING,
 DEC,DEC_STRING,
 KEPID,
 KOI,
-KDE,
+KDE, (obsolete, make sure to delete)
 EOD,
 MICROLENSING,
 IMAGING,
@@ -154,7 +154,7 @@ FREEZE_ECC - gone? no. still in csv table.
 DISCMETH - replaced by planetdiscmeth and stardiscmeth.
 S - changed to SHK.
 SPSTAR - stellar type of star (unvetted), gone because unvetted.
-NSTEDID - replaced by EANAME (Exoplanet Archive).
+NSTEDID - replaced by EANAME (Exoplanet Archive). NSTEDID will be deteleted in the pln file. Deleted from the web already.
 MASSREF, MASSURL - originally for stellar mass reference, now for planet mass.
 
 
@@ -166,7 +166,7 @@ Planet Information:
 
 KEPID
 KOI
-KDE
+KDE (obsolete, make sure to delete)
 EOD
 MICROLENSING
 IMAGING
