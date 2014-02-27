@@ -196,49 +196,48 @@ We report the orbit parameters that determine the shape of the planet's orbit. D
 Added fields since \cite{Wright2011}:
 
 
-MASS is the mass of the planet in the unit of Jupiter mass. Previously, we only reported the minimum mass (MSINI) of the planets. We now report mass as well. If a planet is discovered by transit, the planet mass is given by the literature. However, if a planet is detected by radial velocity
+{\bf MASS} is the mass of the planet in the unit of Jupiter mass. Previously, we only reported the minimum mass (MSINI) of the planets. We now report mass as well. If a planet is discovered by transit, the planet mass is given by the literature. However, if a planet is detected by radial velocity
 method, the minimum mass is given in which case we calculate the mass
 by dividing the minimum mass by the orbit inclination. MASS is set to
 MSINI if the orbital inclination is not given and the MASSREF is set
 to ``Set to MSINI; I unknown''. For KOIs without MSINI measured, the Exoplanet Archive reports MASS which is derived from the mass-radius relation. 
 
 
-SEP is the projected separation between the host star and the planet in the unit of AU. For directly imaged planets, the literatures give the projected separation and we report this value. There are cases where only the semi-major axis is given without the projected separation, then SEP is set to the semi-major axis. For the cases where only the projected separation is given such as imaged planets, then the semi-major axis is set to SEP. 
+{\bf SEP} is the projected separation between the host star and the planet in the unit of AU. For directly imaged planets, the literatures give the projected separation and we report this value. There are cases where only the semi-major axis is given without the projected separation, then SEP is set to the semi-major axis. For the cases where only the projected separation is given such as imaged planets, then the semi-major axis is set to SEP. 
 
-BIGOM is the longitude of the ascending node, which together with other orbital parameters (PER, T0, K, OM, ECC and I) determines the the planet's orbit. 
+{\bf BIGOM} is the longitude of the ascending node, which together with other orbital parameters (PER, T0, K, OM, ECC and I) determines the the planet's orbit. 
 ZZ why did we start reporting this?
 We thought we would get them eventually but we haven't seen any paper that actually reports this.
 
-LAMBDA is the projected spin-orbit misalignment in the unit of degree. We report the projected spin-orbit misalignment of transiting systems. We follow the definition of Fabrycky and Winn 2009. The spin-orbit angle is defined to be the angle between the stellar spin axis and the orbital axis. However, since the spin-orbit angle is not directly measurable, and therefore lambda, the projected spin-orbit angle was introduced. In the observer-oriented frame, Z axis points toward the observer, X axis points along the intersection of the sky plane and the planet's orbital plane, and Y axis completes a right handed-triad. Lambda is measured clockwise on the sky from the Y axis to the projected stellar rotational axis. While maintaining LAMBDA in our database, we figured out that literatures have conflicted definitions of LAMBDA with $\beta$, which is equal to $\lambda$ = -$\beta$. We sorted these cases out and made sure that LABDA is following the definition of Fabrycky and Winn 2009. 
+{\bf LAMBDA} is the projected spin-orbit misalignment in the unit of degree. We report the projected spin-orbit misalignment of transiting systems, which is measured by Rossiter-McLaughlin effect. We follow the definition of Fabrycky and Winn 2009. The spin-orbit angle is defined to be the angle between the stellar spin axis and the orbital axis. However, since the spin-orbit angle is not directly measurable, and therefore lambda, the projected spin-orbit angle was introduced. In the observer-oriented frame, Z axis points toward the observer, X axis points along the intersection of the sky plane and the planet's orbital plane, and Y axis completes a right handed-triad. Lambda is measured clockwise on the sky from the Y axis to the projected stellar rotational axis. While maintaining LAMBDA in our database, we figured out that literatures have conflicted definitions of LAMBDA with $\beta$, which is equal to $\lambda$ = -$\beta$. We sorted these cases out and made sure that LABDA is following the definition of Fabrycky and Winn 2009. 
 
 
-I is the orbital inclination. This field is not newly added but we chose to describe it here since our database now has the inclination for planets detected by methods other than transit. Previously, only transiting systems used to have the inclination measured. However, now sometimes for
+{\bf I} is the orbital inclination. This field is not newly added but we chose to describe it here since our database now has the inclination for planets detected by methods other than transit. Previously, only transiting systems used to have the inclination measured. However, now sometimes for
 non-transiting systems the values of I are also available. For instance, if the system was first detected by radial velocity and has a follow-up transit observation, then the inclination can be measured. To sum up, all the transiting planets have measured orbital inclination and currently, we also have one microlensing planet with measured inclination. *** give the example!
 
-you can only measure inclination with transit and imaging but there is only one microlensing planet with the inclination
 
 
 %------------------------------------------------------------------------------
 \subsection{Transit Parameters}
-
+We report the transit parameters of transiting planets. These parameters are available only when the planet has TRANSIT flag equal to 1. 
 Added fields since \cite{Wright2011}:
 
-DR
+{\bf DR} is the distance between the planet and the star during the transit in stellar radii. This is one of the parameters that goes into the transit light curve modeling and for more information, see Batalha 2013 for more details. 
 
-RR is the ratio of the planetary radius and the stellar radius. Previously, we only reported the transit depth, which is the square of the planetary radius and the stellar radius.
-=== Why did we add this field? 
+{\bf RR} is the ratio of the planetary radius and the stellar radius. Previously, we only reported the transit depth, which is the square of the planetary radius and the stellar radius.
+Why did we add this field? 
 
 %------------------------------------------------------------------------------
 \subsection{Secondary Eclipse}
-We have added an entire new set of fields for the secondary eclipse. Since \cite{Wright2011}, 
+We have added an entirely new set of fields for the secondary eclipse. To measure transits, astronomers need to have a precision of 1/100, whereas for the secondary eclipse (or transmission spectrum), precision of 1/10,000 is required, which means it is much harder to detect the secondary eclipse depths or transmission spectra compared to just transit. Previously, due to the limits of instrumentation, there were not much available measured secondary eclipse depths. However, since \cite{Wright2011}, as many different surveys have been launched, secondary eclipse depths at multiple bands are now available. Therefore, to better ingest this information, we added a new set of fields for the secondary eclipse. 
 
 This is a entire new set of fields since \cite{Wright2011}:
 
-SE flag indicates whether the system has detected secondary eclipse in any of the 2MASS J, H, and K$_s$, Kepler photometry band, and 4 Spitzer IRAC bands. SE is a boolean and being true indicates the system has detected secondary eclipse. 
+{\bf SE} flag indicates whether the system has detected secondary eclipse in any of the 2MASS J, H, and K$_s$, Kepler photometry band, and 4 Spitzer IRAC bands. SE is a boolean and being true indicates the system has detected secondary eclipse. 
 
-SEDEPTH J H KS KP 36 45 58 80 fields are the secondary eclipse depth measured in the corresponding wavelength band. J, K, and K$_s$ are the depth measured in the 2MASS wavelength band in near infrared each centered at 1.25\micron, 1.65\micron, and 2.15\micron, respectively. KP is the depth measured in the Kepler photometry band which is centered at 
+{\bf SEDEPTH J H KS KP 36 45 58 80} fields are the secondary eclipse depth measured in the corresponding wavelength band. J, K, and K$_s$ are the depth measured in the 2MASS wavelength band in near infrared each centered at 1.25\micron, 1.65\micron, and 2.15\micron, respectively. KP is the depth measured in the Kepler photometry band which is centered at 
 
-SET is the epoch of secondary eclipse center in HJD. 
+{\bf SET} is the epoch of secondary eclipse center in HJD. 
 
 %------------------------------------------------------------------------------
 
@@ -250,17 +249,17 @@ Stellar parameters section is consisted of 3 parts: Stellar properties, Stellar 
 Added fields since \cite{Wright2011}:
 
 
-GAMMA is the newly added field under Stellar properties. It is the radial velocity of the center of mass of the planetary system and is reported in km/s.  
+{\bf GAMMA} is the newly added field under Stellar properties. It is the radial velocity of the center of mass of the planetary system and is reported in km/s.  
 
 
 Difference from Stellar Parameters: these are derived parameters based
 on spectroscopy and stellar models. 
-==>> Not always true for RSTAR because some literatures give the value. 
+Not always true for RSTAR because some literatures give the value. 
 Added fields since \cite{Wright2011}:
 
-RSTAR is the radius of the star in the solar radius. 
+{\bf RSTAR} is the radius of the star in the solar radius. 
 
-RHOSTAR is the density of the star in the unit of $g/cm^3$
+{\bf RHOSTAR} is the density of the star in the unit of $g/cm^3$
 
 %------------------------------------------------------------------------------
 \subsection {Stellar Magnitudes}
@@ -268,14 +267,14 @@ RHOSTAR is the density of the star in the unit of $g/cm^3$
 We provide the brightness of the host star measured in different wavelengths. We report optical magnitudes (V and B-V), 2MASS J,H, and K magnitudes centered at 1.25\micron, 1.65\micron, and 2.15\micron, respectively. 
 
 Added field: 
-KP is the stellar magnitude measured through the Kepler bandpass which covers 4000 angstroms to 8500 angstroms. 
+{\bf KP} is the stellar magnitude measured through the Kepler bandpass which covers 4000 angstroms to 8500 angstroms. 
 
 %------------------------------------------------------------------------------
 \subsection{Coordinates and Catalogs}
-
+We report the coordinates of the host star as well as the stellar ID as designated by different catalogs. 
 Added fields since \cite{Wright2011}:
 
-DIST is the distance of the host star in the unit of pc. It sometimes is calculated from the parallax that come from the Hipparcos data set by van Leeuwen (2009).
+{\bf DIST} is the distance of the host star in the unit of pc. It sometimes is calculated from the parallax that come from the Hipparcos data set by van Leeuwen (2009).
 
 
 %------------------------------------------------------------------------------
@@ -291,14 +290,11 @@ bars. Fields that have XUPPER, XLOWER and UX are: (list of fields).
 %------------------------------------------------------------------------------
 \subsection{References}
 
-Added field: MONTH, PLANETDISCMETH, STARDISCMETH.
+The fields {\bf XREF} and {\bf XURL} store the peer-reviewed reference and link to
+the publication for the field X. 
 
-The fields XREF and XURL store the peer-reviewed reference and link to
-the publication for the field X. The following fields now have XREF
-and XURL: (previously in \citealt{Wright2011}) DIST, TRANSIT, BINARY;
-(new) fields in stellar parameters: V, VSINI, GAMMA; all orbit pars except for
-trend and freeze\_ecc; all transit parameters; all SE parameters;
-fields for stellar properties: MSTAR, RSTAR, TEFF, RHOSTAR, LOGG, FE.
+Added field: MONTH, PLANETDISCMETH, STARDISCMETH.
+The following fields now have XREF and XURL: (previously in \cite{Wright2011}) DIST, TRANSIT, BINARY; (new) fields in stellar parameters: V, VSINI, GAMMA; all orbit pars except for trend and freeze\_ecc; all transit parameters; all SE parameters; fields for stellar properties: MSTAR, RSTAR, TEFF, RHOSTAR, LOGG, FE.
 
 VREF is not the same as REF for J H KS, which do not have XREF
 fields. See \cite{Wright2011} for references of J H KS mags -- I think
@@ -309,33 +305,30 @@ FIRSTURL, ORBREF, ORBURL. New: SPECREF, SPECURL contain source of most
 of the spectroscopic parameters listed for convenience; actual
 references in the REF fields take precedence over this one.
 
-We now report the month when the peer-reviewed paper is accepted to
-ApJ to better track of the trend in exoplanetary detections. Moreover,
-we report the discovery methods for the host star and the planet
-separately: STARDISCMETH and PLANETDISCMETH. See Section~ for more
-details.  
+{\bf MONTH} field reports an integer of the month when the peer-reviewed paper is accepted to the
+ApJ to better track of the trend in the exoplanet detections. 
+
+{\bf PLANETDISCMENT} and {\bf STARDISCMETH} are the fields that report the discovery methods for the host star and the planet See Section~ for more details.  
 
 
 %------------------------------------------------------------------------------
 \subsection{Revised and Removed Fields}
+We have major updates by taking out some of the fields and by revising the existing fields. Here, we explain why we removed or revised such fields. 
 
-These include:
-
-OTHERNAME - This is now listed as other name of planet instead of star;
+{\bf OTHERNAME} - This is now listed as other name of planet instead of star;
 ** OTHTERNAME has always been the name of the star I think...?
 
-DISCMETH - We have replaced DISCMETH with PLANETDISCMETH and STARDISCMETH to better report how the host star and the planet are detected. 
+{\bf DISCMETH} field previously reported the mouthed of discovery, which was either radial velocity or transit. We have replaced DISCMETH with {\bf PLANETDISCMETH} and {\bf STARDISCMETH} to better report how the host star and the planet are detected. Furthermore, they now have value of one of the following: radial velocity, transit, imaging, microlensing, timing, or astrometry.  
 
-S - changed to SHK; ZZZ What's the source for SHK and RHK? Still discovery
-paper and Butler 2006? ZZZ SHK is a poorly maintained field, and it is
-unreferenced at the moment though we plan to include propoer reference
+{\bf S} field previously reported the Mount Wilson Ca II S-value and now it is changed to SHK. 
+; ZZZ What's the source for SHK and RHK? Still discovery paper and Butler 2006? ZZZ SHK is a poorly maintained field, and it is unreferenced at the moment though we plan to include proper reference
 in the future.
 
-SPSTAR - stellar type of star (unvetted), gone;
+{\bf SPSTAR} field previously reported the stellar type of the host star. We choose to remove this field because....? - stellar type of star (unvetted), gone;
 
-NSTEDID - replaced by EANAME (Exoplanet Archive).
+{\bf NSTEDID} field reported ID of host star in NStED and now it is replaced by EANAME, which is the name of the star as appears on the Exoplanet Archive. 
 
-MASSREF, MASSURL - originally for stellar mass reference, now for planet mass.
+{\bf MASSREF} and {\bf MASSURL} fields were used to report the reference and the url of stellar mass but now they are used for planet mass.
 
 %------------------------------------------------------------------------------
 Figure: Figure of single planet page, to show updated transit
