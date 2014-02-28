@@ -161,7 +161,7 @@ all planets on exoplanets.org.
 \subsection{Discovery and References}
 
 We report general information of when, by whom and how the planets were
-discovered and provide the references. We describe the added fields since \cite{Wright2011} below. \\
+discovered and provide the references. We describe the added fields since \cite{Wright2011} below.
 
 {\bf KEPID} stands for KEPler ID which is the integer number assigned for a Kepler host star. KEPID is only available for the unconfirmed KOI which we import directly from the Exoplanet Archive. Therefore, none of the EOD planets and the confirmed Kepler planets has KEPID.
 
@@ -200,17 +200,16 @@ KDE: obselete field! Detele from the table.
 
 
 %------------------------------------------------------------------------------
-\subsection{Orbit Parameters}
-We report the orbit parameters that determine the shape of the planet's orbit. Depending on the detection methods, different parameters are given by the literatures. For instance, if a planet is detected by the radial velocity method, we get the semi-amplitude, whereas the transit method gives the inclination of the orbit. 
+\subsection{Orbital Parameters}
+We report the orbital parameters that determine the shape of the planet's orbit. Depending on the detection methods, different sets of parameters are given by the literatures. For instance, if a planet is detected by the radial velocity method, the semiamplitude, $K$, is reported whereas the inclination of the orbit, $i$, is reported by the transit method. 
 
-Added fields since \cite{Wright2011}:
+We describe the added fields since \cite{Wright2011} below. 
 
 
-{\bf MASS} is the mass of the planet in the unit of Jupiter mass. Previously, we only reported the minimum mass (MSINI) of the planets. We now report mass as well. If a planet is discovered by transit, the planet mass is given by the literature. However, if a planet is detected by radial velocity
-method, the minimum mass is given in which case we calculate the mass
-by dividing the minimum mass by the orbit inclination. MASS is set to
-MSINI if the orbital inclination is not given and the MASSREF is set
-to ``Set to MSINI; I unknown''. For KOIs without MSINI measured, the Exoplanet Archive reports MASS which is derived from the mass-radius relation. 
+{\bf MASS} is the mass of the planet in the unit of Jupiter mass. Previously, we only reported the minimum mass, ($m\sin{i}$, MSINI) of the planets. We now report the mass as well. For example, if a planet is discovered by microlensing, we report the actual mass of the planet according to the literature. 
+If a planet has both radial velocity and transit measurements, we calculate the mass from the minimum mass and the orbital inclination. MASS is set to MSINI if the orbital inclination is not given and the MASSREF is set to ``Set to MSINI; I unknown''. 
+
+ZZZ For KOIs without MSINI measured, we import the MASS fields from the Exoplanet Archive, which are derived from the mass-radius relation in . 
 
 
 {\bf SEP} is the projected separation between the host star and the planet in the unit of AU. For directly imaged planets, the literatures give the projected separation and we report this value. There are cases where only the semi-major axis is given without the projected separation, then SEP is set to the semi-major axis. For the cases where only the projected separation is given such as imaged planets, then the semi-major axis is set to SEP. 
