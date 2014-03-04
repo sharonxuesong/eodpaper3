@@ -129,6 +129,7 @@ website has also gone through major back-end changes since
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Updates on the EOD}\label{sec:update}
+ZZZ make sure to cite Wright and Gaudi paper for the definition of orbital elements. 
 
 Scope of EOD has changed in the following ways:
 
@@ -200,24 +201,20 @@ KDE: obselete field! Detele from the table.
 
 %------------------------------------------------------------------------------
 \subsection{Orbital Parameters}
-We report the orbital parameters that determine the shape of the planet's orbit. Depending on the detection methods, different sets of parameters are given by the literatures. For instance, if a planet is detected by the radial velocity method, the semiamplitude, $K$, is reported whereas the inclination of the orbit, $i$, is reported by the transit method. 
-
-We describe the added fields since \cite{Wright2011} below. 
+We report the orbital parameters that determine the shape of the planet's orbit. Depending on the detection methods, different sets of parameters are given by the literatures. For instance, if a planet is detected by the radial velocity method, the semiamplitude, $K$, is reported whereas the inclination of the orbit, $i$, is reported by the transit method. We describe the added fields since \cite{Wright2011} below. 
 
 
-{\bf MASS} is the mass of the planet in the unit of Jupiter mass. Previously, we only reported the minimum mass, ($m\sin{i}$, MSINI) of the planets. We now report the mass as well. For example, if a planet is discovered by microlensing, we report the actual mass of the planet according to the literature. 
-If a planet has both radial velocity and transit measurements, we calculate the mass from the minimum mass and the orbital inclination. MASS is set to MSINI if the orbital inclination is not given and the MASSREF is set to ``Set to MSINI; I unknown''. 
+{\bf MASS} is the mass of the planet in the unit of Jupiter mass. Previously, we only reported the minimum mass, ($m\sin{i}$, MSINI) of the planets. We now report the mass as well when it is available. For example, if a planet is discovered by microlensing, we report the actual mass of the planet according to the literature. If a planet has both radial velocity and transit measurements, we calculate the mass from the minimum mass and the orbital inclination. MASS is set to MSINI if the orbital inclination is not given and the MASSREF is set to ``Set to MSINI; I unknown''. 
 
 ZZZ For KOIs without MSINI measured, we import the MASS fields from the Exoplanet Archive, which are derived from the mass-radius relation in . 
 
 
-{\bf SEP} is the projected separation between the host star and the planet in the unit of AU. For directly imaged planets, the literatures give the projected separation and we report this value. There are cases where only the semi-major axis is given without the projected separation, then SEP is set to the semi-major axis. For the cases where only the projected separation is given such as imaged planets, then the semi-major axis is set to SEP. 
+{\bf SEP} is the projected separation on the sky between the host star and the planet in the unit of AU. For directly imaged planets, the literatures give the projected separation and we report this value. 
+If SEP is  not directly measured but the semi-major (A) is available, then SEP is set to A with the reference ``Set to A''. For the cases where only the projected separation is given such as imaged planets, then the semi-major axis is set to SEP. 
 
-{\bf BIGOM} is the longitude of the ascending node, which together with other orbital parameters (PER, T0, K, OM, ECC and I) determines the the planet's orbit. 
-ZZ why did we start reporting this?
-We thought we would get them eventually but we haven't seen any paper that actually reports this.
+{\bf BIGOM} is the longitude of the ascending node ($\Omega$) in the unit of degree and for now this is only measured for some of the directly imaged planets, which are not in the EOD. 
 
-{\bf LAMBDA} is the projected spin-orbit misalignment in the unit of degree. We report the projected spin-orbit misalignment of transiting systems, which is measured by Rossiter-McLaughlin effect. We follow the definition of Fabrycky and Winn 2009. The spin-orbit angle is defined to be the angle between the stellar spin axis and the orbital axis. However, since the spin-orbit angle is not directly measurable, and therefore lambda, the projected spin-orbit angle was introduced. In the observer-oriented frame, Z axis points toward the observer, X axis points along the intersection of the sky plane and the planet's orbital plane, and Y axis completes a right handed-triad. Lambda is measured clockwise on the sky from the Y axis to the projected stellar rotational axis. While maintaining LAMBDA in our database, we figured out that literatures have conflicted definitions of LAMBDA with $\beta$, which is equal to $\lambda$ = -$\beta$. We sorted these cases out and made sure that LABDA is following the definition of Fabrycky and Winn 2009. 
+{\bf LAMBDA} is the projected spin-orbit misalignment ($\lambda$) in the unit of degree. We report the projected spin-orbit misalignment of transiting systems, which is measured by ZZZ Rossiter-McLaughlin effect. $\lambda$ is introduced because the true spin-orbit angle ($\phi$), defined as the angle between the stellar spin axis and the orbital axis, is normally not directly measurable. We follow the definition of $\lambda$ in Fabrycky and Winn 2009 where the coordinates are defined as follows; the $z$-axis points toward the observer, the $x$-axis points along the intersection of the sky plane and the planet's orbital plane with the ascending node of the planet having $x<0$, and the $y$-axis completes a right handed-triad. $\lambda$ is measured clockwise on the sky from the $y$-axis to the projected stellar rotational axis. Some literatures report $\beta = -\lambda$ instead. We sorted these cases out and made sure that our $\lambda$'s are following the definition of Fabrycky and Winn 2009. 
 
 
 {\bf I} is the orbital inclination. This field is not newly added but we chose to describe it here since our database now has the inclination for planets detected by methods other than transit. Previously, only transiting systems used to have the inclination measured. However, now sometimes for
