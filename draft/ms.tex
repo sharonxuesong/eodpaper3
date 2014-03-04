@@ -40,6 +40,7 @@
 \def\spitzer{\textit{Spitzer}}
 \def\micron{$\mu$m}
 \def\mjup{$M_{\rm Jup}$}
+\def\rearth{R_\oplus}
 
 
 \maxdeadcycles=1000 % need this to have bunch of figures on each page
@@ -206,7 +207,8 @@ We report the orbital parameters that determine the shape of the planet's orbit.
 
 {\bf MASS} is the mass of the planet in the unit of Jupiter mass. Previously, we only reported the minimum mass, ($m\sin{i}$, MSINI) of the planets. We now report the mass as well when it is available. For example, if a planet is discovered by microlensing, we report the actual mass of the planet according to the literature. If a planet has both radial velocity and transit measurements, we calculate the mass from the minimum mass and the orbital inclination. MASS is set to MSINI if the orbital inclination is not given and the MASSREF is set to ``Set to MSINI; I unknown''. 
 
-ZZZ For KOIs without MSINI measured, we import the MASS fields from the Exoplanet Archive, which are derived from the mass-radius relation in . 
+ZZZ For KOIs without MSINI measured, we calculate their mass using the mass-radius relation from the literatures. For KOIs with $R<4\rearth$, we use \cite{Weiss2014} , with $4\rearth<R<6\rearth$, we use \cite{Lissauer2011}, and for KOIs with $6\rearth<R<17\rearth$ we use \cite{Mordasini2012}. 
+
 
 
 {\bf SEP} is the projected separation on the sky between the host star and the planet in the unit of AU. For directly imaged planets, the literatures give the projected separation and we report this value. 
@@ -214,23 +216,17 @@ If SEP is  not directly measured but the semi-major (A) is available, then SEP i
 
 {\bf BIGOM} is the longitude of the ascending node ($\Omega$) in the unit of degree and for now this is only measured for some of the directly imaged planets, which are not in the EOD. 
 
-{\bf LAMBDA} is the projected spin-orbit misalignment ($\lambda$) in the unit of degree. We report the projected spin-orbit misalignment of transiting systems, which is measured by ZZZ Rossiter-McLaughlin effect. $\lambda$ is introduced because the true spin-orbit angle ($\phi$), defined as the angle between the stellar spin axis and the orbital axis, is normally not directly measurable. We follow the definition of $\lambda$ in Fabrycky and Winn 2009 where the coordinates are defined as follows; the $z$-axis points toward the observer, the $x$-axis points along the intersection of the sky plane and the planet's orbital plane with the ascending node of the planet having $x<0$, and the $y$-axis completes a right handed-triad. $\lambda$ is measured clockwise on the sky from the $y$-axis to the projected stellar rotational axis. Some literatures report $\beta = -\lambda$ instead. We sorted these cases out and made sure that our $\lambda$'s are following the definition of Fabrycky and Winn 2009. 
-
-
-{\bf I} is the orbital inclination. This field is not newly added but we chose to describe it here since our database now has the inclination for planets detected by methods other than transit. Previously, only transiting systems used to have the inclination measured. However, now sometimes for
-non-transiting systems the values of I are also available. For instance, if the system was first detected by radial velocity and has a follow-up transit observation, then the inclination can be measured. To sum up, all the transiting planets have measured orbital inclination and currently, we also have one microlensing planet with measured inclination. *** give the example!
 
 
 
 %------------------------------------------------------------------------------
 \subsection{Transit Parameters}
-We report the transit parameters of transiting planets. These parameters are available only when the planet has TRANSIT flag equal to 1. 
-Added fields since \cite{Wright2011}:
+We report the transit parameters, which are available only when the planet has TRANSIT flag equal to 1. We describe added fields since \cite{Wright2011} below. 
 
-{\bf DR} is the distance between the planet and the star during the transit in stellar radii. This is one of the parameters that goes into the transit light curve modeling and for more information, see Batalha 2013 for more details. 
+{\bf DR} is the distance between the planet and the star during the transit in stellar radii. This is one of the parameters that goes into the transit light curve modeling (see e.g. \citealt{Batalha2013}). 
 
-{\bf RR} is the ratio of the planetary radius and the stellar radius. Previously, we only reported the transit depth, which is the square of the planetary radius and the stellar radius.
-Why did we add this field? 
+{\bf RR} is the ratio of the planetary radius and the stellar radius. If the transit depth (DEPTH) is not given, we calculate DEPTH by taking square of RR but we do not calculate RR from DEPTH.  
+
 
 %------------------------------------------------------------------------------
 \subsection{Secondary Eclipse}
@@ -319,6 +315,12 @@ ApJ to better track of the trend in the exoplanet detections.
 %------------------------------------------------------------------------------
 \subsection{Revised and Removed Fields}
 We have major updates by taking out some of the fields and by revising the existing fields. Here, we explain why we removed or revised such fields. 
+
+{\bf LAMBDA} is the projected spin-orbit misalignment ($\lambda$) in the unit of degree. We report the projected spin-orbit misalignment of transiting systems, which is measured by ZZZ Rossiter-McLaughlin effect. $\lambda$ is introduced because the true spin-orbit angle ($\phi$), defined as the angle between the stellar spin axis and the orbital axis, is normally not directly measurable. We follow the definition of $\lambda$ in Fabrycky and Winn 2009 where the coordinates are defined as follows; the $z$-axis points toward the observer, the $x$-axis points along the intersection of the sky plane and the planet's orbital plane with the ascending node of the planet having $x<0$, and the $y$-axis completes a right handed-triad. $\lambda$ is measured clockwise on the sky from the $y$-axis to the projected stellar rotational axis. Some literatures report $\beta = -\lambda$ instead. We sorted these cases out and made sure that our $\lambda$'s are following the definition of Fabrycky and Winn 2009. 
+
+{\bf I} is the orbital inclination. This field is not newly added but we chose to describe it here since our database now has the inclination for planets detected by methods other than transit. Previously, only transiting systems used to have the inclination measured. However, now sometimes for
+non-transiting systems the values of I are also available. For instance, if the system was first detected by radial velocity and has a follow-up transit observation, then the inclination can be measured. To sum up, all the transiting planets have measured orbital inclination and currently, we also have one microlensing planet with measured inclination. *** give the example!
+
 
 {\bf OTHERNAME} - This is now listed as other name of planet instead of star;
 ** OTHTERNAME has always been the name of the star I think...?
