@@ -217,8 +217,6 @@ If SEP is  not directly measured but the semi-major (A) is available, then SEP i
 {\bf BIGOM} is the longitude of the ascending node ($\Omega$) in the unit of degree and for now this is only measured for some of the directly imaged planets, which are not in the EOD. 
 
 
-
-
 %------------------------------------------------------------------------------
 \subsection{Transit Parameters}
 We report the transit parameters, which are available only when the planet has TRANSIT flag equal to 1. We describe added fields since \cite{Wright2011} below. 
@@ -230,52 +228,35 @@ We report the transit parameters, which are available only when the planet has T
 
 %------------------------------------------------------------------------------
 \subsection{Secondary Eclipse}
-We have added an entirely new set of fields for the secondary eclipse. To measure transits, astronomers need to have a precision of 1/100, whereas for the secondary eclipse (or transmission spectrum), precision of 1/10,000 is required, which means it is much harder to detect the secondary eclipse depths or transmission spectra compared to just transit. Previously, due to the limits of instrumentation, there were not much available measured secondary eclipse depths. However, since \cite{Wright2011}, as many different surveys have been launched, secondary eclipse depths at multiple bands are now available. Therefore, to better ingest this information, we added a new set of fields for the secondary eclipse. 
+We have added an entirely new set of fields for the secondary eclipse. Previously, due to the limits of instrumentation, there were not much available measured secondary eclipse depths. Since \cite{Wright2011}, as many different surveys have been launched, secondary eclipse depths at multiple bands are now available. Therefore, we added this entire new set of fields since.
 
-This is a entire new set of fields since \cite{Wright2011}:
+{\bf SE} flag indicates whether the system has detected secondary eclipse in any of the two Micron All-Sky Survey (2MASS) $J$, $H$, and $K_s$, Kepler photometry band, and 4 Spitzer IRAC bands. SE is a boolean and being true indicates the system has at least one detected secondary eclipse. 
+ZZZ add 2MASS reference!
 
-{\bf SE} flag indicates whether the system has detected secondary eclipse in any of the 2MASS J, H, and K$_s$, Kepler photometry band, and 4 Spitzer IRAC bands. SE is a boolean and being true indicates the system has detected secondary eclipse. 
-
-{\bf SEDEPTH J H KS KP 36 45 58 80} fields are the secondary eclipse depth measured in the corresponding wavelength band. J, K, and K$_s$ are the depth measured in the 2MASS wavelength band in near infrared each centered at 1.25\micron, 1.65\micron, and 2.15\micron, respectively. KP is the depth measured in the Kepler photometry band which is centered at 
+{\bf SEDEPTHX} whereas X stands for one of J H KS KP 36 45 58 80: these fields are the secondary eclipse depth measured in the corresponding wavelength band. SEDEPTHJ, H, and KS are the depths measured in the 2MASS wavelength band in near infrared each centered at 1.25~\micron, 1.65~\micron, and 2.15~\micron, respectively. KP is the depth measured in the \kepler\ photometry band which ranges from 400 to 865~nm. The rest four stand for the Spitzer bands centered at 3.6~\micron, 4.5~\micron, 5.8~\micron, and 8.0~\micron. 
 
 {\bf SET} is the epoch of secondary eclipse center in HJD. 
 
 %------------------------------------------------------------------------------
-
 \subsection{Stellar Properties}
-ZZZ Stellar parameters and stellar properties have been merged. 
+This set of parameters is to provide users the physical parameters of the exoplanet host stars. 
+Most of the parameters are derived from the stellar models in the literatures and we provide the readers with the references. We describe added fields since \cite{Wright2011} below. 
 
-Stellar parameters section is consisted of 3 parts: Stellar properties, Stellar magnitudes, and Coordinates and Catalog. This section is to provide our users detailed information about the exoplanet hosting stars. Stellar properties section contains name, mass, and consistent set of metalicities (FE) , effective temperature (TEFF), surface gravity (LOGG), projected rotational velocity (VSINI), and the systematic radial velocity (GAMMA). Stellar magnitudes section includes optical magnitudes of the star (V and BMV) as well as 2MASS infrared (J, H, and K) and Kepler bandpass magnitude (KP). Coordinates and Catalog section includes the right ascension (RA) and the declination (DEC) of the host star, parallax (PAR) and distance (DIST) and the integers designated by different catalogs. 
-
-Added fields since \cite{Wright2011}:
-
-
-{\bf GAMMA} is the newly added field under Stellar properties. It is the radial velocity of the center of mass of the planetary system and is reported in km/s.  
-
-
-Difference from Stellar Parameters: these are derived parameters based
-on spectroscopy and stellar models. 
-Not always true for RSTAR because some literatures give the value. 
-Added fields since \cite{Wright2011}:
+{\bf GAMMA} ($\gamma$) is the radial velocity of the center of mass of the planetary system and is reported in km/s.  
 
 {\bf RSTAR} is the radius of the star in the solar radius. 
 
-{\bf RHOSTAR} is the density of the star in the unit of $g/cm^3$
+{\bf RHOSTAR} is the density of the star in the unit of g/cm$^3$. 
 
 %------------------------------------------------------------------------------
 \subsection {Stellar Magnitudes}
 
-We provide the brightness of the host star measured in different wavelengths. We report optical magnitudes (V and B-V), 2MASS J,H, and K magnitudes centered at 1.25\micron, 1.65\micron, and 2.15\micron, respectively. 
-
-Added field: 
-{\bf KP} is the stellar magnitude measured through the Kepler bandpass which covers 4000 angstroms to 8500 angstroms. 
+We provide the brightness of the host star measured in different wavelengths. We report optical magnitudes ($V$ and $B-V$), 2MASS $J$, $H$, and $K_s$ magnitudes and we added {\bf KP} since \cite{Wright2011}, which is the stellar magnitude measured through the Kepler bandpass.
 
 %------------------------------------------------------------------------------
 \subsection{Coordinates and Catalogs}
 We report the coordinates of the host star as well as the stellar ID as designated by different catalogs. 
-Added fields since \cite{Wright2011}:
-
-{\bf DIST} is the distance of the host star in the unit of pc. It sometimes is calculated from the parallax that come from the Hipparcos data set by van Leeuwen (2009).
+We added {\bf DIST} since \cite{Wright2011}, which is the distance of the host star in the unit of pc. If only parallax (PAR) is given, we convert it to DIST and vice versa. If the literature does not report DIST or PAR, then we obtain PAR from the Hipparcos data set by van Leeuwen (2009). ZZZ add a reference for Leeuwen
 
 
 %------------------------------------------------------------------------------
@@ -455,7 +436,7 @@ PER\dotfill & Double & Orbital period in days & -UPPER, etc. \\
 ECC\dotfill & Float & Orbital eccentricity & -UPPER, etc. \\
 OM\dotfill & Float & Argument of periastron in degrees & -UPPER, etc. \\
 K\dotfill & Float & Semiamplitude of stellar reflex motion in \mps & -UPPER, etc. \\
-T0\dotfill & Double & Epoch of periastron in HJD\tablenotemark{d}$-2,440,000$ & -UPPER, etc. \\
+T0\dotfill & Double & Epoch of periastron in HJD\tablenotemark{d} & -UPPER, etc. \\
 DVDT\dotfill & Float & Magnitude of linear trend in \mps\ day$^{-1}$ & -UPPER, etc. \\
 I\dotfill & Float & Orbital inclination in degrees & -UPPER, etc. \\
 MSINI\dotfill & Float & Minimum mass (as calculated from the mass
@@ -472,7 +453,7 @@ FREEZE\_ECC\dotfill & Boolean & Eccentricity frozen in fit? & \nodata \\
 DEPTH\dotfill & Float & Transit depth, $(R_p/R_*)^2$ & -UPPER, etc. \\
 T14\dotfill & Float & Time of transit from first to fourth contact in days & -UPPER, etc. \\
 TT\dotfill & Float & Epoch of transit center in
-HJD\tablenotemark{d}$-2,440,000$ & -UPPER, etc. \\
+HJD\tablenotemark{d} & -UPPER, etc. \\
 R\dotfill & Float & Radius of planet in Jupiter radii & -UPPER, etc. \\
 AR\dotfill & Float & $(a/R_*)$ & -UPPER, etc. \\
 B\dotfill & Float & Impact parameter of transit & -UPPER, etc. \\
@@ -502,7 +483,7 @@ SEDEPTH58\dotfill & Float & Secondary eclipse depth in
 SEDEPTH80\dotfill & Float & Secondary eclipse depth in
 \spitzer\ IRAC4 8.0 \micron\ band & -UPPER, etc. \\
 SET\dotfill & Double & Epoch of secondary eclipse center in
-HJD\tablenotemark{d}$-2,440,000$ & -UPPER, etc. \\
+HJD\tablenotemark{d} & -UPPER, etc. \\
 %
 \sidehead{\textbf{Fit \& References}}
 RMS\dotfill & Float & Root-mean-square residuals to orbital RV fit & \nodata \\
