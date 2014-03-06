@@ -389,15 +389,17 @@ versa. If the literature does not report DIST or PAR, then we obtain
 PAR from the Hipparcos data set by \cite{van Leeuwen2009}.
 
 %------------------------------------------------------------------------------
-\subsection{Uncertainties}
+\subsection{Uncertainties and Upper Limits}
 
 We now report uncertainties for a certain field X as XUPPER, XLOWER
 and UX. XUPPER and XLOWER store the upper and lower 1$\sigma$
 uncertainties, and they are different when the error bars are
 asymmetric. UX contains the 1$\sigma$ uncertainty, and it
 equals to $({\rm XUPPER+XLOWER})/2$ in the case of asymmetric error
-bars. Fields that have XUPPER, XLOWER and UX are: (list of fields).
+bars. Fields that have XUPPER, XLOWER and UX are:  all the orbital parameters except for TREND and FREEZE\_ECC flags; all the transit parameters except for TRANSIT flags; all the secondary eclipse fields except for SE flag; and all the stellar properties except for STAR, SPECREF and BINARY flag; and DIST and PAR. 
+We also report the upper limits for planet mass (MSINI), eccentricity (ECC), and the velocity semi-amplitude (K) when the literatures only provide the upper limits and not the actual values. The upper limits for ECC is reported when the orbit is circular, and the upper limits for K is reported when there is no radial velocity detection. If only upper limits are given, we set the field to 0, the uncertainty to half of the upper limit, and the upper limits to the upper limits. For example, if the literature reports the upper limit for ECC, then we put the value in ECCUL, set ECC to be 0, ECCUPPER to ECCUL, and UECC to ECCUL/2. 
 
+ZZZ modify table to reflect MASSUL, ECCUL, KUL, fields
 %------------------------------------------------------------------------------
 \subsection{References}
 
@@ -420,7 +422,7 @@ FIRSTURL, ORBREF, ORBURL. New: SPECREF, SPECURL contain source of most
 of the spectroscopic parameters listed for convenience; actual
 references in the REF fields take precedence over this one.
 
-{\bf MONTH} field reports an integer of the month when the
+{\bf MONTH} field reports the month in integer when the
 peer-reviewed paper is accepted to the ApJ to better track of the
 trend in the exoplanet detections.
 
@@ -431,6 +433,8 @@ for more details.
 
 %------------------------------------------------------------------------------
 \subsection{Revised and Removed Fields}
+ZZZ CPSNAME?
+
 We have major updates by taking out some of the fields and by revising the existing fields. Here, we explain why we removed or revised such fields. 
 
 {\bf LAMBDA} is the projected spin-orbit misalignment ($\lambda$) in
