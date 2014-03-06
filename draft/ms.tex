@@ -561,6 +561,7 @@ SXW acknowledges support from PSARC.
 % Table
 \clearpage
 
+% NEW ORGANIZATION ACCORDING TO INDIVIDUAL PLANET PAGE
 \begin{deluxetable}{llll}
 \tabletypesize{\scriptsize}
 %\rotate
@@ -572,9 +573,39 @@ SXW acknowledges support from PSARC.
 }
 \startdata
 %
-\sidehead{\textbf{Planet Information}}
+\sidehead{\textbf{Discovery and References}}
 NAME\dotfill & String & Name of planet & \nodata \\
 OTHERNAME\tablenotemark{c}\dotfill & String & Other commonly used name of planet & \nodata \\
+DATE\dotfill & Integer & Year of publication of FIRSTREF & \nodata \\
+MONTH\dotfill & Integer & Month of publication of FIRSTREF & \nodata \\
+PLANETDISCMETH\dotfill & String & Method of discovery of planet & \nodata \\
+STARDISCMETH\dotfill & String & Method of discovery of first planet in system & \nodata \\
+ORBREF\dotfill & String & Peer-reviewed origin of orbital parameters & ORBURL \\
+FIRSTREF\dotfill & String & First peer-reviewed publication of
+planetary orbit & FIRSTURL \\
+JSNAME\dotfill & String & Name of host star used in the Extrasolar
+Planets Encyclopaedia & EPEURL \\
+ETDNAME\dotfill & String & Name of planet used in the Exoplanet
+Transit Database & ETDURL \\
+EANAME\dotfill & String & Name of planet used in the Exoplanet
+Archive database & EAURL \\
+SIMBADNAME\dotfill & String & Valid SIMBAD name of host star (or
+planet, if available) & SIMBADURL \\
+KEPID\dotfill & Long Integer & The unique \kepler\ star identifier &
+\nodata \\
+KOI\dotfill & Float & KOI object number & \nodata \\
+KDE\dotfill & Boolean & If true, planet appears in the \kepler\ archive & \nodata \\
+EOD\dotfill & Boolean & If true, planet is included in the EOD & \nodata \\
+MICROLENSING\dotfill & Boolean & If true, planet was detected via microlensing & \nodata \\
+IMAGING\dotfill & Boolean & If true, planet was detected via imaging & \nodata \\
+TIMING\dotfill & Boolean & If true, planet was detected via timing & \nodata \\
+ASTROMETRY\dotfill & Boolean & If true, planet was detected via astrometric motion & \nodata \\
+
+
+% STILL OLD SORTING BELOW
+
+%
+\sidehead{\textbf{Planet Information}}
 COMP\dotfill & String & Component name of planet ($b$, $c$, etc.) & \nodata \\
 HD\dotfill & Long Integer & Henry Draper number of sar & \nodata \\
 HR\dotfill & Integer & Bright Star Catalog number of star & \nodata \\
@@ -587,14 +618,6 @@ RA\dotfill & Double & J2000 right ascension in decimal hours & \nodata \\
 RA\_STRING\dotfill & String & J2000 right ascension in sexagesimal string & \nodata  \\
 DEC\dotfill & Double & J2000 declination in decimal degrees & \nodata \\
 DEC\_STRING\dotfill & String & J2000 declination in sexagesimal string & \nodata \\
-KEPID\dotfill & Long Integer & The unique \kepler\ star identifier & \nodata \\
-KOI\dotfill & Float & KOI object number & \nodata \\
-KDE\dotfill & Boolean & If true, planet appears in the \kepler\ archive & \nodata \\
-EOD\dotfill & Boolean & If true, planet is included in the EOD & \nodata \\
-MICROLENSING\dotfill & Boolean & If true, planet was detected via microlensing & \nodata \\
-IMAGING\dotfill & Boolean & If true, planet was detected via imaging & \nodata \\
-TIMING\dotfill & Boolean & If true, planet was detected via timing & \nodata \\
-ASTROMETRY\dotfill & Boolean & If true, planet was detected via astrometric motion & \nodata \\
 %
 \sidehead{\textbf{Stellar Parameters}}
 BMV\dotfill & Float & $B-V$ color & \nodata \\
@@ -668,13 +691,9 @@ CHI2\dotfill & Float & $\chi_{\nu}^2$ to orbital RV fit & \nodata \\
 NOBS\dotfill & Integer & Number of observations used in fit & \nodata \\
 NCOMP\dotfill & Integer & Number of planetary companions known & \nodata \\
 MULT\dotfill & Boolean & Multiple planets in system? & \nodata \\
-PLANETDISCMETH\dotfill & String & Method of discovery of planet & \nodata \\
-STARDISCMETH\dotfill & String & Method of discovery of first planet in system & \nodata \\
-DATE\dotfill & Integer & Year of publication of FIRSTREF & \nodata \\
-MONTH\dotfill & Integer & Month of publication of FIRSTREF & \nodata \\
-FIRSTREF\dotfill & String & First peer-reviewed publication of
-planetary orbit & FIRSTURL \\
-ORBREF\dotfill & String & Peer-reviewed origin of orbital parameters & ORBURL \\
+
+
+
 %
 \sidehead{\textbf{Stellar Properties}}
 STAR\dotfill & String & Standard name for host star & \nodata \\
@@ -691,14 +710,8 @@ KP\dotfill & Float & \kepler\ bandpass magnitude & \nodata \\
 SPECREF\dotfill & String & Source of most of the spectroscopic parameters & SPECURL \\
 %
 \sidehead{\textbf{Links}}
-JSNAME\dotfill & String & Name of host star used in the Extrasolar
-Planets Encyclopaedia & EPEURL \\
-ETDNAME\dotfill & String & Name of planet used in the Exoplanet
-Transit Database & ETDURL \\
-SIMBADNAME\dotfill & String & Valid SIMBAD name of host star (or
-planet, if available) & SIMBADURL \\
-EANAME\dotfill & String & Name of planet used in the Exoplanet
-Archive database & EAURL \\
+
+
 \enddata
 \tablenotetext{a}{Fields in bold are updates or new additions from
   \cite{Wright2011}. See Section~\ref{sec:update} for more details.}
