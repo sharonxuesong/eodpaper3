@@ -600,72 +600,54 @@ MICROLENSING\dotfill & Boolean & If true, planet was detected via microlensing &
 IMAGING\dotfill & Boolean & If true, planet was detected via imaging & \nodata \\
 TIMING\dotfill & Boolean & If true, planet was detected via timing & \nodata \\
 ASTROMETRY\dotfill & Boolean & If true, planet was detected via astrometric motion & \nodata \\
-
-
-% STILL OLD SORTING BELOW
-
 %
-\sidehead{\textbf{Planet Information}}
-COMP\dotfill & String & Component name of planet ($b$, $c$, etc.) & \nodata \\
-HD\dotfill & Long Integer & Henry Draper number of sar & \nodata \\
-HR\dotfill & Integer & Bright Star Catalog number of star & \nodata \\
-HIPP\dotfill & Long Integer & \textit{Hipparcos} catalog number of
-star & \nodata \\
-SAO\dotfill & Long Integer & SAO catalog number of star & \nodata \\
-GL\dotfill & Float & GJ or Gliese catalog number of star & \nodata \\
-BINARY\dotfill & Boolean & Star known ot be binary? & -REF, -URL \\
-RA\dotfill & Double & J2000 right ascension in decimal hours & \nodata \\
-RA\_STRING\dotfill & String & J2000 right ascension in sexagesimal string & \nodata  \\
-DEC\dotfill & Double & J2000 declination in decimal degrees & \nodata \\
-DEC\_STRING\dotfill & String & J2000 declination in sexagesimal string & \nodata \\
-%
-\sidehead{\textbf{Stellar Parameters}}
-BMV\dotfill & Float & $B-V$ color & \nodata \\
-V\dotfill & Float & $V$ magnitude & -REF,-URL \\
-J\dotfill & Float & $J$ magnitude & \nodata \\
-H\dotfill & Float & $H$ magnitude & \nodata \\
-KS\dotfill & Float & $K_S$ magnitude & \nodata \\
-DIST\dotfill & Float & Distance to host star based on parallax in parsecs & -UPPER, etc. \\
-PAR\dotfill & Float & Parallax in mas & -UPPER,-LOWER,U- \\
-VSINI\dotfill & Float & Projected equatorial rotational velocity of
-star in k\mps & -UPPER, etc. \\
-GAMMA\dotfill & Float & Systemic radial velocity in k\mps & -UPPER, etc. \\
-%
-\sidehead{\textbf{Orbit Parameters}}
-PER\dotfill & Double & Orbital period in days & -UPPER, etc. \\
-ECC\dotfill & Float & Orbital eccentricity & -UPPER, etc. \\
-OM\dotfill & Float & Argument of periastron in degrees & -UPPER, etc. \\
-K\dotfill & Float & Semiamplitude of stellar reflex motion in \mps & -UPPER, etc. \\
-T0\dotfill & Double & Epoch of periastron in HJD\tablenotemark{d} & -UPPER, etc. \\
-DVDT\dotfill & Float & Magnitude of linear trend in \mps\ day$^{-1}$ & -UPPER, etc. \\
-I\dotfill & Float & Orbital inclination in degrees & -UPPER, etc. \\
+\sidehead{\textbf{Orbital Parameters}}
 MSINI\dotfill & Float & Minimum mass (as calculated from the mass
 function) in \mjup & -UPPER, etc. \\
-A\dotfill & Float & Orbital semimajor axis in AU & -UPPER, etc. \\
 MASS\dotfill & Float & Mass of planet in \mjup & -UPPER, etc. \\
+A\dotfill & Float & Orbital semimajor axis in AU & -UPPER, etc. \\
 SEP\dotfill & Float & Separation between host star and planet in AU & -UPPER, etc. \\
-TREND\dotfill  & Boolean & Linear trend in fit? & \nodata \\
-LAMBDA\dotfill & Float & Projected spin-orbit misalignment in degrees & -UPPER, etc. \\
+PER\dotfill & Double & Orbital period in days & -UPPER, etc. \\
+K\dotfill & Float & Semiamplitude of stellar reflex motion in \mps &
+-UPPER, etc. \\
+ECC\dotfill & Float & Orbital eccentricity & -UPPER, etc. \\
+I\dotfill & Float & Orbital inclination in degrees & -UPPER, etc. \\
+OM\dotfill & Float & Argument of periastron in degrees & -UPPER, etc. \\
 BIGOM\dotfill & Float & Longitude of ascending node in degrees & -UPPER, etc. \\
-FREEZE\_ECC\dotfill & Boolean & Eccentricity frozen in fit? & \nodata \\
+T0\dotfill & Double & Epoch of periastron in HJD\tablenotemark{d} & -UPPER, etc. \\
+DVDT\dotfill & Float & Magnitude of linear trend in \mps\ day$^{-1}$ & -UPPER, etc. \\
+LAMBDA\dotfill & Float & Projected spin-orbit misalignment in degrees
+& -UPPER, etc. \\
+TRANSIT\dotfill & Boolean & Is the planet known to transit? & -REF,-URL \\
 %
 \sidehead{\textbf{Transit Parameters}}
-DEPTH\dotfill & Float & Transit depth, $(R_p/R_*)^2$ & -UPPER, etc. \\
-T14\dotfill & Float & Time of transit from first to fourth contact in days & -UPPER, etc. \\
+R\dotfill & Float & Radius of planet in Jupiter radii & -UPPER,
+etc. \\
 TT\dotfill & Float & Epoch of transit center in
 HJD\tablenotemark{d} & -UPPER, etc. \\
-R\dotfill & Float & Radius of planet in Jupiter radii & -UPPER, etc. \\
-AR\dotfill & Float & $(a/R_*)$ & -UPPER, etc. \\
+T14\dotfill & Float & Time of transit from first to fourth contact in days & -UPPER, etc. \\
 B\dotfill & Float & Impact parameter of transit & -UPPER, etc. \\
+AR\dotfill & Float & $(a/R_*)$ & -UPPER, etc. \\
+DEPTH\dotfill & Float & Transit depth, $(R_p/R_*)^2$ & -UPPER, etc. \\
 DENSITY\dotfill & Float & Density of planet in g cc$^{-1}$ &
 -UPPER, etc. \\
 GRAVITY\dotfill & Float & $\log{g}$ (surface gravity) of planet in cgs unit &
 -UPPER, etc. \\
-TRANSIT\dotfill & Boolean & Is the planet known to transit? & -REF,-URL \\
 DR\dotfill & Float & Distance during transit in stellar radii & -UPPER, etc. \\
 RR\dotfill & Float & $(R_p/R_*)$ & -UPPER, etc. \\
 %
-\sidehead{\textbf{Secondary Eclipse}}
+\sidehead{\textbf{Orbital Fit Properties}}
+CHI2\dotfill & Float & $\chi_{\nu}^2$ to orbital RV fit & \nodata \\
+NOBS\dotfill & Integer & Number of observations used in fit & \nodata \\
+RMS\dotfill & Float & Root-mean-square residuals to orbital RV fit &
+\nodata \\
+FREEZE\_ECC\dotfill & Boolean & Eccentricity frozen in fit? & \nodata \\
+TREND\dotfill  & Boolean & Linear trend in fit? & \nodata \\
+NCOMP\dotfill & Integer & Number of planetary companions known & \nodata \\
+MULT\dotfill & Boolean & Multiple planets in system? & \nodata \\
+COMP\dotfill & String & Component name of planet ($b$, $c$, etc.) & \nodata \\
+%
+\sidehead{\textbf{Secondary Eclipse Depth}}
 SE\dotfill & Boolean & If true, at least one secondary eclipse has
 been detected & -REF,-URL \\
 SEDEPTHJ\dotfill & Float & Secondary eclipse depth in $J$ band & -UPPER, etc. \\
@@ -685,33 +667,45 @@ SEDEPTH80\dotfill & Float & Secondary eclipse depth in
 SET\dotfill & Double & Epoch of secondary eclipse center in
 HJD\tablenotemark{d} & -UPPER, etc. \\
 %
-\sidehead{\textbf{Fit \& References}}
-RMS\dotfill & Float & Root-mean-square residuals to orbital RV fit & \nodata \\
-CHI2\dotfill & Float & $\chi_{\nu}^2$ to orbital RV fit & \nodata \\
-NOBS\dotfill & Integer & Number of observations used in fit & \nodata \\
-NCOMP\dotfill & Integer & Number of planetary companions known & \nodata \\
-MULT\dotfill & Boolean & Multiple planets in system? & \nodata \\
-
-
-
-%
 \sidehead{\textbf{Stellar Properties}}
 STAR\dotfill & String & Standard name for host star & \nodata \\
+BINARY\dotfill & Boolean & Star known ot be binary? & -REF, -URL \\
 MSTAR\dotfill & Float & Mass of host star in solar mass & -UPPER, etc. \\
 RSTAR\dotfill & Float & Radius of host star in solar radii & -UPPER, etc. \\
+FE\dotfill & Float & Iron abundance (or metallicity) of star & -UPPER, etc. \\
 TEFF\dotfill & Float & Effective temperature of host star & -UPPER, etc. \\
 RHOSTAR\dotfill & Float & Density of host star & -UPPER, etc. \\
 LOGG\dotfill & Float & Spectroscopic $\log{g}$ (surface gravity) of
 host star in cgs unit & -UPPER, etc. \\
-FE\dotfill & Float & Iron abundance (or metallicity) of star & -UPPER, etc. \\
+VSINI\dotfill & Float & Projected equatorial rotational velocity of
+star in k\mps & -UPPER, etc. \\
+GAMMA\dotfill & Float & Systemic radial velocity in k\mps & -UPPER, etc. \\
+%
+\sidehead{\textbf{Stellar Magnitudes}}
+V\dotfill & Float & $V$ magnitude & -REF,-URL \\
+BMV\dotfill & Float & $B-V$ color & \nodata \\
+J\dotfill & Float & $J$ magnitude & \nodata \\
+H\dotfill & Float & $H$ magnitude & \nodata \\
+KS\dotfill & Float & $K_S$ magnitude & \nodata \\
 SHK\dotfill & Float & Mount Wilson Ca \sc{II} $S$-value & \nodata \\
 RHK\dotfill & Float & Chromospheric activity of star as $R'_{HK}$ & \nodata \\
 KP\dotfill & Float & \kepler\ bandpass magnitude & \nodata \\
 SPECREF\dotfill & String & Source of most of the spectroscopic parameters & SPECURL \\
 %
-\sidehead{\textbf{Links}}
-
-
+\sidehead{\textbf{Coordinates and Catalogs}}
+RA\dotfill & Double & J2000 right ascension in decimal hours & \nodata \\
+RA\_STRING\dotfill & String & J2000 right ascension in sexagesimal string & \nodata  \\
+DEC\dotfill & Double & J2000 declination in decimal degrees & \nodata \\
+DEC\_STRING\dotfill & String & J2000 declination in sexagesimal string & \nodata \\
+PAR\dotfill & Float & Parallax in mas & -UPPER,-LOWER,U- \\
+DIST\dotfill & Float & Distance to host star based on parallax in parsecs & -UPPER, etc. \\
+HIPP\dotfill & Long Integer & \textit{Hipparcos} catalog number of
+star & \nodata \\
+HD\dotfill & Long Integer & Henry Draper number of sar & \nodata \\
+GL\dotfill & Float & GJ or Gliese catalog number of star & \nodata \\
+HR\dotfill & Integer & Bright Star Catalog number of star & \nodata \\
+SAO\dotfill & Long Integer & SAO catalog number of star & \nodata \\
+%
 \enddata
 \tablenotetext{a}{Fields in bold are updates or new additions from
   \cite{Wright2011}. See Section~\ref{sec:update} for more details.}
