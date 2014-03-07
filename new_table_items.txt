@@ -150,7 +150,6 @@ Added KOIs, not just Kepler planets.
 Items in Wright 2011 Table 1, but no long exist /is changed in the actual website table:
 
 OTHERNAME - This is now listed as other name of planet instead of star.
-FREEZE_ECC - gone? no. still in csv table.
 DISCMETH - replaced by planetdiscmeth and stardiscmeth.
 S - changed to SHK.
 SPSTAR - stellar type of star (unvetted), gone because unvetted.
