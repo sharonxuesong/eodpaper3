@@ -55,7 +55,7 @@
 
 \begin{CJK*}{UTF8}{gbsn}
 
-\title{Updates on the Exoplanet Orbit Database}
+\title{The Exoplanet Orbit Database 2, 2014 updates}
 
 % leading authors
 \author{Eunkyu Han\altaffilmark{1,2}}
@@ -298,8 +298,10 @@ is set to ``Set to MSINI; I unknown''.
 ZZZ For KOIs without MSINI measured, we calculate their mass using the
 mass-radius relation from the literatures. For KOIs with $R<4\rearth$,
 we use \cite{Weiss2014} , with $4\rearth<R<6\rearth$, we use
-\cite{Lissauer2011}, and for KOIs with $6\rearth<R<17\rearth$ we use
+\cite{Lissauer2011}, and for KOIs with $6\rearth<R<11.7\rearth$ we use
 \cite{Mordasini2012}.  
+
+ZZZ 
 
 {\bf SEP} is the projected separation on the sky between the host star
 and the planet in the unit of AU. For directly imaged planets, the
@@ -387,6 +389,8 @@ as designated by different catalogs.  We added {\bf DIST} since
 of pc. If only parallax (PAR) is given, we convert it to DIST and vice
 versa. If the literature does not report DIST or PAR, then we obtain
 PAR from the Hipparcos data set by \cite{van Leeuwen2009}.
+
+We naively propagate the error in PAR to DIST. 
 
 %------------------------------------------------------------------------------
 \subsection{Uncertainties and Upper Limits}
