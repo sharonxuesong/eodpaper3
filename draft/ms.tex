@@ -478,31 +478,31 @@ parameters and RV curves etc.?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Inclusion of the Kepler Planet Candidates and Other Exoplanets on Exoplanets.org}\label{sec:kepler}
 
-We included KOIs and other planets and describe the criteria for other planets.
+Since \cite{Wright2011}, as more planets were discovered by different methods other than radial velocity and transit, we have expanded this information to better ingest those planets into our database. We are going to explain what they are and the criteria we used to put them into the EOD. 
 
-KOI's are not counted as part of the EOD due to their status of being 'candidates', we include them in our website so that these KOIs are put into the context of all confirmed exoplanets. To display the KOIs in the EDE table, check the 'Kepler' option on the upper left of the table (default selection only includes 'Orbit Database' and 'Other'). The KOIs listed in our table include two past Kepler data releases and the most up-to-date release from January 2013. The original data are from the NASA Exoplanet Archive.
+{\bf KOI}'s: Although KOI's are not counted as part of the EOD due to their status of being `candidates', we include them in our website so that these KOIs are put into the context of all confirmed exoplanets. To display the KOIs in the EDE table, check the 'Kepler' option on the upper left of the table (default selection only includes 'Orbit Database' and 'Other'). The KOIs listed in our table include two past Kepler data releases and the most up-to-date release from February 2014. The original data are from the NASA Exoplanet Archive.
 
-Since \cite{Wright2011}, as more planets were discovered by different
-methods other than radial velocity and transit, we have expanded this
-information to better ingest those planets into our database.
+ZZZ Ask Jason about their criteria. \\
+We also included robustly detected imaging, microlensing, and timing planets and the criteria are the following (as set by the QUACBED): 
 
-Planets primarily detected by these methods do not have robust orbital
-parameters, they are categorized as ``Other Planets'' on
-exoplanets.org.
+\begin{itemize}
+\item Imaging planets: 
+\begin{enumerate}
+\item Planet-star mass ratio $q < 0.024$ ($< 24\ $\mjup\ for a solar mass star); and in general we require ($q+\sigma_q$) $< 0.024$, where $\sigma_q$ is the uncertainty in $q$.
+\item SEP $<$ 100 AU $\times$ ($M_*/M_\odot$), where SEP is the semi-major axis a if a is known, and the projected separation otherwise.
+\item Confidently detected: the detection is clearly of a real astrophysical source, and will unlikely later be found to have been spurious.
+\item Confidently bound: in opinion of the QUACBED the object will not be later found to be unbound or a chance alignment.
 
-If planets have follow up radial velocity or transit observations and
-thus have good orbital parameters, they have EOD flags. See
-Section~\ref{sec:kepler} for more information about `Other Planets'.
+\end{enumerate}
+\item Microlensing planets
+
+\item Timing planets
+
+\end{itemize}
+Planets primarily detected by these methods do not have robust orbital parameters and they are categorized as ``Other Planets'' on
+exoplanets.org. If planets have follow up radial velocity or transit observations and thus have good orbital parameters, they have the EOD flags. See Section~\ref{sec:kepler} for more information about `Other Planets'. These other planets can be displayed by check the `Other' option for the table. They are not included in the EOD (especially some microlensing and imaging planets) because of poorly characterized orbits.
 
 
-We now include \kepler\ candidates... They can be displayed by
-checking the `Kepler' option for the interactive data table.
-
-We also include robustly detected planets discovered microlensing,
-imaging, timing, astrometric motion. They can be displayed by check
-the `Other' option for the table. They are not included in the EOD
-(especially some microlensing and imaging planets) because of poorly
-characterized orbits...
 
 Also add our criteria for vetting IMAGING planets, which can be found
 here: http://exoplanets.org/methodology.html; do we have any similar
