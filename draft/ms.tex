@@ -347,6 +347,9 @@ were not reported consistently since some literatures report $\beta =
 -\lambda$ instead. We sorted these cases out and made sure that our
 $\lambda$'s are following the definition of \cite{Fabrycky2009}.
 
+{\bf MASSREF} and {\bf MASSURL} fields were used to report the
+reference and the URL of stellar mass but now they are used for planet
+mass.
 
 %------------------------------------------------------------------------------
 \subsection{Transit Parameters}\label{sec:transit}
@@ -415,12 +418,15 @@ $H$, and $K_s$ magnitudes and we added {\bf KP} since
 \cite{Wright2011}, which is the stellar magnitude measured through the
 Kepler bandpass.
 
+<<<<<<< HEAD
 {\bf SHK} is the Mount Wilson Ca II S-value and {\bf RHK} is the
 Chromospheric activity of star as $\log{R'_{HK}}$ : field previously
 reported the and now it is changed to SHK.  ; ZZZ What's the source
 for SHK and RHK?  Still discovery paper and Butler 2006? ZZZ SHK is a
 poorly maintained field, and it is unreferenced at the moment though
 we plan to include proper reference in the future.
+=======
+>>>>>>> 74ef30cb979a09525956d6559962a20f059b0543
 
 %------------------------------------------------------------------------------
 \subsection{Coordinates and Catalogs}\label{sec:coord}
@@ -478,33 +484,42 @@ are from the 2MASS \citep{Skrutskie2006}. The KP field do not have
 reference but the values are from the Exoplanet Archive
 \citep{Akeson2013}.
 
+<<<<<<< HEAD
 %------------------------------------------------------------------------------
 \subsection{Revised and Removed Fields}
 
 We have major updates by taking out some of the fields and by revising
 the existing fields. Here, we explain why we removed or revised such
 fields.  
+=======
+SHK and RHK are poorly maintained fields and they unreferenced at the moment though we plan to include
+proper reference in the future. Most of the values are from \cite{Butler2006}. 
 
+%------------------------------------------------------------------------------
+\subsection{Removed Fields}
+>>>>>>> 74ef30cb979a09525956d6559962a20f059b0543
+
+We removed 2 fields. 
 
 {\bf SPSTAR} field previously reported the stellar type of the host
-star. We choose to remove this field because....? - stellar type of
-star (unvetted), gone;
+star but it is removed since it is not reliable. 
 
 {\bf NSTEDID} field reported ID of host star in NStED and now it is
 replaced by EANAME, which is the name of the star as appears on the
-Exoplanet Archive.
+NASA's Exoplanet Archive \citep{Akeson2013}. 
 
-{\bf MASSREF} and {\bf MASSURL} fields were used to report the
-reference and the url of stellar mass but now they are used for planet
-mass.
 
 %------------------------------------------------------------------------------
-Figure: Figure of single planet page, to show updated transit
+ZZZ Figure: Figure of single planet page, to show updated transit
 parameters and RV curves etc.?
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Inclusion of the Kepler Planet Candidates and Other Exoplanets on Exoplanets.org}\label{sec:kepler}
+
+We included KOIs and other planets and describe the criteria for other planets.
+
+KOI's are not counted as part of the EOD due to their status of being 'candidates', we include them in our website so that these KOIs are put into the context of all confirmed exoplanets. To display the KOIs in the EDE table, check the 'Kepler' option on the upper left of the table (default selection only includes 'Orbit Database' and 'Other'). The KOIs listed in our table include two past Kepler data releases and the most up-to-date release from January 2013. The original data are from the NASA Exoplanet Archive.
 
 Since \cite{Wright2011}, as more planets were discovered by different
 methods other than radial velocity and transit, we have expanded this
