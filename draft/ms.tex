@@ -319,7 +319,10 @@ then SEP is set to A with the reference ``Set to A''. For the cases
 where only the projected separation is given such as imaged planets,
 then the semi-major axis is set to SEP.
 
-{\bf I} is the orbital inclination. Previously, only transiting systems have I measured but now, sometimes, non-transiting systems have I's reported too. ZZZ(add reference) For example, one microlensing system has I measured (OGLE-2006-BLG-109L). 
+{\bf I} is the orbital inclination. Previously, only transiting
+systems have I measured but now, sometimes, non-transiting systems
+have I's reported too. For example, one microlensing system has I
+measured (OGLE-2006-BLG-109L; \citealt{Bennet2010}).  
 
 {\bf BIGOM} is the longitude of the ascending node ($\Omega$) in the
 unit of degree and for now this is only measured for some of the
@@ -327,23 +330,27 @@ directly imaged planets, which are not in the EOD.
 
 {\bf LAMBDA} is the projected spin-orbit misalignment ($\lambda$) in
 the unit of degree. We report the projected spin-orbit misalignment of
-transiting systems, which is measured by, e.g., the Rossiter-McLaughlin
-effect or planet transiting star spots ZZZ add references for RM effect and the star spot method. $\lambda$ is introduced because the true spin-orbit angle
-($\phi$), defined as the angle between the stellar spin axis and the
-orbital axis, is normally not directly measurable. We follow the
-definition of $\lambda$ in \cite{Fabrycky2009} where the
-coordinates are defined as follows; the $z$-axis points toward the
-observer, the $x$-axis points along the intersection of the sky plane
-and the planet's orbital plane with the ascending node of the planet
-having $x<0$, and the $y$-axis completes a right
-handed-triad. $\lambda$ is measured clockwise on the sky from the
-$y$-axis to the projected stellar rotational axis. $\lambda$ is not a newly added field but we describe it here because $\lambda$'s were not reported consistently since some literatures
-report $\beta = -\lambda$ instead. We sorted these cases out and made
-sure that our $\lambda$'s are following the definition of \cite{Fabrycky2009}.
+transiting systems, which is measured by, e.g., the
+Rossiter-McLaughlin effect \citep[e.g.,][]{Winn2005} or planet
+transiting star spots \citep[e.g.,][]{Sanchis-Ojeda2012}. $\lambda$ is
+introduced because the true spin-orbit angle ($\phi$), defined as the
+angle between the stellar spin axis and the orbital axis, is normally
+not directly measurable. We follow the definition of $\lambda$ in
+\cite{Fabrycky2009} where the coordinates are defined as follows; the
+$z$-axis points toward the observer, the $x$-axis points along the
+intersection of the sky plane and the planet's orbital plane with the
+ascending node of the planet having $x<0$, and the $y$-axis completes
+a right handed-triad. $\lambda$ is measured clockwise on the sky from
+the $y$-axis to the projected stellar rotational axis. $\lambda$ is
+not a newly added field but we describe it here because $\lambda$'s
+were not reported consistently since some literatures report $\beta =
+-\lambda$ instead. We sorted these cases out and made sure that our
+$\lambda$'s are following the definition of \cite{Fabrycky2009}.
 
 {\bf MASSREF} and {\bf MASSURL} fields were used to report the
 reference and the URL of stellar mass but now they are used for planet
 mass.
+
 %------------------------------------------------------------------------------
 \subsection{Transit Parameters}\label{sec:transit}
 
@@ -437,25 +444,40 @@ TRANSIT flags; all the secondary eclipse fields except for SE flag;
 and all the stellar properties except for STAR, SPECREF and BINARY
 flag; and DIST and PAR.
 
-We also report the upper limits (XUL) for planet mass (MSINI), eccentricity (ECC), and the velocity semi-amplitude (K) when the literatures report them. For example, the upper limits for ECC is reported when the orbit is circular, and the upper limits for K is reported when there is no radial velocity detection. If only
-upper limits are given, we set the field to 0, the uncertainty to half
-of the upper limit, and the upper limits to the upper limits. For
+We also report the upper limits (XUL) for planet mass (MSINI),
+eccentricity (ECC), and the velocity semi-amplitude (K) when the
+literatures report them. For example, the upper limits for ECC is
+reported when the orbit is circular, and the upper limits for K is
+reported when there is no radial velocity detection. If only upper
+limits are given, we set the field to 0, the uncertainty to half of
+the upper limit, and the upper limits to the upper limits. For
 example, if the literature reports the upper limit for ECC, then we
 put the value in ECCUL, set ECC to be 0, ECCUPPER to ECCUL, and UECC
-to ECCUL/2. Since not all authors define the upper limits in the same way (e.g. 1$\sigma$ or some fixed percentile), we encourage the readers to refer to the literature for more information. 
+to ECCUL/2. Since not all authors define the upper limits in the same
+way (e.g. 1$\sigma$ or some fixed percentile), we encourage the
+readers to refer to the literature for more information.
 
 %------------------------------------------------------------------------------
 \subsection{References}\label{sec:ref}
 
-The fields {\bf XREF} and {\bf XURL} store the peer-reviewed reference and link to
-the publication for the field X. 
+The fields {\bf XREF} and {\bf XURL} store the peer-reviewed reference
+and link to the publication for the field X.
 
-Previously, we only reported general references (e.g. FIRSTREF, FIRSTURL, ORBREF, and ORBURL), but now we report the references for most of the fields. 
+Previously, we only reported general references (e.g. FIRSTREF,
+FIRSTURL, ORBREF, and ORBURL), but now we report the references for
+most of the fields.
 
-ZZZ RA, DEC, and PAR do not have references but they are from the \textit{Hipparcos} by \cite{van Leeuwen2009}. $B-V$ (BMV) field does not have a reference but the values are from the \textit{Hipparcos} catalog. The fields J H and KS do not have references as well but they are from the 2MASS \citep{Skrutskie2006}. The KP field do not have reference but the values are from the Exoplanet Archive \citep{Akeson2013}. 
+RA, DEC, and PAR do not have references but they are from the
+\textit{Hipparcos} by \cite{van Leeuwen2009}. $B-V$ (BMV) field does
+not have a reference but the values are from the \textit{Hipparcos}
+catalog by \cite{Perryman1997}. The fields J H and KS do not have
+references as well but they are from the 2MASS
+\citep{Skrutskie2006}. The KP field do not have reference but the
+values are from the Exoplanet Archive \citep{Akeson2013}.
 
-SHK and RHK are poorly maintained fields and they unreferenced at the moment though we plan to include
-proper reference in the future. Most of the values are from \cite{Butler2006}. 
+SHK and RHK are poorly maintained fields and they unreferenced at the
+moment though we plan to include proper reference in the future. Most
+of the values are from \cite{Butler2006}.
 
 %------------------------------------------------------------------------------
 \subsection{Removed Fields}
