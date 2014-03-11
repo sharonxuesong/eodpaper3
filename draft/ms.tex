@@ -184,39 +184,15 @@ Exoplanets Data Explorer\footnote{See \url{http://exoplanets.org}.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Updates on the EOD}\label{sec:update}
 
-The scope of the EOD has not been changed much but there was a major change in the category of host star. Previously, we only included exoplanets orbiting the `normal stars', but exoplanets orbiting neutron stars are also in our database. Furthermore, we only had exoplanets that were discovered by RV and transit but as more exoplanets are discovered by various methods such as microlensing and imaging, we have included those exoplanets as well into our database. 
+The scope of the EOD has not been changed much but there were two major changes in the EOD. Previously, we only included exoplanets orbiting the `normal stars', but now we are not limiting the type of the host star (e.g. we included exoplanets orbiting neutron stars). Furthermore, we only had exoplanets that were discovered by RV and transit but as more exoplanets are discovered by various methods such as timing are now in the EOD. For the future, exoplanets discovered by other methods with good orbital parameters may also be included in the EOD. 
 
-We still require the ``planets" to be smaller than 24 \mjup\ and the robust detection, which although is not strictly quantitative. 
+The rest of the criteria remain unchanged. We still require the planets to be smaller than 24 \mjup\ and with robust detection (though not strictly quantitative; see \citealt{Wright2011}).  
 
-The purpose of the EOD has not changed; we aim to provide the readers with comprehensive database for exoplanets that are discovered up-to-date. However, we just do not put all the announced exoplanets as we are not trying to do ``an encyclopedic presentation of every claimed detection of an exoplanet" as mentioned in \cite{Wright2011}.
-
-
-Scope of EOD has changed in the following ways:
-
-1. Definition of planets: not strictly smaller than 24 \mjup\ any
-more? Or still true? We still require smaller than 24 \mjup.
-
-2. Host stars: not only `normal stars' any more? Not any more -
-neutron stars are there (at least)! This requirement is completely gone.
-
-3. Change on definition of `well-determined' orbital parameters? No. Still
-qualitative, still the same as described in Section~2 of \cite{Wright2011}.
-
-4. Inclusion of planets discovered beyond RV and transit.
-
-Purposes of EOD have not changed?
+The purpose of the EOD has not changed; we aim to provide the readers with comprehensive database for exoplanets that are discovered up-to-date. However, we do not report \textit{all} the announced exoplanets as we are not trying to do ``an encyclopedic presentation of every claimed detection of an exoplanet" \citep{Wright2011}.
 
 We only describe new additions and revised fields here, but list all
-fields. For details on other fields, see \cite{Wright2011}. We divide
-the fields into categories in consistency with the interactive table
-on exoplanets.org. Some fields are not explicitly included in the
-interactive table (e.g., the URLs), but are explicitly listed in the
-downloadable {\tt .csv} file.\footnote{The entire dataset provided by
-  exoplanets.org is available for download in a single CSV file at
-  \url{http://exoplanets.org/csv-files/exoplanets.csv}} Make a note
-here that though we focus on EOD in this Section, the fields apply to
-all planets on exoplanets.org.
-Make sure to cite \cite{Wright2013} for the definition of orbital elements. 
+fields in Table~\ref{tab:par}. We divide the fields into categories in consistency with the individual planet page
+on exoplanets.org. Some fields are not explicitly included on the page (e.g., the URLs), but are explicitly listed in the downloadable {\tt .csv} file.\footnote{At \url{http://exoplanets.org/csv-files/exoplanets.csv}.} Though we focus on EOD in this section, the fields apply to all planets on exoplanets.org. For the definition of orbital elements see \cite{Wright2013} . 
 %------------------------------------------------------------------------------
 \subsection{Discovery and References}\label{sec:disc}
 
@@ -511,17 +487,17 @@ expanded our database at exoplanets.org to better ingest those
 planets.
 
 % KOIs
-First, we now include the KOIs discovered by \kepler in the
+First, we now include the KOIs discovered by \kepler\ in the
 EDE. Although KOIs are not counted as part of the EOD due to their
-status of being `candidates', we include them in our website so that
+status of being ``candidates", we include them in our website so that
 these KOIs are put into the context of all confirmed exoplanets. The
 KOIs listed in our table include three Kepler data releases (as of
 March 2014), and we always keep up with the most up-to-date
 releases. The original data are from the NASA Exoplanet Archive.
 
-To display the KOIs in the EDE table, check the 'Kepler' option on the
-upper left of the table (default selection only includes 'Orbit
-Database', i.e.~the EOD, and 'Other'). They can also be displayed on
+To display the KOIs in the EDE table, check the ``Kepler" option on the
+upper left of the table (default selection only includes ``Orbit
+Database", i.e.~the EOD, and ``Other"). They can also be displayed on
 plots with the interactive plotting tool of EDE.
 
 % Other Planets
