@@ -577,14 +577,14 @@ SXW acknowledges support from PSARC.
 \tablewidth{0pt}
 \tablecaption{Fields of Exoplanet Orbit Database\label{tab:par}}
 \tablehead{
-  \colhead{Field\tablenotemark{a}} & \colhead{Data Type} & \colhead{Meaning} &
-  \colhead{Related Fields\tablenotemark{b}} & \colhead{Ref.}
+  \colhead{Field} & \colhead{Data Type} & \colhead{Meaning} &
+  \colhead{Related Fields\tablenotemark{a}} & \colhead{Ref.\tablenotemark{b}}
 }
 \startdata
 %
 \sidehead{\textbf{Discovery and References}}
 NAME\dotfill & String & Name of planet & \nodata & W11 \\
-OTHERNAME\tablenotemark{c}\dotfill & String & Other commonly used name of star & \nodata & \ref{sec:disc} \\
+OTHERNAME\dotfill & String & Other commonly used name of star & \nodata & \ref{sec:disc} \\
 DATE\dotfill & Integer & Year of publication of FIRSTREF & \nodata & W11 \\
 MONTH\dotfill & Integer & Month of publication of FIRSTREF & \nodata & W11 \\
 PLANETDISCMETH\dotfill & String & Method of discovery of planet & \nodata & \ref{sec:disc} \\
@@ -623,7 +623,7 @@ ECC\dotfill & Float & Orbital eccentricity & -UL, -UPPER, etc. & W11 \\
 I\dotfill & Float & Orbital inclination in degrees & -UPPER, etc. & \ref{sec:orbit} \\
 OM\dotfill & Float & Argument of periastron in degrees & -UPPER, etc. & W11 \\
 BIGOM\dotfill & Float & Longitude of ascending node in degrees & -UPPER, etc. & \ref{sec:orbit} \\
-T0\dotfill & Double & Epoch of periastron in HJD\tablenotemark{d} & -UPPER, etc. & W11 \\
+T0\dotfill & Double & Epoch of periastron in HJD\tablenotemark{c} & -UPPER, etc. & W11 \\
 DVDT\dotfill & Float & Magnitude of linear trend in \mps\ day$^{-1}$ & -UPPER, etc. & W11 \\
 LAMBDA\dotfill & Float & Projected spin-orbit misalignment in degrees
 & -UPPER, etc. & \ref{sec:orbit} \\
@@ -633,7 +633,7 @@ TRANSIT\dotfill & Boolean & Is the planet known to transit? & -REF,-URL & W11 \\
 R\dotfill & Float & Radius of planet in Jupiter radii & -UPPER,
 etc. & W11 \\
 TT\dotfill & Float & Epoch of transit center in
-HJD\tablenotemark{d} & -UPPER, etc. & W11 \\
+HJD\tablenotemark{c} & -UPPER, etc. & W11 \\
 T14\dotfill & Float & Time of transit from first to fourth contact in days & -UPPER, etc. & W11 \\
 B\dotfill & Float & Impact parameter of transit & -UPPER, etc. & W11 \\
 AR\dotfill & Float & $(a/R_*)$ & -UPPER, etc. & W11 \\
@@ -674,7 +674,7 @@ SEDEPTH58\dotfill & Float & Secondary eclipse depth in
 SEDEPTH80\dotfill & Float & Secondary eclipse depth in
 \spitzer\ IRAC4 8.0 \micron\ band & -UPPER, etc. & \ref{sec:se} \\
 SET\dotfill & Double & Epoch of secondary eclipse center in
-HJD\tablenotemark{d} & -UPPER, etc. & \ref{sec:se} \\
+HJD\tablenotemark{c} & -UPPER, etc. & \ref{sec:se} \\
 %
 \sidehead{\textbf{Stellar Properties}}
 STAR\dotfill & String & Standard name for host star & \nodata & W11 \\
@@ -716,17 +716,20 @@ HR\dotfill & Integer & Bright Star Catalog number of star & \nodata & W11 \\
 SAO\dotfill & Long Integer & SAO catalog number of star & \nodata & W11 \\
 %
 \enddata
-\tablenotetext{a}{Fields in bold are updates or new additions from
-  \cite{Wright2011}. See Section~\ref{sec:update} for more details.}
-\tablenotetext{b}{-UPPER etc. means ``-UPPER, -LOWER, U-, -REF, -URL",
-where ``-" stands for the name of the field listed in the first
-column. They are... See Section~\ref{sec:unc} and \ref{sec:ref} for
-more details. -UL stands for upper limits for the fields (see
-Section~\ref{sec:unc} for details).}
-\tablenotetext{c}{Originally as other commonly used name for star in \cite{Wright2011};
-  changed to other commonly used name for planet.}
-\tablenotetext{d}{The same as in \cite{Wright2011}, HJD/BJD etc.\ are
-  still not consistent.}
+\tablenotetext{a}{``-UPPER etc." means ``-UPPER, -LOWER, U-, -REF,
+  -URL", where ``-" stands for the name of the field listed in the
+  first column. These fields store the uncertainties and
+  references. See Section~\ref{sec:unc} and \ref{sec:ref} for more
+  details. ``-UL" stands for upper limits for the fields (see
+  Section~\ref{sec:unc} for details).}
+\tablenotetext{b}{Fields that remain unchanged are referenced to
+  \cite{Wright2011}, abbreviated as ``W11". Fields that are new or
+  revised since \cite{Wright2011} are referenced to the relevant
+  section in this paper.}
+\tablenotetext{c}{As noted in \cite{Wright2011}, we do not report the
+  epoches of periastron, transit center, and secondary eclipse center
+  all consistently as HJD. We simply record what the original articles
+  report, which are in varies formats (JD, BJD, HJD etc.).}
 \end{deluxetable}
 
 
