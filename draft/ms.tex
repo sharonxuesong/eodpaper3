@@ -184,15 +184,37 @@ Exoplanets Data Explorer\footnote{See \url{http://exoplanets.org}.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Updates on the EOD}\label{sec:update}
 
-The scope of the EOD has not been changed much but there were two major changes in the EOD. Previously, we only included exoplanets orbiting the `normal stars', but now we are not limiting the type of the host star (e.g. we included exoplanets orbiting neutron stars). Furthermore, we only had exoplanets that were discovered by RV and transit but as more exoplanets are discovered by various methods such as timing are now in the EOD. For the future, exoplanets discovered by other methods with good orbital parameters may also be included in the EOD. 
+The scope of the EOD has not been changed much but there were two
+major changes in the EOD. Previously, we only included exoplanets
+orbiting the `normal stars', but now we are not limiting the type of
+the host star (e.g. we included exoplanets orbiting neutron
+stars). Furthermore, we only had exoplanets that were discovered by RV
+and transit but as more exoplanets are discovered by various methods
+such as timing are now in the EOD. For the future, exoplanets
+discovered by other methods with good orbital parameters may also be
+included in the EOD.
 
-The rest of the criteria remain unchanged. We still require the planets to be smaller than 24 \mjup\ and with robust detection (though not strictly quantitative; see \citealt{Wright2011}).  
+The rest of the criteria remain unchanged. We still require the
+planets to be smaller than 24 \mjup\ and with robust detection (though
+not strictly quantitative; see \citealt{Wright2011}).
 
-The purpose of the EOD has not changed; we aim to provide the readers with comprehensive database for exoplanets that are discovered up-to-date. However, we do not report \textit{all} the announced exoplanets as we are not trying to do ``an encyclopedic presentation of every claimed detection of an exoplanet" \citep{Wright2011}.
+The purpose of the EOD has not changed; we aim to provide the readers
+with comprehensive database for exoplanets that are discovered
+up-to-date. However, we do not report \textit{all} the announced
+exoplanets as we are not trying to do ``an encyclopedic presentation
+of every claimed detection of an exoplanet" \citep{Wright2011}.
 
 We only describe new additions and revised fields here, but list all
-fields in Table~\ref{tab:par}. We divide the fields into categories in consistency with the individual planet page
-on exoplanets.org. Some fields are not explicitly included on the page (e.g., the URLs), but are explicitly listed in the downloadable {\tt .csv} file.\footnote{At \url{http://exoplanets.org/csv-files/exoplanets.csv}.} Though we focus on EOD in this section, the fields apply to all planets on exoplanets.org. For the definition of orbital elements see \cite{Wright2013} . 
+fields in Table~\ref{tab:par}. We divide the fields into categories in
+consistency with the individual planet page on
+exoplanets.org. Figure~\ref{fig:individual} is an example of
+individual planet page. Some fields are not explicitly included on the
+page (e.g., the URLs), but are explicitly listed in the downloadable
+{\tt .csv} file.\footnote{At
+  \url{http://exoplanets.org/csv-files/exoplanets.csv}.} Though we
+focus on EOD in this section, the fields apply to all planets on
+exoplanets.org. For the definition of orbital elements see
+\cite{Wright2013} .
 %------------------------------------------------------------------------------
 \subsection{Discovery and References}\label{sec:disc}
 
@@ -202,12 +224,16 @@ fields since \cite{Wright2011} below.
 
 {\bf DISCMETH} field previously reported the method of discovery,
 which was either radial velocity or transit. We have replaced DISCMETH
-with {\bf PLANETDISCMETH} and \mbox{{\bf STARDISCMETH}} to better report how
-the host star and the planet are detected. PLANETDISCMETH and STARDISCMETH are the fields that report the discovery methods for the planet and the first planet around the host star, respectively. Furthermore, they now have values of one of the following: radial velocity, transit, imaging,
-microlensing, timing, or astrometry.
+with {\bf PLANETDISCMETH} and \mbox{{\bf STARDISCMETH}} to better
+report how the host star and the planet are detected. PLANETDISCMETH
+and STARDISCMETH are the fields that report the discovery methods for
+the planet and the first planet around the host star,
+respectively. Furthermore, they now have values of one of the
+following: radial velocity, transit, imaging, microlensing, timing, or
+astrometry.
 
-{\bf MONTH} field reports the month in integer when the
-peer-reviewed paper is accepted to the ApJ. 
+{\bf MONTH} field reports the month in integer when the peer-reviewed
+paper is accepted to the ApJ.
 
 {\bf KEPID} stands for KEPler ID which is the integer number assigned
 for a Kepler host star. KEPID is only available for the unconfirmed
@@ -474,8 +500,17 @@ NASA's Exoplanet Archive \citep{Akeson2013}.
 
 
 %------------------------------------------------------------------------------
-ZZZ Figure: Figure of single planet page, to show updated transit
-parameters and RV curves etc.?
+% Figure: single planet page
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\textwidth]{../fig/wasp-14b.eps}
+\caption{An example page for an individual exoplanet (WASP-14b in this
+  case). The numbers listed in each field contain links to the
+  reference on ADS. In this example for WASP-14b, we provide the plot
+  for the phased RVs, but we are yet to implement such feature for all
+  planets with available RV data.}
+\label{fig:individual}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -495,10 +530,11 @@ KOIs listed in our table include three Kepler data releases (as of
 March 2014), and we always keep up with the most up-to-date
 releases. The original data are from the NASA Exoplanet Archive.
 
-To display the KOIs in the EDE table, check the ``Kepler" option on the
-upper left of the table (default selection only includes ``Orbit
+To display the KOIs in the EDE table, check the ``Kepler" option on
+the upper left of the table (default selection only includes ``Orbit
 Database", i.e.~the EOD, and ``Other"). They can also be displayed on
-plots with the interactive plotting tool of EDE.
+plots with the interactive plotting tool of EDE (see
+Figure~\ref{fig:koi} for an example plot).
 
 % Other Planets
 ZZZ Ask Jason about their criteria. \\ Second, we now also include
@@ -539,9 +575,23 @@ parameters and are included in the EOD.
 ZZZ (1) We have a list of criteria for 'robustly detected' imaging planets (on our methodology web page) - do we have similar lists of criteria regarding 'robust detections' for microlensing, timing, and astrometry planets?
 
 No, not really.  As I think we discuss in the last EOD paper (check) we relax some conditions for transiting planets (we don't have to have a measured RV amplitude, for instance).  There have been no astrometric planets.  Timing planets must have dynamically stable orbits and, ideally, show multiple complete orbits (see Jackson Norris's paper for a discussion of difficulties with timing planets, also cite recent papers by Rob Wittenmyer).  In general, we accept microlensing planets that are appear in refereed journals as having unambiguously planetary masses.
- 
-ZZZ Figure: some comparison figures of Kepler candidate properties vs. EOD
-planet properties, such as mass-period, mass-radius?
+
+
+%------------------------------------------------------------------------------
+% Figure: single planet page
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\textwidth]{../fig/mass-per-color.eps}
+\caption{An example plot produced by the interactive plotting tools of
+  EDE on exoplanets.org. The $x$-axis is planet orbital period in days
+  and $y$-axis is planet mass in Earth's mass. The exoplanet samples
+  being plotted are the ones in the EOD, including transit planets
+  (blue large dots), RV planets (red triangles), and timing planets
+  (magenta squares). The KOIs are plotted as black small dots, and
+  their masses are calculated using their radii based on mass-radius
+  relations from the literature (see Section~\ref{sec:orbit}).}
+\label{fig:koi}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
