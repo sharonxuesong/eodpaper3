@@ -506,7 +506,7 @@ NASA's Exoplanet Archive \citep{Akeson2013}.
 \includegraphics[width=\textwidth]{../fig/wasp-14b.eps}
 \caption{An example page for an individual exoplanet (WASP-14b in this
   case). The numbers listed in each field contain links to the
-  reference on ADS. In this example for WASP-14b, we provide the plot
+  reference on NASA ADS. In this example for WASP-14b, we provide the plot
   for the phased RVs, but we are yet to implement such feature for all
   planets with available RV data.}
 \label{fig:individual}
@@ -537,7 +537,7 @@ plots with the interactive plotting tool of EDE (see
 Figure~\ref{fig:koi} for an example plot).
 
 % Other Planets
-ZZZ Ask Jason about their criteria. \\ Second, we now also include
+Second, we now also include
 robustly detected imaging, microlensing, and timing planets, and our
 criteria for a `robust detection' are the following (as set by the
 QUACBED):
@@ -558,9 +558,15 @@ QUACBED):
   be later found to be unbound or a chance alignment.
 
 \end{enumerate}
-\item Microlensing planets
+\item Microlensing planets:\\
+We accept microlensing planets that appear in refereed journals as
+having unambiguously planetary masses (planet host mass ratio,
+$q<0.024$). In cases of ambiguity, we consult with QUACBED.  
 
-\item Timing planets
+\item Timing planets:\\
+ Timing planets must have dynamically stable orbits and, ideally, show
+ multiple complete orbits (e.g., see \citealt{Wittenmyer2012},
+ \citealt{Horner2012}, and \citealt{Wittenmyer2013}). 
 
 \end{itemize}
 Some of the exoplanets primarily detected by these methods do not have
@@ -571,10 +577,8 @@ table. As of March 2014, no microlensing or imaging planets are in the
 EOD, while several timing exoplanets have well-determined orbital
 parameters and are included in the EOD.
 
-
-ZZZ (1) We have a list of criteria for 'robustly detected' imaging planets (on our methodology web page) - do we have similar lists of criteria regarding 'robust detections' for microlensing, timing, and astrometry planets?
-
-No, not really.  As I think we discuss in the last EOD paper (check) we relax some conditions for transiting planets (we don't have to have a measured RV amplitude, for instance).  There have been no astrometric planets.  Timing planets must have dynamically stable orbits and, ideally, show multiple complete orbits (see Jackson Norris's paper for a discussion of difficulties with timing planets, also cite recent papers by Rob Wittenmyer).  In general, we accept microlensing planets that are appear in refereed journals as having unambiguously planetary masses.
+ZZZ mention there have been no astrometry planets so far, but we do
+plan to include them if any robust detections occur.
 
 
 %------------------------------------------------------------------------------
@@ -603,10 +607,24 @@ Onsi? Essential updates on the website.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Summary and Future Work}\label{sec:conclusion}
 
-We have had two major updates since \cite{Wright2011}. We included Kepler planet candidates and other planets on exoplanets.org. Although they are not included in the EOD, we reported them on our website to help the users explore them and use them easily. We also have added some new fields, removed obsolete fields and revised them as necessary. 
+We have had two major updates since \cite{Wright2011}. First, we
+changed the scope of the EOD. We removed the limit on the type of the
+host star. We included the planets discovered by various methods
+(e.g. timing) in the EOD. We also have added some new fields, removed
+obsolete fields and revised them as necessary.
 
-ZZZ Any planned future improvements and updates?
-I hesitate to promise here, lest we overpromise.  We do hope to include images of directly imaged planets (where allowed under copyright law) and perhaps light curves for transits. 
+Second, we included Kepler planet candidates and other planets on
+exoplanets.org. Although they are not included in the EOD, we reported
+them on our website to help the users explore them and use them
+easily.
+
+ZZZ add summary for Onsi's section.
+
+
+ZZZ Any planned future improvements and updates?  I hesitate to
+promise here, lest we overpromise.  We do hope to include images of
+directly imaged planets (where allowed under copyright law) and
+perhaps light curves for transits.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -614,7 +632,8 @@ I hesitate to promise here, lest we overpromise.  We do hope to include images o
 
 NSF funding?
 
-SXW acknowledges support from PSARC.
+SXW acknowledges support from PSARC. This research has made use of
+NASA's Astrophysics Data System Bibliographic Services (ADS). 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
