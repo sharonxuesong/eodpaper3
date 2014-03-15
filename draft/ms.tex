@@ -88,7 +88,7 @@ Since the launch of NASA's \kepler\ mission \citep{Borucki2010}, the
 number of confirmed exoplanets has increased from about 300 to over
 1490 as of March 2014 (exoplanets.org). \kepler\ contributed to a vast
 majority of these new discoveries ($> 800$) while providing an
-additional sample of over 3000 exoplanet candidates(\kepler\ Objects
+additional sample of over 3000 exoplanet candidates (\kepler\ Objects
 of Interest, KOIs; e.g.~\citealt{Batalha2013}). The transit method has
 surpassed the radial velocity (RV) method and become the most fruitful
 mean for detecting exoplanets. Meanwhile, great promises lie within
@@ -104,10 +104,10 @@ Transiting Exoplanet Survey Satellit, TESS, \citealt{Ricker2010}).
 This paper describes the continuing efforts since \cite{Butler2006}
 and \cite{Wright2011} to maintain the Exoplanet Orbit Database (EOD)
 and the Exoplanets Data Explorer (EDE) to keep track of the exoplanet
-discoveries and catalog their orbital parameters and host star
+discoveries and to catalog their orbital parameters and host star
 properties. There are also other entities devoted to this effort,
 including the Extrasolar Planets Encyclopaedia\footnote{See
-  \url{http://exoplanet.eu}.}  \citep{Schneider2011}, the NASA
+  \url{http://exoplanet.eu}.}  \citep{Schneider2011} and the NASA
 Exoplanet Archive\footnote{See
   \url{http://exoplanetarchive.ipac.caltech.edu}.}
 \citep{Akeson2013}. As described in \cite{Wright2011}, the EOD is
@@ -129,17 +129,19 @@ visited exoplanet databases, with over $47,000$ visitors in 2013
 according to Google Analytics.
 
 % updates on EOD and the website
-Since \cite{Wright2011}, the EOD has expanded its scope and we now do
+Since \cite{Wright2011}, the EOD has expanded its scope: we now do
 not require the host star of an exoplanet to be a normal star (e.g.,
 exoplanets around pulsars are now included). It has also ingested more
-parameters of the exoplanet systems and host stars, and some
+parameters describing the exoplanet systems and their host stars, and some
 parameters are revised or deleted. We describe the updates with the
-EOD in Section~\ref{sec:update}. We also describe the updates to the
-hosting website, exoplanets.org. The EDE at exoplanets.org has
+EOD in Section~\ref{sec:update}. The EDE at exoplanets.org has also
 expanded its scope and now includes the \kepler\ exoplanet candidates
 (KOIs). We describe these changes in Section~\ref{sec:kepler}. The
-website has also gone through major back-end changes since
-\cite{Wright2011}, which is described in Section~\ref{sec:website}.
+website exoplanets.org has gone through major back-end changes since
+\cite{Wright2011}, which is described in Section~\ref{sec:website}. We
+summarize the updates and possible future improvements in
+Section~\ref{sec:summary}. 
+
 
 %------------------------------------------------------------------
 % RECYCLE BIN
@@ -184,111 +186,94 @@ Exoplanets Data Explorer\footnote{See \url{http://exoplanets.org}.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Updates on the EOD}\label{sec:update}
 
-The scope of the EOD has not been changed much but there were two
-major changes in the EOD. Previously, we only included exoplanets
-orbiting the `normal stars', but now we are not limiting the type of
-the host star (e.g. we included exoplanets orbiting neutron
-stars). Furthermore, we only had exoplanets that were discovered by RV
-and transit but as more exoplanets are discovered by various methods
-such as timing are now in the EOD. For the future, exoplanets
-discovered by other methods with good orbital parameters may also be
-included in the EOD.
+The scope of the EOD has expanded, and there are two major changes
+from what was described in \cite{Wright2011}. Previously, we only
+included exoplanets orbiting the ``normal stars", but now we are not
+limiting the type of host stars (e.g. we included exoplanets orbiting
+neutron stars). Furthermore, in \cite{Wright2011}, we only had
+exoplanets that were discovered by the RV and transit methods in the
+EOD, but now we also have planets discovered via timing. For the
+future, exoplanets discovered by any other methods with robust
+detections and good orbital parameters will also be included in the
+EOD.
 
-The rest of the criteria remain unchanged. We still require the
-planets to be smaller than 24 \mjup\ and with robust detection (though
-not strictly quantitative; see \citealt{Wright2011}).
+The rest of the selection criteria for the EOD remain unchanged. We
+still require the planets to be smaller than 24 \mjup\ and to have
+robust detections and well-determined orbits (though these are not
+strictly quantitative; see Section~2 of \citealt{Wright2011}).
 
-The purpose of the EOD has not changed; we aim to provide the readers
-with comprehensive database for exoplanets that are discovered
-up-to-date. However, we do not report \textit{all} the announced
-exoplanets as we are not trying to do ``an encyclopedic presentation
-of every claimed detection of an exoplanet" \citep{Wright2011}.
+The purpose of the EOD has not changed: we aim to provide the readers
+with a comprehensive, reliable, and up-to-date database of exoplanets
+with good orbital parameters and host star properties. We do not
+report \textit{all} the announced exoplanets as we are not trying to
+do ``an encyclopedic presentation of every claimed detection of an
+exoplanet" \citep{Wright2011}.
 
-We only describe new additions and revised fields here, but list all
-fields in Table~\ref{tab:par}. We divide the fields into categories in
+In the following subsections, we describe the newly added and revised
+fields since \cite{Wright2011}, but list all fields in
+Table~\ref{tab:par}. We divide the fields into categories in
 consistency with the individual planet page on
 exoplanets.org. Figure~\ref{fig:individual} is an example of
-individual planet page. Some fields are not explicitly included on the
-page (e.g., the URLs), but are explicitly listed in the downloadable
-{\tt .csv} file.\footnote{At
-  \url{http://exoplanets.org/csv-files/exoplanets.csv}.} Though we
-focus on EOD in this section, the fields apply to all planets on
-exoplanets.org. For the definition of orbital elements see
-\cite{Wright2013} .
+individual planet page. Some fields are not explicitly tabulated on
+the page (e.g., the URLs), but are explicitly listed in the
+downloadable {\tt .csv} file (see Section~\ref{sec:intro}). Though we
+focus on the EOD in this section, the fields apply to all planets on
+exoplanets.org. We follow the definition of orbital elements in
+\cite{Wright2013} unless indicated otherwise.
+
+
 %------------------------------------------------------------------------------
 \subsection{Discovery and References}\label{sec:disc}
 
 We report general information of when, by whom and how the planets
-were discovered and provide the references. We describe the added
-fields since \cite{Wright2011} below.
+were discovered and provide the references. We describe the added or
+revised fields since \cite{Wright2011} below.
 
 {\bf DISCMETH} field previously reported the method of discovery,
 which was either radial velocity or transit. We have replaced DISCMETH
 with {\bf PLANETDISCMETH} and \mbox{{\bf STARDISCMETH}} to better
-report how the host star and the planet are detected. PLANETDISCMETH
-and STARDISCMETH are the fields that report the discovery methods for
-the planet and the first planet around the host star,
-respectively. Furthermore, they now have values of one of the
-following: radial velocity, transit, imaging, microlensing, timing, or
-astrometry.
+report how exoplanet systems and individual exoplanets are first
+discovered. PLANETDISCMETH reports the discovery method for the
+planet, wihle STARDISCMETH reports the discovery method for the first
+discovered planet around the host star. Furthermore, they are stored
+in string formats and have values of one of the following: RV,
+Transit, Imaging, Microlensing, Timing, or Astrometry.
 
-{\bf MONTH} field reports the month in integer when the peer-reviewed
-paper is accepted to the ApJ.
+{\bf MONTH} field reports the month in integer of when the
+peer-reviewed paper is accepted by the journal.
 
-{\bf KEPID} stands for KEPler ID which is the integer number assigned
+{\bf KEPID} stands for KEPler ID, which is the integer number assigned
 for a Kepler host star. KEPID is only available for the unconfirmed
 KOI which we import directly from the Exoplanet Archive. Therefore,
 none of the EOD planets and the confirmed Kepler planets has KEPID.
 
-{\bf KOI} stands for Kepler Objects of Interest which is a star with
-transit signals detected by \kepler\ but have not been confirmed to
-due to exoplanets. The KOI field contains a floating point number that
-consist of a whole number designated to the host star followed by a
-decimal number denoting a candidate planet. For example, KOI 102 is a
-star suspected to host two exoplanets and KOI 102.01 is the inner
-planet candidate and KOI 102.02 is the outer one. Once a candidate is
-confirmed, the NAME field of the planet is replaced by the official
-\kepler\ ID ('Kepler' followed by a hyphen, an integer and a
-letter). The KOI number is used as OTHERNAME. None of the KOIs are in
-the EOD and for more information see Section~\ref{sec:kepler}.
+{\bf KOI} stands for Kepler Objects of Interest, which is an object
+with transit signals detected by \kepler\ but have not been confirmed
+to be due to exoplanets. The KOI field contains a floating point
+number that consist of a whole number designated to the host star
+followed by a decimal number denoting a candidate planet. For example,
+KOI 102 is a star suspected to host two exoplanets, and KOI 102.01 is
+the inner planet candidate and KOI 102.02 is the outer one. Once a
+candidate is confirmed, the NAME field of the planet is replaced by
+the official \kepler\ ID (``Kepler" followed by a hyphen, an integer
+and an lower case letter). The KOI number is then used as
+OTHERNAME. None of the KOIs are in the EOD. For more information, see
+Section~\ref{sec:kepler}.
 
-\begin{comment}
-\textit {Sharon: you need to say what KOI stores. When writing each
-  field, keep in mind you need to cover the following so that the
-  reader will completely understand: (1) what the field stands for
-  (e.g., in case of an abbreviation like KOI); (2) what the field
-  physically means, like `KOI' means planet candidates that have
-  transit signals as detected by \kepler\ but have not been confirmed,
-  and make sure to be thorough at what you say -- sometimes things are
-  not that obvious to an outsider reader, e.g., think if a cosmologist
-  would understand what you're saying when reading it; (3) what the
-  field actually contains, e.g. KOI contains the KOI number designated
-  by the \kepler\ team (right?), it is a floating point number, and
-  sometimes maybe even worth giving an example, e.g. KOI 30.1 or
-  something...; (4) why we added this new field, if this information
-  is helpful, or if it's a revised field since \cite{Wright2011}, what
-  is changed. Also, use \kepler\ (which is a defined symbol in our
-  ms.tex file), instead of typing out Kepler, since you need italic.
-  Don't be afraid to write more! Being concise is important, but it's
-  always easier to trim down things than to add things on, especially
-  for a documentation type of paper like this. Let's be thorough at
-  first, then try to reach optimal conciseness.}
- \end{comment}
-
-%KDE: obselete field! Detele from the table.
-
-{\bf EOD} is a flag which indicates whether an exoplanet has
-well-characterized orbital parameters (e.g. period (PER)). EOD equals
-1 means the exoplanet is in the EOD. We added this field because
-exoplanets.org now also includes robustly discovered planets that do
-not have well-characterized orbits, and also \kepler\ planet
-candidates (see Section~\ref{sec:kepler} for more details).
+{\bf EOD} is a flag which indicates whether an exoplanet is included
+in the EOD for having robust detection and well-characterized orbital
+parameters such as the orbital period (PER). EOD equals 1 means the
+exoplanet is in the EOD. We added this field because exoplanets.org
+now also includes robustly discovered planets that do not have
+well-characterized orbits, and also \kepler\ planet candidates (see
+Section~\ref{sec:kepler} for more details).
 
 {\bf MICROLENSING, IMAGING, TIMING and ASTROMETRY} are flags which
 indicate that a planet detected via theses methods. For example,
-MICROLENSING $=$ 1 means the planet is detected by a microlensing
+MICROLENSING $=$ 1 means the planet is detected in a microlensing
 event. However, we require the detection to be robust, as determined
-by the QUAlity Control Board of the Exoplanet Database, QUACBED.
+by the QUAlity Control Board of the Exoplanet Database, QUACBED (see
+Section~\ref{sec:kepler}. 
 
 
 %------------------------------------------------------------------------------
@@ -605,7 +590,7 @@ Onsi? Essential updates on the website.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Summary and Future Work}\label{sec:conclusion}
+\section{Summary and Future Work}\label{sec:summary}
 
 We have had two major updates since \cite{Wright2011}. First, we
 changed the scope of the EOD. We removed the limit on the type of the
