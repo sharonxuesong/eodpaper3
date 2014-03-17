@@ -201,7 +201,10 @@ EOD.
 The rest of the selection criteria for the EOD remain unchanged. We
 still require the planets to be smaller than 24 \mjup\ and to have
 robust detections and well-determined orbits (though these are not
-strictly quantitative; see Section~2 of \citealt{Wright2011}).
+strictly quantitative; see Section~2 of \citealt{Wright2011}). When
+new evidence comes to light and we are no longer confident about the
+planet, we remove it from EOD, even if the evidence is not peer
+reviewed. 
 
 The purpose of the EOD has not changed: we aim to provide the readers
 with a comprehensive, reliable, and up-to-date database of exoplanets
@@ -274,7 +277,7 @@ indicate that a planet detected via theses methods. For example,
 MICROLENSING $=$ 1 means the planet is detected in a microlensing
 event. However, we require the detection to be robust, as determined
 by the QUAlity Control Board of the Exoplanet Database, QUACBED (see
-Section~\ref{sec:kepler}. 
+Section~\ref{sec:kepler}). 
 
 
 %------------------------------------------------------------------------------
@@ -294,51 +297,54 @@ MSINI) of the planets. We now report the mass as well when it is
 available. For example, if a planet is discovered by microlensing, we
 report the actual mass of the planet according to the literature. If a
 planet has both radial velocity and transit measurements, we calculate
-the mass from the minimum mass and the orbital inclination. MASS is
-set to MSINI if the orbital inclination is not given and the MASSREF
-is set to ``Set to MSINI; I unknown''.  
+the mass from the minimum mass $m\sin{i}$ and the orbital inclination
+$i$. MASS is set to MSINI if the orbital inclination is not given and
+the reference for MASS, MASSREF is set to ``Set to MSINI; I unknown''.
 
 For KOIs without MSINI measured, we calculate their mass using the
 mass-radius relation from the literatures. For KOIs with $R<4\rearth$,
-we use \cite{Weiss2014} , with $4\rearth<R<6\rearth$, we use
-\cite{Lissauer2011}, and for KOIs with $6\rearth<R<11.7\rearth$ we use
+we follow \cite{Weiss2014}; for $4\rearth<R<6\rearth$, we follow
+\cite{Lissauer2011}; and for $6\rearth<R<11.7\rearth$ we follow
 \cite{Mordasini2012}.  
 
 {\bf SEP} is the projected separation on the sky between the host star
 and the planet in the unit of AU. For directly imaged planets, the
-literatures give the projected separation and we report this value.
-If SEP is not directly measured but the semi-major (A) is available,
-then SEP is set to A with the reference ``Set to A''. For the cases
-where only the projected separation is given such as imaged planets,
-then the semi-major axis is set to SEP.
+literatures usually report the projected separation and we report the
+value accordingly.  If SEP is not directly measured but the semi-major
+axis ($a$, A) is available, then SEP is set to A with its reference,
+SEPREF, set to ``Set to A''. For the cases where only the projected
+separation is given but A is not available (e.g., the directly imaged
+planets), then A is set to SEP.
 
 {\bf I} is the orbital inclination. Previously, only transiting
-systems have I measured but now, sometimes, non-transiting systems
-have I's reported too. For example, one microlensing system has I
-measured (OGLE-2006-BLG-109L; \citealt{Bennet2010}).  
+systems have I measured, but now some non-transiting systems
+have I's reported too. For example, one microlensing system,
+OGLE-2006-BLG-109L, has I measured \citep{Bennett2010}.
 
 {\bf BIGOM} is the longitude of the ascending node ($\Omega$) in the
-unit of degree and for now this is only measured for some of the
+unit of degree. At the moment, this is only measured for some of the
 directly imaged planets, which are not in the EOD.
 
 {\bf LAMBDA} is the projected spin-orbit misalignment ($\lambda$) in
-the unit of degree. We report the projected spin-orbit misalignment of
-transiting systems, which is measured by, e.g., the
-Rossiter-McLaughlin effect \citep[e.g.,][]{Winn2005} or planet
-transiting star spots \citep[e.g.,][]{Sanchis-Ojeda2012}. $\lambda$ is
-introduced because the true spin-orbit angle ($\phi$), defined as the
-angle between the stellar spin axis and the orbital axis, is normally
-not directly measurable. We follow the definition of $\lambda$ in
-\cite{Fabrycky2009} where the coordinates are defined as follows; the
+the plane of the sky in the unit of degree. At the moment, $\lambda$
+values are only available for the transiting systems, which are
+measured by either the Rossiter-McLaughlin effect
+\citep[e.g.,][]{Winn2005} or planet transiting star spots
+\citep[e.g.,][]{Sanchis-Ojeda2012}. $\lambda$ is introduced because
+the true spin-orbit angle ($\phi$), defined as the angle between the
+stellar spin axis and the orbital axis, is normally not directly
+measurable. We follow the definition of $\lambda$ in
+\cite{Fabrycky2009} where the coordinates are defined as follows: the
 $z$-axis points toward the observer, the $x$-axis points along the
 intersection of the sky plane and the planet's orbital plane with the
 ascending node of the planet having $x<0$, and the $y$-axis completes
 a right handed-triad. $\lambda$ is measured clockwise on the sky from
 the $y$-axis to the projected stellar rotational axis. $\lambda$ is
-not a newly added field but we describe it here because $\lambda$'s
-were not reported consistently since some literatures report $\beta =
--\lambda$ instead. We sorted these cases out and made sure that our
-$\lambda$'s are following the definition of \cite{Fabrycky2009}.
+not a newly added field but we describe it here because it was not
+reported consistently since some literatures report the ``projected
+spin-orbit misalignment" as $\beta = -\lambda$ instead. We have sorted
+these cases out and made sure that our $\lambda$'s are following the
+definition of \cite{Fabrycky2009}.
 
 {\bf MASSREF} and {\bf MASSURL} fields were used to report the
 reference and the URL of stellar mass but now they are used for planet
