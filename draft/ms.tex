@@ -325,9 +325,7 @@ and the planet in the unit of AU. For directly imaged planets, the
 literatures usually report the projected separation and we report the
 value accordingly.  If SEP is not directly measured but the semi-major
 axis ($a$, A) is available, then SEP is set to A with its reference,
-SEPREF, set to ``Set to A''. For the cases where only the projected
-separation is given but A is not available (e.g., the directly imaged
-planets), then A is set to SEP.
+SEPREF, set to ``Set to A''. 
 
 {\bf I} is the orbital inclination. Previously, only transiting
 systems have I measured, but now some non-transiting systems
@@ -383,16 +381,17 @@ by taking square of RR but we do not calculate RR from DEPTH.
 \subsection{Secondary Eclipse}\label{sec:se}
 
 We have added an entirely new set of fields for the secondary
-eclipse. Previously, due to the limits of instrumentation, there were
-not much available measured secondary eclipse depths. Since
-\cite{Wright2011}, as many different surveys have been launched,
-secondary eclipse depths at multiple bands are now
-available. Therefore, we added this entire new set of fields since.
+eclipse. Previously, due to the limits of instrumentation and limited
+sample of exoplanets, there were not much secondary eclipse depth data
+available. Since \cite{Wright2011}, as many different surveys have
+been launched, more and more secondary eclipse depths at multiple
+bands become available for more and more planets. Therefore, we added
+this entire new set of fields.
 
 {\bf SE} flag indicates whether the system has detected secondary
 eclipse in any of the two Micron All-Sky Survey (2MASS;
-\citealt{Skrustskie2006}) $J$, $H$, and $K_s$, Kepler photometry band,
-and 4 Spitzer IRAC bands. SE is a boolean and being true indicates the
+\citealt{Skrutskie2006}) $J$, $H$, and $K_s$, Kepler photometry band,
+and 4 Spitzer IRAC bands. SE is a boolean and SE $=$ 1 indicates the
 system has at least one detected secondary eclipse.
 
 {\bf SEDEPTHX} whereas X stands for one of J H KS KP 36 45 58 80:
@@ -404,7 +403,7 @@ the depth measured in the \kepler\ photometry band which ranges from
 400 to 865~nm. The rest four stand for the Spitzer bands centered at
 3.6~\micron, 4.5~\micron, 5.8~\micron, and 8.0~\micron.
 
-{\bf SET} is the epoch of secondary eclipse center in HJD.
+{\bf SET} is the epoch of secondary eclipse center (normally in HJD).
 
 %------------------------------------------------------------------------------
 \subsection{Stellar Properties}\label{sec:stellarprop}
@@ -425,79 +424,81 @@ the planetary system and is reported in km/s.
 \subsection{Stellar Magnitudes}\label{sec:stellarmag}
 
 We provide the brightness of the host star measured in different
-wavelengths. We report optical magnitudes ($V$ and $B-V$), 2MASS $J$,
-$H$, and $K_s$ magnitudes and we added {\bf KP} since
+wavelengths. We report optical magnitude and color ($V$ and $B-V$),
+2MASS $J$, $H$, and $K_s$ magnitudes and we added {\bf KP} since
 \cite{Wright2011}, which is the stellar magnitude measured through the
-Kepler bandpass.
+\kepler\ bandpass.
 
 
 %------------------------------------------------------------------------------
 \subsection{Coordinates and Catalogs}\label{sec:coord}
-We report the coordinates of the host star as well as the stellar ID
-as designated by different catalogs.  We added {\bf DIST} since
-\cite{Wright2011}, which is the distance of the host star in the unit
-of pc. If only parallax (PAR) is given, we convert it to DIST and vice
-versa. If the literature does not report DIST or PAR, then we obtain
-PAR from the Hipparcos data set by \cite{van Leeuwen2009}.
 
-We naively propagate the error in PAR to DIST. 
+We report the coordinates of the host star as well as the host star's
+ID as designated by different catalogs.  We added {\bf DIST} since
+\cite{Wright2011}, which is the distance to the host star in the unit
+of pc. If only parallax (PAR) is given, we calculate DIST based on PAR
+and vice versa. If the literature does not report DIST or PAR, then we
+obtain PAR from the Hipparcos dataset by \cite{van Leeuwen2009}. We
+naively propagate the error in PAR to DIST and vice versa.
 
 %------------------------------------------------------------------------------
 \subsection{Uncertainties and Upper Limits}\label{sec:unc}
 
-We now report uncertainties for a certain field X as XUPPER, XLOWER
-and UX. XUPPER and XLOWER store the upper and lower 1$\sigma$
-uncertainties, and they are different when the error bars are
-asymmetric. UX contains the 1$\sigma$ uncertainty, and it equals to
-$({\rm XUPPER+XLOWER})/2$ in the case of asymmetric error bars. Fields
-that have XUPPER, XLOWER and UX are: all the orbital parameters except
-for TREND and FREEZE\_ECC flags; all the transit parameters except for
-TRANSIT flags; all the secondary eclipse fields except for SE flag;
-and all the stellar properties except for STAR, SPECREF and BINARY
-flag; and DIST and PAR.
+We have changed the way of reporting uncertainties, especially
+asymmetric error bars since \cite{Wright2011}. We now report
+uncertainties for a certain field X as XUPPER, XLOWER and UX. XUPPER
+and XLOWER store the upper and lower 1$\sigma$ uncertainties, and they
+are different when the error bars are asymmetric. UX contains the
+1$\sigma$ uncertainty, and it equals to $({\rm XUPPER+XLOWER})/2$ in
+the case of asymmetric error bars. Fields that have XUPPER, XLOWER and
+UX are: all the orbital parameters except for TREND and FREEZE\_ECC
+flags; all the transit parameters except for TRANSIT flags; all the
+secondary eclipse fields except for SE flag; and all the stellar
+properties except for STAR, SPECREF and BINARY flag; and DIST and PAR.
 
-We also report the upper limits (XUL) for planet mass (MSINI),
-eccentricity (ECC), and the velocity semi-amplitude (K) when the
-literatures report them. For example, the upper limits for ECC is
-reported when the orbit is circular, and the upper limits for K is
-reported when there is no radial velocity detection. If only upper
-limits are given, we set the field to 0, the uncertainty to half of
-the upper limit, and the upper limits to the upper limits. For
-example, if the literature reports the upper limit for ECC, then we
-put the value in ECCUL, set ECC to be 0, ECCUPPER to ECCUL, and UECC
+We also report the upper limits (XUL) for planet minimum mass (MSINI),
+eccentricity (ECC), and the radial velocity semi-amplitude (K) when
+the literatures report them. For example, the upper limits for ECC is
+reported when the orbit is consistent with a circular one, and the
+upper limits for K is reported when there is only upper-limit radial
+velocity detection. If only upper limits are given, we set the
+parameter field X to 0, the uncertainty XU to half of the upper limit,
+and the upper error bar XUPPER to the upper limits (same as XUL). For
+example, if the literature reports the upper limit for ECC, which we
+report in ECCUL, then we set ECC to be 0, ECCUPPER to ECCUL, and UECC
 to ECCUL/2. Since not all authors define the upper limits in the same
 way (e.g. 1$\sigma$ or some fixed percentile), we encourage the
-readers to refer to the literature for more information.
+readers to refer to the original references for more information.
+
 
 %------------------------------------------------------------------------------
 \subsection{References}\label{sec:ref}
 
 The fields {\bf XREF} and {\bf XURL} store the peer-reviewed reference
-and link to the publication for the field X.
-
-Previously, we only reported general references (e.g. FIRSTREF,
+and link to the publication for the field X. Previously, we only
+reported general references for certain sets of fields (e.g. FIRSTREF,
 FIRSTURL, ORBREF, and ORBURL), but now we report the references for
-most of the fields.
+most of the fields on an individual basis.
 
-RA, DEC, and PAR do not have references but they are from the
-\textit{Hipparcos} by \cite{van Leeuwen2009}. $B-V$ (BMV) field does
-not have a reference but the values are from the \textit{Hipparcos}
-catalog by \cite{Perryman1997}. The fields J H and KS do not have
-references as well but they are from the 2MASS
-\citep{Skrutskie2006}. The KP field do not have reference but the
-values are from the Exoplanet Archive \citep{Akeson2013}.
+The following fields do not have associated REF or URL fields, and we
+list their references here: RA, DEC, and PAR are from the
+\textit{Hipparcos} by \cite{van Leeuwen2009}; the $B-V$ (BMV) values
+are from the \textit{Hipparcos} catalog by \cite{Perryman1997};
+stellar magnitudes J H and KS are from the 2MASS
+\citep{Skrutskie2006}; the KP magnitudes are from the Exoplanet
+Archive \citep{Akeson2013}.
 
-SHK and RHK are poorly maintained fields and they unreferenced at the
-moment though we plan to include proper reference in the future. Most
-of the values are from \cite{Butler2006}.
+SHK and RHK are poorly maintained fields, and they unreferenced at the
+moment. We plan to include proper reference in the future. Most of the
+SHK and RHK values are from \cite{Butler2006}.
 
 %------------------------------------------------------------------------------
 \subsection{Removed Fields}\label{sec:removed}
 
-We removed 2 fields. 
+We removed 2 fields since \cite{Wright2011}:
 
 {\bf SPSTAR} field previously reported the stellar type of the host
-star but it is removed since it is not reliable. 
+star, but it is removed since it is not reliable. 
 
 {\bf NSTEDID} field reported ID of host star in NStED and now it is
 replaced by EANAME, which is the name of the star as appears on the
@@ -519,7 +520,8 @@ NASA's Exoplanet Archive \citep{Akeson2013}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Inclusion of the Kepler Planet Candidates and Other Exoplanets on Exoplanets.org}\label{sec:kepler}
+\section{Inclusion of the Kepler Planet Candidates \\
+  and Other Exoplanets on Exoplanets.org}\label{sec:kepler}
 
 Since \cite{Wright2011}, as more planets were robustly discovered by
 different methods other than radial velocity and transit, we have
@@ -610,15 +612,25 @@ Onsi? Essential updates on the website.
 \section{Summary and Future Work}\label{sec:summary}
 
 We have had two major updates since \cite{Wright2011}. First, we
-expanded the scope of the EOD. We removed the requirement for the host star being normal and included the planets discovered not only by RV and transit but also by various other methods (e.g. timing) in the EOD. We also have added some new fields, most notably, we now report the secondary eclipse depths. We removed obsolete fields and revised some fields as necessary. 
+expanded the scope of the EOD. We removed the requirement for the host
+star being normal and included the planets discovered not only by RV
+and transit but also by various other methods (e.g. timing) in the
+EOD. We also have added some new fields, most notably, we now report
+the secondary eclipse depths. We removed obsolete fields and revised
+some fields as necessary.
 
-Second, we included KOIs and other planets (the ones detected by microlensing, imaging, timing, and in the future, astrometry) on exoplanets.org. Although they are not included in the EOD, we reported them on our website since the users might find them useful for purposes of statistical studies and comparison.  
+Second, we included KOIs and other planets (the ones detected by
+microlensing, imaging, timing, and in the future, astrometry) on
+exoplanets.org. Although they are not included in the EOD, we reported
+them on our website since the users might find them useful for
+purposes of statistical studies and comparison.
 
 ZZZ add summary for Onsi's section.
 
 
-In the future, we hope to include images of directly imaged planets (where allowed under copyright law) and
-light curves for transits. We also plan to display RV curves whenever their RV data are available. 
+In the future, we hope to include images of directly imaged planets
+(where allowed under copyright law) and light curves for transits. We
+also plan to display RV curves whenever their RV data are available.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
