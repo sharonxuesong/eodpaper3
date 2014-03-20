@@ -83,17 +83,7 @@ parameters of all known robustly dected exoplanets reported in the peer-reviewed
 literature. The EOD can be navigated through the Exoplanet Data
 Explorer (EDE) Plotter and Table, available at exoplanets.org. We have
 ZZZ number of confirmed exoplanets as of March 2014.  
-The first complete documentation for the EOD and the EDE was \cite{Wright2011} and since then, we have expanded the scope of the EOD and incorporated the sample of over 3000  \kepler\ Objects of Interest, (KOIs) and other planets (the ones detected by microlensing, imaging, and timing) on exoplanets.org. We also added some new fields (e.g. the secondary eclipse depths), removed obsolete fields, and revised some fields as necessary.  
-
-What is the EOD?
-What does our  website do?
-What has been updated?
-Make sure to mention: data are available at exoplanets.org; KOIs are included.
-ZZZ Also mention the number of confirmed planets? and maybe the scope of the EOD (what are in our database)
-
-Make sure to mention: data are available at exoplanets.org; KOIs are
- included.  ZZZ Also mention the number of confirmed planets? and
- maybe the scope of the EOD (what are in our database)
+The first complete documentation for the EOD and the EDE was \cite{Wright2011} and since then, we have expanded the scope of the EOD. We also incorporated the sample of over 3000 \kepler\ Objects of Interest (KOIs) and other planets (the ones detected by microlensing, imaging, and timing) on exoplanets.org. We added some new fields (e.g. the secondary eclipse depths), removed obsolete fields, and revised some fields as necessary. The website also has gone through some backend changes. The users can download the whole dataset as a single .csv file from the front page of exoplanets.org.
 
 \end{abstract}  
 
@@ -614,8 +604,7 @@ ZZZ add SE plots from Ming
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Updates on the Website}\label{sec:website}
 
-Onsi? Essential updates on the website.
-
+The software stack powering the EOD remains largely unchanged from \cite{Wright2011}. The backend server is now written in Ruby, instead of Python, but the thin role it plays is largely unchanged.  The JavaScript frontend that runs on the browser has recently been optimized to support the larger datasets arising from the Kepler missions.  In particular, the EOD table now only renders cells that are visible on-screen.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -630,13 +619,10 @@ the secondary eclipse depths. We removed obsolete fields and revised
 some fields as necessary.
 
 Second, we included KOIs and other planets (the ones detected by
-microlensing, imaging, timing, and in the future, astrometry) on
+microlensing, imaging, timing, and in the future, astrometry but do not have well characterized orbits) on
 exoplanets.org. Although they are not included in the EOD, we reported
 them on our website since the users might find them useful for
 purposes of statistical studies and comparison.
-
-ZZZ add summary for Onsi's section.
-
 
 In the future, we hope to include images of directly imaged planets
 (where allowed under copyright law) and light curves for transits. We
