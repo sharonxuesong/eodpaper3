@@ -341,18 +341,20 @@ scale (see Section~\ref{sec:kepler}), MASS is set to MSINI if the
 orbital inclination is not known and the reference for MASS ({\bf
   MASSREF}) is set to ``Set to MSINI; I unknown''. 
 
-Also for plotting convenience, for transiting $Kepler$ planets without $m\sin{i}$ measured, we estimate their mass using 
-mass-radius relations from the literature. We follow a series of
-relations given by \footnote{As of the writing of this manuscript,
-  Kepler planet candidates on exoplanets.org ingested
-  from the Exoplanet Archive have their masses estimated in a slightly
-  different manner.  The Website uses the \citeauthor{Mordasini2012} relation for
-  planets with 6$\rearth < R < 1 $ \rjup, the \citeauthor{Lissauer2011}
-  relation between $1 \rearth < R < 6\rearth$, and $M = (1/R)^{0.306}$ in
-  Earth units for planets smaller than $\rearth$.  Updating this
-  relation to be consistent with the EOD (and updating the
-  corresponding MASSREF fields for these candidates) is a priority
-  upgrade for exoplanets.org.} 
+Also for plotting convenience, for transiting $Kepler$ planets without
+$m\sin{i}$ measured, we estimate their mass using mass-radius
+relations from the literature. We follow a series of relations given
+by \footnote{As of the writing of this manuscript, Kepler planet
+  candidates on exoplanets.org ingested from the Exoplanet Archive
+  have their masses estimated in a slightly different manner.  The
+  Website uses the \citeauthor{Mordasini2012} relation for planets
+  with 6$\rearth < R < b$ ($b \sim 11 \rearth$ as defined by
+  \citeauthor{Mordasini2012}), the \citeauthor{Lissauer2011} relation
+  between $1 \rearth < R < 6\rearth$, and $M = (1/R)^{0.306}$ in Earth
+  units for planets smaller than $\rearth$.  Updating this relation to
+  be consistent with the EOD (and updating the corresponding MASSREF
+  fields for these candidates) is a priority upgrade for
+  exoplanets.org.}
 
 \[
 M_p=
@@ -517,7 +519,8 @@ stars with Hipparcos numbers. We na\"ively translate the 1-$\sigma$ errors in ea
 uncertainties in the other.
 
 %------------------------------------------------------------------------------
-\subsection{Uncertainties and Upper Limits}\label{sec:unc}
+%\subsection{Uncertainties and Upper Limits}\label{sec:unc}
+\subsection{Uncertainties}\label{sec:unc}
 
 We have changed the way of reporting uncertainties, especially
 asymmetric ones since \cite{Wright2011}. We now report
@@ -529,6 +532,7 @@ that have XUPPER, XLOWER and UX are: all the orbital parameters, all
 the transit parameters, all the secondary eclipse fields, and all the stellar
 properties and DIST and PAR.
 
+\begin{comment}
 If only an upper limit is given, we set the parameter field X to 0,
 and store the upper limit value in the field XUL. The uncertainty UX
 is set to half of the upper limit, and the upper error bar XUPPER to
@@ -537,7 +541,7 @@ upper limit for ECC, which we report in ECCUL, then we set ECC to be
 0, ECCUPPER to ECCUL, and UECC to ECCUL/2.  We are currently
 implementing a more precise upper limit scheme (see
 Section~\ref{sec:summary}.)
-
+\end{comment}
 
 %------------------------------------------------------------------------------
 \subsection{References}\label{sec:ref}
@@ -697,7 +701,9 @@ EOD.
   $J$, $H$, and $K_{\rm s}$ bands. \kepler\ secondary eclipse measurements
   are labeled as solid black dots. A few representative planets are
   also annotated (a feature not offered by the EDE Plotter, but
-  trivially implemented by other image or presentation software).}
+  trivially implemented by other image or presentation software). The
+  planet name will appear when the user points the cursor at the
+  corresonding data point in the interactive plotting tools.}
 \label{fig:se}
 \end{figure}
 
@@ -875,7 +881,8 @@ HJD\tablenotemark{c} & -UPPER, etc. & W11 \\
 T14\dotfill & Float & Time of transit from first to fourth contact in days & -UPPER, etc. & W11 \\
 B\dotfill & Float & Impact parameter of transit & -UPPER, etc. & W11 \\
 AR\dotfill & Float & $(a/R_*)$ & -UPPER, etc. & W11 \\
-DEPTH\dotfill & Float & Transit depth, $(R_p/R_*)^2$ & -UPPER, etc. & W11 \\
+DEPTH\dotfill & Float & Transit depth, or $(R_p/R_*)^2$ when depth is
+not given & -UPPER, etc. & W11 \\
 DENSITY\dotfill & Float & Density of planet in g cc$^{-1}$ &
 -UPPER, etc. & W11 \\
 GRAVITY\dotfill & Float & $\log{g}$ (surface gravity) of planet in cgs unit &
