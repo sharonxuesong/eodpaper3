@@ -83,19 +83,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
 
-The Exoplanet Orbit Database (EOD) compiles orbital, transit, host star, and other
-parameters of robustly detected exoplanets reported in the peer-reviewed
-literature. The EOD can be navigated through the Exoplanet Data
-Explorer (EDE) Plotter and Table, available on the World Wide Web at exoplanets.org. The EOD contains data for 1490 confirmed exoplanets as of March 2014.  
-The EOD descends from a table in \citet{Butler2002} and the Catalog of Nearby Exoplanets \citep{Butler2006}, and the first complete documentation for the EOD and the EDE was presented in 
-\cite{Wright2011}. In this work, we describe our work since then.  We have expanded the scope of the
-EOD to include secondary eclipse parameters, asymmetric uncertainties,
-and expanded the EDE to include
-the sample of over 3000 \kepler\ Objects of Interest (KOIs), and other
-real planets without good orbital parameters (such as many of those
-those detected by microlensing and imaging.) Users can download the
-latest version of the entire EOD as a single comma separated value
-file from the front page of exoplanets.org.  
+The Exoplanet Orbit Database (EOD) compiles orbital, transit, host
+star, and other parameters of robustly detected exoplanets reported in
+the peer-reviewed literature. The EOD can be navigated through the
+Exoplanet Data Explorer (EDE) Plotter and Table, available on the
+World Wide Web at exoplanets.org. The EOD contains data for 1492
+confirmed exoplanets as of July 2014.  The EOD descends from a table
+in \citet{Butler2002} and the Catalog of Nearby Exoplanets
+\citep{Butler2006}, and the first complete documentation for the EOD
+and the EDE was presented in \cite{Wright2011}. In this work, we
+describe our work since then.  We have expanded the scope of the EOD
+to include secondary eclipse parameters, asymmetric uncertainties, and
+expanded the EDE to include the sample of over 3000 \kepler\ Objects
+of Interest (KOIs), and other real planets without good orbital
+parameters (such as many of those those detected by microlensing and
+imaging.) Users can download the latest version of the entire EOD as a
+single comma separated value file from the front page of
+exoplanets.org.
 
 \end{abstract}  
 
@@ -105,18 +109,20 @@ file from the front page of exoplanets.org.
 % Recent development in exoplanet discoveries
 Since the launch of NASA's \kepler\ mission \citep{Borucki2010}, the
 number of confirmed exoplanets has increased from about 300 to over
-1490 as of March 2014. \kepler\ contributed to a majority of these new discoveries ($> 800$) while providing an
-additional sample of over 4,000 exoplanet candidates (\kepler\ Objects
-of Interest, KOIs; e.g.~\citealt{Batalha2013}). The transit method has thus surpassed the radial velocity (RV) method to become the most fruitful
-means of detecting exoplanets. Meanwhile, great promise lies within
-the new and future exoplanet surveys and instruments with direct
-imaging (e.g., the Gemini Planet Imager, GPI,
-\citealt{Macintosh2014}) and microlensing (e.g., the Wide-Field
-InfraRed Survey Telescope, WFIRST, \citealt{Green2012}), while the
-fronts of RV and transit exoplanet searches keep expanding (e.g., the
-MINiature Exoplanet Radial Velocity Array, MINERVA,
-\citep{Wright2014}; the Habitable-zone Planet Finder, HPF, \cite{Mahadevan2012} and the
-Transiting Exoplanet Survey Satellit, TESS, \citealt{Ricker2014}).
+1490 as of July 2014. \kepler\ contributed to a majority of these new
+discoveries ($> 800$) while providing an additional sample of over
+3,000 exoplanet candidates (\kepler\ Objects of Interest, KOIs;
+e.g.~\citealt{Batalha2013}). The transit method has thus surpassed the
+radial velocity (RV) method to become the most fruitful means of
+detecting exoplanets. Meanwhile, great promise lies within the new and
+future exoplanet surveys and instruments with direct imaging (e.g.,
+the Gemini Planet Imager, GPI, \citealt{Macintosh2014}) and
+microlensing (e.g., the Wide-Field InfraRed Survey Telescope, WFIRST,
+\citealt{Green2012}), while the fronts of RV and transit exoplanet
+searches keep expanding (e.g., the MINiature Exoplanet Radial Velocity
+Array, MINERVA, \citealt{Wright2014}; the Habitable-zone Planet Finder,
+HPF, \citealt{Mahadevan2012} and the Transiting Exoplanet Survey
+Satellit, TESS, \citealt{Ricker2014}).
 
 % The business of tracking planet discoveries and EOD
 This paper describes our continuing efforts since \cite{Butler2006}
@@ -394,10 +400,11 @@ value accordingly.  If SEP is not directly measured but the semi-major
 axis ({\bf A}) is available, then we set SEP to A with its reference,
 SEPREF, set to ``Set to A''. 
 
-{\bf I} reports the orbital inclination of the planet. Previously, only transiting
-systems had $i$ measured, but now some non-transiting systems have
-dynamical or astrometric constraints on $i$ (for example, the
-microlensing system OGLE-2006-BLG-109L \citep{Bennett2010} and the imaged system, $\beta$ Pictoris \citep{Lagrange2009}).
+{\bf I} reports the orbital inclination of the planet. Previously,
+only transiting systems had $i$ measured, but now some non-transiting
+systems have dynamical or astrometric constraints on $i$ (for example,
+the microlensing system OGLE-2006-BLG-109L by \citealt{Bennett2010}
+and the imaged system, $\beta$ Pictoris by \citealt{Lagrange2009}).
 
 {\bf BIGOM} is the longitude of the ascending node ($\Omega$) in units
 of degrees. At the moment, only $\beta$ Pictoris $b$ has this quantity listed.
@@ -453,19 +460,23 @@ been launched, secondary eclipse depths at multiple
 bands have become available for many planets. Therefore, we added
 this entire new set of fields (see Figure~\ref{fig:se}).
 
-{\bf SEDEPTHX} whereas X stands for one of ``J", ``H", ``KS", ``KP", ``36", ``45", ``58", ``80":
-these fields are the secondary eclipse depth measured in the
-corresponding wavelength band. SEDEPTHJ, H, and KS are the depths
-measured in the 2MASS wavelength bands in the near infrared, centered
-at 1.25~\micron, 1.65~\micron, and 2.15~\micron, respectively. KP is
-the depth measured in the \kepler\ photometric band which spans 400 to 865~nm. The other four represent the Spitzer IRAC and MIPS bands centered at
-3.6~\micron, 4.5~\micron, 5.8~\micron, and 8.0~\micron.
+{\bf SEDEPTHX} whereas X stands for one of ``J", ``H", ``KS", ``KP",
+``36", ``45", ``58", ``80": these fields are the secondary eclipse
+depth measured in the corresponding wavelength band. SEDEPTHJ, H, and
+KS are the depths measured in the 2MASS wavelength bands in the near
+infrared, centered at 1.25~\micron, 1.65~\micron, and 2.15~\micron,
+respectively. KP is the depth measured in the \kepler\ photometric
+band which spans 400 to 865~nm. The other four represent the
+\spitzer\ IRAC bands centered at 3.6~\micron, 4.5~\micron,
+5.8~\micron, and 8.0~\micron.
 
 The {\bf SE} Boolean indicates whether the system has secondary
 eclipse depths measured in any band.  Truth indicates the
 system has at least one secondary eclipse measurement in the EOD.
 
-{\bf SET} is the epoch of secondary eclipse center, normally given in BJD but (as with other fields) when the literature reports HJD or UTC JD, we do not attempt a conversion to BJD. 
+{\bf SET} is the epoch of secondary eclipse center, normally given in
+BJD but (as with other fields) when the literature reports HJD or UTC
+JD, we do not attempt a conversion to BJD. 
 
 %------------------------------------------------------------------------------
 \subsection{Stellar Properties}\label{sec:stellarprop}
@@ -490,7 +501,7 @@ $K$, because it requires an absolute measurement of velocity.
 We provide the brightness of the host star measured in different
 filters. We report optical magnitude and color ($V$ and $B-V$),
 2MASS $J$, $H$, and $K_s$ magnitudes and, we have added {\bf KP} for
-the \kepler\ photometric band. Notes that the definitions of $V$ and $B$ in the literature vary, and are often Hipparcos magnitudes.
+the \kepler\ photometric band. Note that the definitions of $V$ and $B$ in the literature vary, and are often Hipparcos magnitudes.
 
 
 %------------------------------------------------------------------------------
@@ -518,13 +529,15 @@ that have XUPPER, XLOWER and UX are: all the orbital parameters, all
 the transit parameters, all the secondary eclipse fields, and all the stellar
 properties and DIST and PAR.
 
-
 If only an upper limit is given, we set the parameter field X to 0,
-the uncertainty XU to half of the upper limit, and the upper error bar
-XUPPER to the upper limits (same as XUL). For example, if the
-literature reports the upper limit for ECC, which we report in ECCUL,
-then we set ECC to be 0, ECCUPPER to ECCUL, and UECC to ECCUL/2.  We
-are currently implementing a more precise upper limit scheme (see Section~\ref{sec:summary}.)
+and store the upper limit value in the field XUL. The uncertainty UX
+is set to half of the upper limit, and the upper error bar XUPPER to
+the upper limit value. For example, if the literature reports the
+upper limit for ECC, which we report in ECCUL, then we set ECC to be
+0, ECCUPPER to ECCUL, and UECC to ECCUL/2.  We are currently
+implementing a more precise upper limit scheme (see
+Section~\ref{sec:summary}.)
+
 
 %------------------------------------------------------------------------------
 \subsection{References}\label{sec:ref}
@@ -537,7 +550,7 @@ most of the fields on an individual basis.
 
 The following fields do not have associated REF or URL fields. Except
 where we record these values directly from discovery papers, {\bf RA},
-{\bf DEC}, and PAR are usually from the \textit{Hipparcos}
+{\bf DEC}, and {\bf PAR} are usually from the \textit{Hipparcos}
 re-reduction of \cite{van Leeuwen2009}; the $B-V$ ({\bf BMV}) values
 are from the \textit{Hipparcos} catalog by \cite{Perryman1997};
 stellar magnitudes {\bf J}, {\bf H}, and {\bf KS} (i.e.\ $K_{\rm s}$)
@@ -571,7 +584,7 @@ NASA's Exoplanet Archive \citep{Akeson2013}.
 % Figure: single planet page
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{fig/wasp-14b.eps}
+\includegraphics[width=\textwidth]{../fig/wasp-14b.eps}
 \caption{An example page for an individual exoplanet (WASP-14b in this
   case). The numbers listed in each field contain links to the
   reference on NASA ADS. In this example for WASP-14b, we provide the plot
@@ -657,7 +670,7 @@ EOD.
 % Figure: single planet page
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{fig/mass-per-interactive.eps}
+\includegraphics[width=\textwidth]{../fig/mass-per-interactive.eps}
 \caption{
   An example plot produced by the interactive plotting tools of
   EDE on exoplanets.org. The interactive plotting interface is shown
@@ -676,12 +689,12 @@ EOD.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{fig/senew.eps}
+\includegraphics[width=\textwidth]{../fig/senew.eps}
 \caption{An example plot that demonstrates the current secondary
   eclipse measurements. Each planet has a set of circles that stand
   for its available secondary eclipse measurements in the database,
-  including Spitzer 8.0, 5.8, 4.5, \& 3.6 $\mu m$, and  ground-based
-  $J$, $H$, and $Ks$ bands. \kepler\ secondary eclipse measurements
+  including \spitzer\ 8.0, 5.8, 4.5, \& 3.6 \micron, and ground-based
+  $J$, $H$, and $K_{\rm s}$ bands. \kepler\ secondary eclipse measurements
   are labeled as solid black dots. A few representative planets are
   also annotated (a feature not offered by the EDE Plotter, but
   trivially implemented by other image or presentation software).}
