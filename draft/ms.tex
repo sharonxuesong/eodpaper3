@@ -40,6 +40,7 @@
 \def\spitzer{\textit{Spitzer}}
 \def\micron{$\mu$m}
 \def\mjup{$M_{\rm Jup}$}
+\def\rjup{$R_{\rm Jup}$}
 \def\rearth{R_\oplus}
 \def\mearth{M_\oplus}
 
@@ -56,15 +57,18 @@
 
 \begin{CJK*}{UTF8}{gbsn}
 
-\title{The Exoplanet Orbit Database \textsc{II}: updates for 2014}
+\title{The Exoplanet Orbit Database \textsc{II}: Updates to
+  exoplanets.org}
 
 % leading authors
 \author{Eunkyu Han\altaffilmark{1,2}}
-\author{Sharon X. Wang\altaffilmark{1,2,3}}
-\author{Jason T. Wright\altaffilmark{1,2,3}}
-\author{Ying Feng\altaffilmark{1,2}}
+\author{Sharon X.\ Wang\altaffilmark{1,2,3}}
+\author{Jason T.\ Wright\altaffilmark{1,2,3}}
+\author{Y.\ Katherina Feng\altaffilmark{1,2}}
 \author{Ming Zhao\altaffilmark{1,2}}
-\author{and Friends}
+\author{Onsi Fakhouri\altaffilmark{4}}
+\author{Jacob I.\ Brown\altaffilmark{1,2}}
+\author{Colin Hancock\altaffilmark{1,2}}
 
 \altaffiltext{1}{Department of Astronomy \& Astrophysics, 525 Davey
   Lab, The Pennsylvania State University, University Park, PA 16802, USA;
@@ -73,20 +77,25 @@
   Pennsylvania State University, University Park, PA 16802, USA}
 \altaffiltext{3}{Penn State Astrobiology Research Center, The
   Pennsylvania State University, University Park, PA 16802, USA} 
-
+\altaffiltext{4}{Pivotal Labs, Cloud Foundry, 875 Howard St., Fourth
+  Floor, San Francisco, CA 94103}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
 
 The Exoplanet Orbit Database (EOD) compiles orbital, transit, host star, and other
-parameters of robustly dected exoplanets reported in the peer-reviewed
+parameters of robustly detected exoplanets reported in the peer-reviewed
 literature. The EOD can be navigated through the Exoplanet Data
-Explorer (EDE) Plotter and Table, available on the world wide web at exoplanets.org. The EOD contains data for 1490 confirmed exoplanets as of March 2014.  
-The EOD drives from the Catalog of Nearby Exoplanets \citep{Butler2006}, and the first complete documentation for the EOD and the EDE was presented in 
-\cite{Wright2011}. Since then, we have expanded the scope of the
-EOD to include secondary eclipse parameters, asymmetric uncertainties and etc. The EOD also incorporats the sample of over 3000 \kepler\ Objects of
-Interest (KOIs) and other real planets without good orbital parameters such as those detected by microlensing and imaging. Users can download the latest version of the in tire EOD as a
-single comma separated value file from the front page of exoplanets.org. 
+Explorer (EDE) Plotter and Table, available on the World Wide Web at exoplanets.org. The EOD contains data for 1490 confirmed exoplanets as of March 2014.  
+The EOD descends from a table in \citet{Butler2002} and the Catalog of Nearby Exoplanets \citep{Butler2006}, and the first complete documentation for the EOD and the EDE was presented in 
+\cite{Wright2011}. In this work, we describe our work since then.  We have expanded the scope of the
+EOD to include secondary eclipse parameters, asymmetric uncertainties,
+and expanded the EDE to include
+the sample of over 3000 \kepler\ Objects of Interest (KOIs), and other
+real planets without good orbital parameters (such as many of those
+those detected by microlensing and imaging.) Users can download the
+latest version of the entire EOD as a single comma separated value
+file from the front page of exoplanets.org.  
 
 \end{abstract}  
 
@@ -96,9 +105,8 @@ single comma separated value file from the front page of exoplanets.org.
 % Recent development in exoplanet discoveries
 Since the launch of NASA's \kepler\ mission \citep{Borucki2010}, the
 number of confirmed exoplanets has increased from about 300 to over
-1490 as of March 2014. \kepler\ contributed to a vast
-majority of these new discoveries ($> 800$) while providing an
-additional sample of over 3000 exoplanet candidates (\kepler\ Objects
+1490 as of March 2014. \kepler\ contributed to a majority of these new discoveries ($> 800$) while providing an
+additional sample of over 4,000 exoplanet candidates (\kepler\ Objects
 of Interest, KOIs; e.g.~\citealt{Batalha2013}). The transit method has thus surpassed the radial velocity (RV) method to become the most fruitful
 means of detecting exoplanets. Meanwhile, great promise lies within
 the new and future exoplanet surveys and instruments with direct
@@ -106,39 +114,49 @@ imaging (e.g., the Gemini Planet Imager, GPI,
 \citealt{Macintosh2014}) and microlensing (e.g., the Wide-Field
 InfraRed Survey Telescope, WFIRST, \citealt{Green2012}), while the
 fronts of RV and transit exoplanet searches keep expanding (e.g., the
-MINiature Exoplanet RV Array, MINERVA, \citealt{Wright2014}; Habitable-zone Planet Finder, HPF, \cite{Mahadevan2012} and the
-Transiting Exoplanet Survey Satellit, TESS, \citealt{Ricker2010}).
+MINiature Exoplanet Radial Velocity Array, MINERVA,
+\citep{Wright2014}; the Habitable-zone Planet Finder, HPF, \cite{Mahadevan2012} and the
+Transiting Exoplanet Survey Satellit, TESS, \citealt{Ricker2014}).
 
 % The business of tracking planet discoveries and EOD
 This paper describes our continuing efforts since \cite{Butler2006}
-and \cite{Wright2011} to maintain the Exoplanet Orbit Database\footnote{See http://expoplanets.org}(EOD)
-and the Exoplanets Data Explorer (EDE), to keep track of the exoplanet
-discoveries, and to catalog their orbital parameters and host star
-properties. There are also other entities devoted to similar efforts,
+and \cite{Wright2011} to maintain the Exoplanet Orbit Database\footnote{See \url{http://expoplanets.org}}(EOD)
+and the Exoplanets Data Explorer (EDE), to keep track of exoplanet
+discoveries, and to better catalog orbital parameters and host star
+properties. 
+
+There are other entities devoted to similar efforts,
 including the Extrasolar Planets Encyclopaedia\footnote{See
   \url{http://exoplanet.eu}.}  \citep{Schneider2011} and the NASA
 Exoplanet Archive\footnote{See
   \url{http://exoplanetarchive.ipac.caltech.edu}.}
-\citep{Akeson2013}. As described in \cite{Wright2011}, the EOD is
+\citep{Akeson2013}.  The natures of these efforts are complementary, and to the
+degree that they are redundant provide important cross-checking and
+validation.  As described in \cite{Wright2011}, the EOD is
 dedicated to cataloging properties of all \emph{robustly-detected} exoplanets with
 \emph{well-determined} orbital parameters published in
-\emph{peer-reviewed} literature.
+\emph{peer-reviewed} literature, and providing outstanding data
+exploration and visualization tools for these planets.
 
 % data access and popularity
-The EOD is hosted at exoplanets.org, which also hosts the EDE, an
-interactive table with plotting tools for all the EOD exoplanets
-as well as confirmed exoplanets, without good orbital parameters and KOIs. The plottable
-dataset of exoplanets.org is available for download as a single comma separated value file from the Website front page.\footnote{At
-  \url{htt://exoplanets.org/csv-files/exoplanets.csv}.} The EOD is widely
+The EOD is hosted at the Web domain exoplanets.org, which also hosts the EDE, an
+interactive table with plotting tools for all the EOD exoplanets, in
+addition to other confirmed exoplanets without good orbital
+parameters, and KOIs (except for those with a ``FALSE POSITIVE''
+disposition at the Exoplanet Archive). The entire dataset of exoplanets.org is available for download as a single comma separated value file from the Website front page.\footnote{At
+  \url{http://exoplanets.org/csv-files/exoplanets.csv}.}  An example
+of this CSV file is available with the electronic version of this paper.
+
+The EOD is widely
 used in exoplanet research (e.g., \citealt{Dawson2013},
 \citealt{Howard2013}, \citealt{Kipping2013}, \citealt{Kane2014},
-\citealt{Weiss2014}), and the website exoplanets.org is among the most
-visited exoplanet databases, with over $47,000$ visits in 2013\footnote{Measured as "visits" by Google Analytics}.
+\citealt{Weiss2014}), and the website exoplanets.org had over $47,000$ visits in
+2013\footnote{Measured as ``visits" by Google Analytics}.
 
 % updates on EOD and the website
 Since the documentation described in \cite{Wright2011}, the EOD has expanded its scope: we now do
 not require the host star of an exoplanet to be a normal star (e.g.,
-exoplanets around pulsars are now included). It now ingestes more
+exoplanets around pulsars are now included). We now ingest more
 parameters describing the exoplanet systems and their host stars, and some
 parameters have been revised or deleted. We describe our updates to the
 EOD in Section~\ref{sec:update}. The EDE at exoplanets.org has also
@@ -199,24 +217,31 @@ included exoplanets orbiting the ``normal stars", but now we are not
 limiting the type of host stars (e.g. we included exoplanets orbiting
 neutron stars). Furthermore, in \cite{Wright2011}, we only included
 exoplanets that were discovered by the RV and transit methods in the
-EOD, but now we also included planets discovered via timing including pulsar planets and those discovered by eclipse timing. In the
-future, exoplanets discovered by any other methods with robust
-detections and good orbital parameters will also be included in the
-EOD including astrometric planets such as beta Pic b. Previously, we required the planets have minimum mass (m$\sin{i}$) smaller than 24\mjup, but now we require the measured mass ratio to be smaller than 24
-\mjup$/\msun$ ($< 0.023)$.
+EOD, but now we also include planets discovered via timing (including
+pulsar planets and those discovered by eclipse timing). We now include
+exoplanets discovered by any other methods with robust detections and
+good orbital parameters, such as $\beta$ Pictoris $b$ \citep{Chauvin2012,Nielsen2014,Macintosh2014}. 
+
+Previously, we used a generous mass cutoff, recognizing that any
+definition of ``exoplanet'' will not necessarily track with the
+formation mechanism for an object (which may, after all, be unknown or
+unknowable).  Our previous mass cutoff was a minimum mass (m$\sin{i}$)
+smaller than 24\mjup; to make this cutoff more relevant to a wide
+range of stellar masses and detection methods, we now require the measured
+planet-star mass ratio to be smaller than 24 \mjup$/\msun$ ($< 0.023)$.
 
 The rest of the selection criteria for the EOD remain unchanged. We
 still require the planets to have robust detections and well-determined
 orbits (though these are not strictly quantitative and sometimes subjective; see Section~2 of
 \citealt{Wright2011}). If new evidence comes to light and we are no
-longer confident about the planet, we may remove it from EOD, even if the new evidence is not peer reviewed.
-
-The purpose of the EOD has not changed: we aim to provide the readers
-with a comprehensive, reliable, and up-to-date database of exoplanets
-with good orbital parameters and host star properties. We do not
-report \textit{all} the announced exoplanets as we are not trying to
-provide ``an encyclopedic presentation of every claimed detection of an
-exoplanet" \citep{Wright2011}.
+longer confident about a planet, we may remove it from EOD, even if the
+new evidence is not peer reviewed.  The rationale for this scheme is,
+as it has been since the CNE, that the EOD represents our best, expert effort to produce a clean set of
+trustworthy parameters.  We do not report \textit{all} the announced
+exoplanets as we are not trying to provide ``an encyclopedic
+presentation of every claimed detection of an 
+exoplanet" \citep{Wright2011}.  More comprehensive sets of planet parameters
+are available from other exoplanet compendia on the Web.
 
 In the following subsections, we describe the newly added and revised
 fields since \cite{Wright2011}, and list all fields in
@@ -237,51 +262,58 @@ We report general information of when, by whom and how the planets
 were discovered and first reported and provide the references for underlying data. We describe the added or
 revised fields since \cite{Wright2011} below.
 
-{\bf DISCMETH} field previously reported the method of discovery,
-which was either radial velocity or transit. We have replaced DISCMETH
-with {\bf PLANETDISCMETH} and \mbox{{\bf STARDISCMETH}} to better
+The DISCMETH field previously reported the method of discovery,
+which was either ``radial velocity'' or ``transit''. We have replaced DISCMETH
+with {\bf PLANETDISCMETH} and {\bf STARDISCMETH} to better
 report how exoplanet systems and individual exoplanets are first
 discovered. PLANETDISCMETH reports the discovery method for the
-planet, wihle STARDISCMETH reports the discovery method for the first
-discovered planet around the host star. These fields are stored
-in string format and have one of the following values: "RV",
-"Transit", "Imaging", "Microlensing", "Timing", or "Astrometry" (no planets have "astrometry" yet).
+planet, while STARDISCMETH reports the discovery method for the {\it
+  planetary system} (i.e. the {\it first}
+discovered planet around the host star). These fields are stored
+in string format and have one of the following values: ``RV",
+``Transit", ``Imaging", ``Microlensing", ``Timing", or ``Astrometry"
+(no planets have a value of ``Astrometry" yet since no planet has yet
+been {\it discovered} via astrometry).
 
 The {\bf MONTH} field reports the integer month of the
 peer-reviewed paper publication date.
 
 {\bf KEPID} stands for KEPler ID, which is the integer number assigned
 for a Kepler host star. KEPID is only available for unconfirmed
-KOI's imported directly from the Exoplanet Archive by the exoplanet.org backend. Therefore,
-none of the EOD planets including confirmed Kepler planets has a KEPID, yet.
+KOI's imported directly from the Exoplanet Archive by the
+exoplanets.org backend. 
 
 {\bf KOI} stands for Kepler Objects of Interest, which is an object
-with transit signals detected by \kepler\ but have not been validated to be due to exoplanets. The KOI field defined by the \kepler\ team and showed on the Exoplanet Archive, contains a floating point
-number that consists of a whole number designated to the host star
-followed by a decimal number denoting a candidate planet. For example,
+with transit signals detected by \kepler\ that have not been validated
+as being due to exoplanets.  The KOI field defined by the \kepler\
+team and shown on the Exoplanet Archive is stored as a floating point
+number, consisting of a whole number designated to the host star
+followed by a decimal portion denoting a candidate planet. For example,
 KOI 102 is a star suspected to host two exoplanets, and KOI 102.01 is
 the inner planet candidate and KOI 102.02 is the outer one. Once a
-candidate is confirmed, the NAME field of the planet is replaced by
-the official \kepler\ ID (``Kepler" followed by a hyphen, an integer
-and an lower case letter). The KOI number is then used as
-OTHERNAME. For more information, see
+candidate is confirmed, the {\bf NAME} field of the planet is replaced by
+the official \kepler\ ID (``Kepler" followed by a hyphen, an integer,
+a space, and finally a lower case letter). The KOI number is then used as
+{\bf OTHERNAME}. For more information, see
 Section~\ref{sec:kepler}.
 
-{\bf EOD} is a boolean which indicates whether an exoplanet is included
+{\bf EOD} is a Boolean which indicates whether an exoplanet is included
 in the EOD for having well-characterized orbital
 parameters, such as the orbital period (PER). We added this field because exoplanets.org
 now also includes robustly discovered planets that do not have
 well-characterized orbits, and also \kepler\ planet candidates (see
-Section~\ref{sec:kepler} for more details).
+Section~\ref{sec:kepler} for more details).  Planets on exoplanets.org
+and appearing in the EDE that are not part of the EOD have EOD set to
+FALSE (i.e.\ zero).
 
-{\bf MICROLENSING, IMAGING, TIMING and ASTROMETRY} are flags which
-indicate that a planet detected via theses method. For example,
+{\bf MICROLENSING, IMAGING, TIMING} and {\bf ASTROMETRY} are Boolean flags which
+indicate that a planet has been detected via these methods. For example,
 MICROLENSING $=$ 1 means the planet is detected in a microlensing
 event. Note that planets may be detected with multiple methods. 
 
 
 %------------------------------------------------------------------------------
-\subsection{Orbital Parameters (e.g. RV and Transit)}\label{sec:orbit}
+\subsection{Orbital Parameters}\label{sec:orbit}
 
 We report the orbital parameters that determine the shape of the
 planet's orbit. Depending on the detection methods, different sets of
@@ -293,43 +325,92 @@ below.
 
 {\bf MASS} is the mass of the planet in the unit of Jupiter
 mass. Previously, we only reported the minimum mass, ($m\sin{i}$,
-MSINI) of the planets. We now report the mass as well when it is
-available. For example, if a planet is discovered by microlensing, we
+MSINI) of the planets.  We now, additionally, report the best estimate
+of the true mass in a heterogeneous way.  For example, if a planet is discovered by microlensing, we
 report the actual mass of the planet according to the literature. If a
 planet has both radial velocity and transit measurements, we calculate
 the mass from the minimum mass $m\sin{i}$ and the orbital inclination
-$i$. For convenience of plotting RV and other planets on a common mass scale (see Section~\ref{sec:kepler}, MASS is set to MSINI if the orbital inclination is not known and
-the reference for MASS, MASSREF is set to ``Set to MSINI; I unknown''.
+$i$. For convenience of plotting RV and other planets on a common mass
+scale (see Section~\ref{sec:kepler}), MASS is set to MSINI if the
+orbital inclination is not known and the reference for MASS ({\bf
+  MASSREF}) is set to ``Set to MSINI; I unknown''. 
 
-Also for plotting convenience, for KOIs without $m\sin{i}$ measured, we estimate their mass using the
-mass-radius relation from the literature. For KOIs with $R<4\rearth$, we follow $M_{p}/\mearth=2.69(R_{p}/\rearth)$
-from \cite{Weiss2014}; for $4\rearth<R<6\rearth$, we follow $M_{p}/\mearth=(R_{p}/\rearth)^2.06$ from
-\cite{Lissauer2011}; and for $6\rearth<R<11.7\rearth$ we follow $M_{p}/\mearth=1756.7*10^{(-1.646*(11.684/(R_{p}/\rearth)-1)^{(1/2.489)})}$
-from \cite{Mordasini2012}. 
+Also for plotting convenience, for transiting $Kepler$ planets without $m\sin{i}$ measured, we estimate their mass using 
+mass-radius relations from the literature. We follow a series of
+relations given by \footnote{As of the writing of this manuscript,
+  Kepler planet candidates on exoplanets.org ingested
+  from the Exoplanet Archive have their masses estimated in a slightly
+  different manner.  The Website uses the \citeauthor{Mordasini2012} relation for
+  planets with 6$\rearth < R < 1 $ \rjup, the \citeauthor{Lissauer2011}
+  relation between $1 \rearth < R < 6\rearth$, and $M = (1/R)^{0.306}$ in
+  Earth units for planets smaller than $\rearth$.  Updating this
+  relation to be consistent with the EOD (and updating the
+  corresponding MASSREF fields for these candidates) is a priority
+  upgrade for exoplanets.org.} 
+
+\[
+M_p=
+\begin{cases}
+M_{\rm WM} &  R<\rearth \\
+(1-x)M_{\rm WM} + xM_L  &  \rearth \leq R<4\rearth \\
+M_L & 4 \rearth \leq R < 6 \rearth \\
+M_M &  6\rearth \leq R < b \\
+{\text \mjup} &  R \geq b
+\end{cases}
+\]
+
+\noindent where $b$ is defined
+below, and we use the weight $x=\left(R_{p}/\rearth-1\right)/3$ to
+smoothly transition between $M_{\rm WM}$ and $M_L$ in their
+overlapping regions of validity. $M_{\rm WM}$ is from \cite{Weiss2014} and is given by 
+\[
+\frac{M_{\rm WM}}{\mearth}=
+\begin{cases}
+2.69\left(\frac{R_{p}}{\rearth}\right)^{0.93} &  \rearth \leq R<1.5\rearth \\
+0.582\left(0.717+\frac{R_{p}}{\rearth}\right)\left(\frac{R_{p}}{\rearth}\right)^3 &  1.5\rearth\leq R<4\rearth
+\end{cases}
+\]
+
+$M_L$ is given by $M_{p}/\mearth=\left(R_{p}/\rearth\right)^{2.06}$ from \cite{Lissauer2011}, and $M_M$ is given by 
+\[
+\log_{10}\left(\frac{M_{p}}{M_0}\right)=-w\left(\frac{b}{\left(R_{p}/\rearth\right)}-1\right)^{1/p}
+\]
+
+\noindent from \cite{Mordasini2012}, where
+\[
+\begin{tabular}{ c c c }
+  & $0.1<a/{\rm AU}$ & $0.1<a/{\rm AU} \leq 1$  \\ \hline $M_0[\mearth]$ & 1756.7 & 1308.7 \\
+$b[\rearth]$ & 11.684 & 11.858 \\ $w$ & 1.646 & 1.635 \\ $p$ & 2.489 & 2.849 \\ 
+\end{tabular}
+\]
+
+Planets with masses estimated in this manner are so noted in the
+MASSREF field.
 
 {\bf SEP} is a separation between the host star
-and the planet in units of AU. For directly imaged planets, the
+and the planet in units of AU. For directly imaged and microlensing planets, the
 literature usually reports the projected separation and we report the
 value accordingly.  If SEP is not directly measured but the semi-major
-axis ($a$, A) is available, then we set SEP to A with its reference,
+axis ({\bf A}) is available, then we set SEP to A with its reference,
 SEPREF, set to ``Set to A''. 
 
-{\bf I} is the orbital inclination. Previously, only transiting
-systems have I measured, but now some non-transiting systems
-have I's reported too. For example, one microlensing system,
-OGLE-2006-BLG-109L, has I measured \citep{Bennett2010}. Also, one imaging system, $\beta$ Pic, has I measured \citep{Lagrange2009}
+{\bf I} reports the orbital inclination of the planet. Previously, only transiting
+systems had $i$ measured, but now some non-transiting systems have
+dynamical or astrometric constraints on $i$ (for example, the
+microlensing system OGLE-2006-BLG-109L \citep{Bennett2010} and the imaged system, $\beta$ Pictoris \citep{Lagrange2009}).
 
-{\bf BIGOM} is the longitude of the ascending node ($\Omega$) in units of degrees. At the moment, no planets have this quantity measured, but astrometric orbits (e.g. from GPI) will reveal it.
+{\bf BIGOM} is the longitude of the ascending node ($\Omega$) in units
+of degrees. At the moment, only $\beta$ Pictoris $b$ has this quantity listed.
 
 {\bf LAMBDA} is the projected spin-orbit misalignment ($\lambda$) in
 the plane of the sky in units of degrees. At the moment, $\lambda$
 values are only available for the transiting systems, which are
 measured by either the Rossiter-McLaughlin effect
-\citep[e.g.,][]{Winn2005} or planet transiting star spots
+\citep[e.g.,][]{Winn2005} or planetary transits of star spots
 \citep[e.g.,][]{Sanchis-Ojeda2012}. $\lambda$ is used because
 the true spin-orbit angle, defined as the angle between the
 stellar spin axis and the orbital axis, is normally not directly
-measurable. We follow \cite{Fabrycky2009} where the coordinates are defined as follows: the
+measurable. We follow \cite{Fabrycky2009} who defined the quantity as follows: the
 $z$-axis points toward the observer, the $x$-axis points along the
 intersection of the sky plane and the planet's orbital plane with the
 ascending node of the planet having $x<0$, and the $y$-axis completes
@@ -337,20 +418,20 @@ a right handed-triad. $\lambda$ is measured clockwise on the sky from
 the $y$-axis to the projected stellar rotational axis. $\lambda$ is
 not a newly added field to the EOD but we describe it here because we did not
 previously report it consistently, since some literature report the ``projected
-spin-orbit misalignment" as $\beta = -\lambda$ instead\footnote{In some cases, e.g. \cite{Moutou2011}, other conventions entirely appear to be used.}. We have sorted
+spin-orbit misalignment" as $\beta = -\lambda$ instead\footnote{In some cases, \citep[e.g.][]{Moutou2011}, other conventions entirely appear to be used.}. We have sorted
 these cases out and made sure that our $\lambda$'s are following the
 definition of \cite{Fabrycky2009}.
 
-{\bf MASSREF} and {\bf MASSURL} fields were used to report the
-reference and the URL of stellar mass but now they are used for planet
-mass.
+The {\bf MASSREF} and {\bf MASSURL} fields were used to report the
+reference and the URL of stellar mass but now they are used for the planet's
+mass; {\bf MSTARREF} and {\bf MSTARURL} are now used for the stellar
+mass, {\bf MSTAR}.
 
 %------------------------------------------------------------------------------
 \subsection{Transit Parameters}\label{sec:transit}
 
-We report the transit parameters, which are available only when the
-planet has TRANSIT Boolean equal to true. We describe two added fields since
-\cite{Wright2011} below, which are used for KOI's incorporated from the Exoplanet Archive.
+We have added two fields since \cite{Wright2011}, which are used for
+KOI's incorporated from the Exoplanet Archive. 
 
 {\bf DR} is the distance between the planet and the star during the
 transit in stellar radii. This is one of the parameters that goes into
@@ -368,15 +449,9 @@ We have added an entirely new set of fields for secondary
 eclipse depths. Previously, due to the limits of instrumentation and limited
 sample of exoplanets, there was not much secondary eclipse depth data
 available. Since \cite{Wright2011}, as many different surveys have
-been launched, more and more secondary eclipse depths at multiple
-bands have become available for more and more planets. Therefore, we added
-this entire new set of fields. ZZZ Refer to Ming's SE plot.
-
-The {\bf SE} Boolean indicates whether the system has detected secondary
-eclipse in any of the two Micron All-Sky Survey (2MASS;
-\citealt{Skrutskie2006}) $J$, $H$, and $K_s$, Kepler photometry band,
-and 4 Spitzer IRAC bands. Truth indicates the
-system has at least one secondary eclipse measurement in the EOD.
+been launched, secondary eclipse depths at multiple
+bands have become available for many planets. Therefore, we added
+this entire new set of fields (see Figure~\ref{fig:se}).
 
 {\bf SEDEPTHX} whereas X stands for one of ``J", ``H", ``KS", ``KP", ``36", ``45", ``58", ``80":
 these fields are the secondary eclipse depth measured in the
@@ -386,7 +461,11 @@ at 1.25~\micron, 1.65~\micron, and 2.15~\micron, respectively. KP is
 the depth measured in the \kepler\ photometric band which spans 400 to 865~nm. The other four represent the Spitzer IRAC and MIPS bands centered at
 3.6~\micron, 4.5~\micron, 5.8~\micron, and 8.0~\micron.
 
-{\bf SET} is the epoch of secondary eclipse center, normally given in HJD but (as with other fields) when the literature reports HJD or UTC JD, we do not attempt a conversion to BJD. 
+The {\bf SE} Boolean indicates whether the system has secondary
+eclipse depths measured in any band.  Truth indicates the
+system has at least one secondary eclipse measurement in the EOD.
+
+{\bf SET} is the epoch of secondary eclipse center, normally given in BJD but (as with other fields) when the literature reports HJD or UTC JD, we do not attempt a conversion to BJD. 
 
 %------------------------------------------------------------------------------
 \subsection{Stellar Properties}\label{sec:stellarprop}
@@ -397,7 +476,9 @@ stellar models in the literature and we provide the readers with the
 references. We describe added fields since \cite{Wright2011} below.
 
 {\bf GAMMA} ($\gamma$) is the radial velocity of the center of mass of
-the planetary system with respect to the barycentric frame and is reported in km/s.
+the planetary system with respect to the barycentric frame and is
+reported in km/s.  It is typically known to far less precision than
+$K$, because it requires an absolute measurement of velocity.
 
 {\bf RSTAR} is the radius of the star in the solar units.
 
@@ -408,20 +489,21 @@ the planetary system with respect to the barycentric frame and is reported in km
 
 We provide the brightness of the host star measured in different
 filters. We report optical magnitude and color ($V$ and $B-V$),
-2MASS $J$, $H$, and $K_s$ magnitudes and, we have added {\bf KP}. Notes that the definitions of V and B in the literature vary, and are often Hipparcos values
-(the stellar magnitude measured through the \kepler\ bandpass).
+2MASS $J$, $H$, and $K_s$ magnitudes and, we have added {\bf KP} for
+the \kepler\ photometric band. Notes that the definitions of $V$ and $B$ in the literature vary, and are often Hipparcos magnitudes.
 
 
 %------------------------------------------------------------------------------
 \subsection{Coordinates and Catalogs}\label{sec:coord}
 
 We report the coordinates of the host star as well as the host star's
-ID as designated by different catalogs.  We added the {\bf DIST} field since
+ID as designated by different catalogs.  We have added the {\bf DIST} field since
 \cite{Wright2011}, which is the distance to the host star in the unit
 of pc. If only parallax (PAR) is given, we calculate DIST based on PAR
 and vice versa. If the literature does not report DIST or PAR, then we
-obtain PAR from the Hipparcos dataset by \cite{van Leeuwen2009} for stars with Hipparcos numbers. We
-naively propagate the error in PAR to DIST and vice versa.
+obtain PAR from the Hipparcos dataset by \cite{van Leeuwen2009} for
+stars with Hipparcos numbers. We na\"ively translate the 1-$\sigma$ errors in each into asymmetric
+uncertainties in the other.
 
 %------------------------------------------------------------------------------
 \subsection{Uncertainties and Upper Limits}\label{sec:unc}
@@ -431,55 +513,56 @@ asymmetric ones since \cite{Wright2011}. We now report
 uncertainties for a certain field X as XUPPER, XLOWER and UX. XUPPER
 and XLOWER store the upper and lower 1$\sigma$ uncertainties, and they
 are different when the error bars are asymmetric. UX contains the
-1$\sigma$ uncertainty, and it equals $({\rm XUPPER+XLOWER})/2$ in
-the case of asymmetric error bars. Fields that have XUPPER, XLOWER and
-UX are: all the orbital parameters, all the transit parameters, all the
-secondary eclipse fields, and all the stellar
+1$\sigma$ uncertainty, and it equals $({\rm XUPPER+XLOWER})/2$. Fields
+that have XUPPER, XLOWER and UX are: all the orbital parameters, all
+the transit parameters, all the secondary eclipse fields, and all the stellar
 properties and DIST and PAR.
 
-We also report the upper limits (XUL) for planet minimum mass (MSINI),
-eccentricity (ECC), and the radial velocity semi-amplitude (K) when
-the literature reports them. For example, the upper limits for ECC is
-reported when the orbit is consistent with a circular one, and the
-upper limits for K is reported when there is only upper-limit radial
-velocity detection. If only upper limits are given, we set the
-parameter field X to 0, the uncertainty XU to half of the upper limit,
-and the upper error bar XUPPER to the upper limits (same as XUL). For
-example, if the literature reports the upper limit for ECC, which we
-report in ECCUL, then we set ECC to be 0, ECCUPPER to ECCUL, and UECC
-to ECCUL/2. Since not all authors define the upper limits in the same
-way (e.g. 1$\sigma$ or some fixed percentile), we encourage the
-readers to refer to the original references for more information. Note that as of this writing, limits have not been incorporated into the EDE (see Section~\ref{sec:website}
 
+If only an upper limit is given, we set the parameter field X to 0,
+the uncertainty XU to half of the upper limit, and the upper error bar
+XUPPER to the upper limits (same as XUL). For example, if the
+literature reports the upper limit for ECC, which we report in ECCUL,
+then we set ECC to be 0, ECCUPPER to ECCUL, and UECC to ECCUL/2.  We
+are currently implementing a more precise upper limit scheme (see Section~\ref{sec:summary}.)
 
 %------------------------------------------------------------------------------
 \subsection{References}\label{sec:ref}
 
 The fields {\bf XREF} and {\bf XURL} store the peer-reviewed reference
-and link to the publication for the data in field X. Previously, we only
-reported general references for certain sets of fields (e.g. FIRSTREF,
+and link to the publication for the data in field X. Previously, we 
+reported only general references for certain sets of fields (e.g. FIRSTREF,
 FIRSTURL, ORBREF, and ORBURL), but now we report the references for
 most of the fields on an individual basis.
 
-The following fields do not have associated REF or URL fields. Except where we record these values directly from discovery papers, RA, DEC, and PAR are usually from the \textit{Hipparcos} re-reduction of \cite{van Leeuwen2009}; the $B-V$ (BMV) values
+The following fields do not have associated REF or URL fields. Except
+where we record these values directly from discovery papers, {\bf RA},
+{\bf DEC}, and PAR are usually from the \textit{Hipparcos}
+re-reduction of \cite{van Leeuwen2009}; the $B-V$ ({\bf BMV}) values
 are from the \textit{Hipparcos} catalog by \cite{Perryman1997};
-stellar magnitudes J H and KS are from the 2MASS
-\citep{Skrutskie2006} (as reduced from SIMBAD) and the KP magnitudes are from the Exoplanet
+stellar magnitudes {\bf J}, {\bf H}, and {\bf KS} (i.e.\ $K_{\rm s}$)
+are from the 2MASS catalog
+\citep{Skrutskie2006} (as reported in SIMBAD) and the {\bf KP} (i.e.\ $K_P$) magnitudes are from the Exoplanet
 Archive \citep{Akeson2013}.
 
-SHK and RHK are poorly maintained fields representing chromospheric emission measures and they unreferenced at the
-moment. We plan to include proper reference in the future. Most of the
-SHK and RHK values are from \cite{Butler2006}, and individual discovery papers.
+{\bf SHK} and {\bf RHK} represent the Mount Wilson S and
+$R^\prime_{HK}$ chromospheric
+emission measures.  These fields are poorly maintained fields and
+unreferenced, at the moment. We plan to include proper reference in
+the future. Most of the SHK and RHK values are from \cite{Butler2006},
+and individual discovery papers. 
 
 %------------------------------------------------------------------------------
 \subsection{Removed Fields}\label{sec:removed}
 
 We removed 2 fields since \cite{Wright2011}:
 
-{\bf SPSTAR} field previously reported the stellar type of the host
-star, but it is removed since it is not well maintained. 
+The {\bf SPSTAR} field previously reported the stellar type of the host
+star.  We have removed it since it can be difficult to verify with
+peer-reviewed references, and the field was not well maintained.  We encourage users
+to use TEFF and BMV instead.
 
-{\bf NSTEDID} field reported ID of host star in NStED and now it is
+The {\bf NSTEDID} field reported ID of host star in NStED, and now it is
 replaced by EANAME, which is the name of the star as appears on the
 NASA's Exoplanet Archive \citep{Akeson2013}. 
 
@@ -488,7 +571,7 @@ NASA's Exoplanet Archive \citep{Akeson2013}.
 % Figure: single planet page
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../fig/wasp-14b.eps}
+\includegraphics[width=\textwidth]{fig/wasp-14b.eps}
 \caption{An example page for an individual exoplanet (WASP-14b in this
   case). The numbers listed in each field contain links to the
   reference on NASA ADS. In this example for WASP-14b, we provide the plot
@@ -500,33 +583,37 @@ NASA's Exoplanet Archive \citep{Akeson2013}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Inclusion of the Kepler Planet Candidates \\
-  and Other Exoplanets on Exoplanets.org}\label{sec:kepler}
+  and Other Exoplanets on exoplanets.org}\label{sec:kepler}
 
 Since \cite{Wright2011}, \kepler\ has discovered many exoplanet
-candidates, and more planets were robustly discovered by various
-methods though not having very well characterized orbits, we have
+candidates, and more planets have been robustly discovered by various
+other methods, although not all have very well characterized orbits.  We have
 expanded the EDE to include those planets for the convenience of
-the users and also to keep our database complete in terms of confirmed
+our users, and also to keep exoplanets.org complete in terms of confirmed
 exoplanets.
 
 % KOIs
-We have used broad definitions for SEP and MASS for this purpose. First, we now include the KOIs discovered by \kepler\ in the
+We now provide an option for users to include the KOIs discovered by \kepler\ in the
 EDE. Although KOIs are not counted as part of the EOD due to their
-status of being ``candidates", we include them in our website so that
-these KOIs are put into the context of all confirmed exoplanets. The
+status of being ``candidates", we include them on our website so that
+these KOIs are put into the context of all confirmed exoplanets. We
+have used broad definitions for SEP and MASS so that they may be
+compared to EOD planets, even though they share few strictly defined parameters.  The
 KOIs listed in our table include three \kepler\ data releases (as of
-March 2014), and we always keep up with the most up-to-date
-release. The original data are from the NASA Exoplanet Archive.
+July 2014), and exoplanets.org always provides the most up-to-date
+release through a partnership with the NASA Exoplanet Archive.  
 
 To display the KOIs in the EDE table, users can check the ``Kepler" option on
 the upper left of the table (the default selection only includes ``Orbit
 Database", i.e.~the EOD, and ``Other"). They can also be displayed on
 plots with the interactive plotting tool of EDE (see
-Figure~\ref{fig:koi} for an example plot).
+Figure~\ref{fig:koi} for an example plot).  All KOIs with a
+disposition other than ``FALSE POSITIVE'' are included in the EDE.
 
 % Other Planets
-Second, we now also include robustly detected imaging, microlensing,
-and timing planets, and our criteria for a `robust detection' are the
+We now also include robustly detected imaging, microlensing,
+and timing planets.  Our criteria for a ``robust detection'' for these
+planets are the
 following:
 
 \begin{itemize}
@@ -560,19 +647,18 @@ Some of the exoplanets that are primarily detected by these methods do
 not have well-determined orbital parameters, and thus they are
 categorized as ``Other Planets'' on exoplanets.org instead of being in
 the EOD. These planets can be displayed by check the `Other' option
-for the EDE table. As of March 2014, no microlensing or imaging
-planets are in the EOD, while several timing exoplanets have
+for the EDE table. As of July 2014, no microlensing or imaging
+planets (except $\beta$ Pictoris) appear in the EOD, while several timing exoplanets have
 well-determined orbital parameters and are included in the
-EOD. Moreover, there have been no astrometric planets in the EOD but we
-plan to include them if any robust detections occur.
+EOD.
 
 
 %------------------------------------------------------------------------------
 % Figure: single planet page
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../fig/mass-per-interactive.eps}
-\caption{ZZZ will change to mass-SEP plot once KOIs have SEP ZZZ
+\includegraphics[width=\textwidth]{fig/mass-per-interactive.eps}
+\caption{
   An example plot produced by the interactive plotting tools of
   EDE on exoplanets.org. The interactive plotting interface is shown
   on the right, with the mass-period plot shown on the left. The
@@ -582,16 +668,23 @@ plan to include them if any robust detections occur.
   planets (red triangles), and timing planets (magenta squares). The
   KOIs are plotted as black small dots, and their masses are
   calculated using their radii based on mass-radius relations from the
-  literature (see Section~\ref{sec:orbit}).}
+  literature (see Section~\ref{sec:orbit}).  Note the
+  apples-to-oranges comparison enabled by the hybrid MASS field on the y-axis, which blends estimated
+  masses, minimum masses, and true masses on a single plot.}
 \label{fig:koi}
 \end{figure}
 
-ZZZ add SE plots from Ming
-
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{../fig/senew.eps}
-\caption{An example plot that demonstrates the current secondary eclipse measurements. Each planet has a set of circles that stand for its available secondary eclipse measurements in the database, including Spitzer 8.0, 5.8, 4.5, \& 3.6 $\mu m$, and  ground-based $J$, $H$, and $Ks$ bands. \kepler\ secondary eclipse measurements are labeled as solid black dots. A few representative planets are also annotated.}
+\includegraphics[width=\textwidth]{fig/senew.eps}
+\caption{An example plot that demonstrates the current secondary
+  eclipse measurements. Each planet has a set of circles that stand
+  for its available secondary eclipse measurements in the database,
+  including Spitzer 8.0, 5.8, 4.5, \& 3.6 $\mu m$, and  ground-based
+  $J$, $H$, and $Ks$ bands. \kepler\ secondary eclipse measurements
+  are labeled as solid black dots. A few representative planets are
+  also annotated (a feature not offered by the EDE Plotter, but
+  trivially implemented by other image or presentation software).}
 \label{fig:se}
 \end{figure}
 
@@ -630,20 +723,66 @@ them on our website since the users might find them useful for
 purposes of statistical studies and comparison.
 
 In the future, we hope to include images of directly imaged planets
-(where allowed under copyright law) and light curves for transits and microlensing planets. We plan to display RV curves whenever their RV data are available and include better incorporation of Kepler parameters in the EOD (such as KEPID). We also hope to include upper limits in the EDE table and plotter. 
+and light curves for transits and
+microlensing planets. We plan to display RV curves whenever their RV
+data are available and include better incorporation of Kepler
+parameters in the EOD (such as KEPID). 
+
+We also plan to report the upper limits (XUL) for planet minimum mass (MSINI),
+eccentricity (ECC), and the radial velocity semi-amplitude (K) when
+the literature reports them. For example, an upper limit for ECC is
+reported when the orbit is consistent with a circular one, and the
+upper limit for K is reported when there is only a null result from
+radial velocities. Since not all authors define the upper limits in the same
+way (e.g. 1$\sigma$ or some fixed percentile), we encourage the
+readers to refer to the original references for more information. We
+will also include proper rendering of upper limits in the EDE Table,
+proper upper limit symbols in the Plotter, and proper handling of
+upper limits in filters and queries in both cases. 
+ 
+Omissions and errors to the EOD can be corrected by sending us an
+email at \url{datamaster@exoplanets.org}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \acknowledgments
-NASA/Keck time. 
 
-NSF funding? ZZZ will be added by Jason
-NSF grant AST-1211441.
+We acknowledge NSF grant AST-1211441 which supports exoplanets.org.
+Parts of this work was supported by a NASA Keck PI Data Award, administered by
+the NASA Exoplanet Science Institute.
 
-SXW acknowledges support from PSARC. This research has made use of
-NASA's Astrophysics Data System Bibliographic Services (ADS). 
+We also thank NASA and NExScI for support via funds associated with
+the award of Keck time for monitoring the orbits of long-period and
+multi-planet systems.
 
-CEHW, SIMBAD, EA, and JS acknowledgement
+SXW acknowledges support from the Penn State Astrobiology Research
+Center, part of the NASA Astrobiology Institute. The Center for
+Exoplanets and Habitable Worlds is supported by the 
+Pennsylvania State University, the Eberly College of Science, and the
+Pennsylvania Space Grant Consortium.
+
+This research has made use of
+NASA's Astrophysics Data System Bibliographic Services (ADS) and the SIMBAD database,
+operated at CDS, Strasbourg, France. 
+
+We thank Jean Schneider and the exoplanet.eu team, Rachel Akeson
+and the Exoplanet Archive team, and David Ciardi and the NStED team,
+for their hard work on their exoplanet compendia and for their
+occasional assistance and support.  Our parallel,
+independent, and complementary efforts improve all of our resources.
+We are especially grateful for the radial velocity archive compiled by
+NStED and currently maintained by the Exoplanet Archive, which enables
+many of the radial velocity plots at exoplanets.org.
+
+We thank Katie Peek, the information graphics editor at Popular
+Science magazine, for compiling the data to initially populate the
+MONTH field of the EOD and sharing it with us.
+
+We thank the many people who contributed bug reports and data
+errors to \url{datamaster@exoplanets.org}, which continue to improve
+the data quality of the EOD.   
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % References:
@@ -764,12 +903,12 @@ HJD\tablenotemark{c} & -UPPER, etc. & \ref{sec:se} \\
 %
 \sidehead{\textbf{Stellar Properties}}
 STAR\dotfill & String & Standard name for host star & \nodata & W11 \\
-BINARY\dotfill & Boolean & Star known ot be binary? & -REF, -URL & W11 \\
+BINARY\dotfill & Boolean & Star known to be binary? & -REF, -URL & W11 \\
 MSTAR\dotfill & Float & Mass of host star in solar mass & -UPPER, etc. & W11 \\
 RSTAR\dotfill & Float & Radius of host star in solar radii & -UPPER, etc. & \ref{sec:stellarprop} \\
 FE\dotfill & Float & Iron abundance (or metallicity) of star & -UPPER, etc. & W11 \\
-TEFF\dotfill & Float & Effective temperature of host star & -UPPER, etc. & W11 \\
-RHOSTAR\dotfill & Float & Density of host star & -UPPER, etc. & \ref{sec:stellarprop} \\
+TEFF\dotfill & Float & Effective temperature of host star in Kelvins & -UPPER, etc. & W11 \\
+RHOSTAR\dotfill & Float & Density of host star in g/cm$^3$ & -UPPER, etc. & \ref{sec:stellarprop} \\
 LOGG\dotfill & Float & Spectroscopic $\log{g}$ (surface gravity) of
 host star in cgs unit & -UPPER, etc. & W11 \\
 VSINI\dotfill & Float & Projected equatorial rotational velocity of
