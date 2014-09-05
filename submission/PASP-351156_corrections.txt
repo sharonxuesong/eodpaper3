@@ -1,5 +1,5 @@
 Thank you for sending the proof of manuscript 351156. Please find our corrections below. We also have some other minor corrections and additions to the paper, which are listed at the end.
-Please email Sharon Wang at cfaxuesong@gmail.com in case of questions.
+Please email both Sharon Wang at cfaxuesong@gmail.com and Jason Wright at jtwright@astro.psu.edu in case of questions.
 
 Corrections regarding the proof:
 
@@ -30,7 +30,7 @@ If the above is inappropriate, we are fine with other ways of referencing this f
 
 7. We confirm with the changes (removal of italic style).
 
-8. We confirm the dates of the citations in footnote 10.
+8. Please delete footnote 10.
 
 9. Please change 'Lambda is used' into 'The angle $\lambda$ is used' so that it is still lowercase greek letter lambda but no longer leads the sentence.
 
@@ -46,20 +46,49 @@ If the above is inappropriate, we are fine with other ways of referencing this f
 
 
 Other corrections:
+Additions and corrections are in square brakets [].
 
-1. In Section 2.2, on the left side of Page 6, in the first equation, on the fourth line under the condition of 6 R_Earth < R < b, please change M_{\rm M} to \min{(M_{\rm M}, M_{\rm Jup})}.
+- Section 1, 3rd paragraph, 2nd sentence, :
+…are [largely] complementary [to the EOD], and to the degree…
 
-2. In Section 2.2, on the left side of Page 6, in the second equation which comes after "from Weiss & Marcy (2014) and is given by:", the first condition should be R < 1.5 R_\oplus (i.e. "R < 1.5 R_Earth"), i.e., please eliminate the "R_Earth <=" part on the first line of this equation.
+- Section 2, end of 2nd paragraph:
+smaller than 2[4] M_Jup/ M_Sun (<0.023).
 
-3. Also in Section 2.2, left side of Page 6, in the table at the bottom of the page, the column headers for the tables should be:
+- Section 2.1, in paragraph starting with 'KEPID':
+…KEPler [ID]entification, which is the integer [Kepler Input Catalog index] for a…
+
+- Section 2.1, in paragraph starting with 'KOI':
+…Kepler Object[] of Interest, which is an object with transit signals detected by Kepler that [may or may not] have been validated…
+
+- Section 2.2, on the left side of Page 6, in the first equation, on the fourth line under the condition of 6 R_Earth < R < b, please change M_{\rm M} to \min{(M_{\rm M}, M_{\rm Jup})}.
+
+- Section 2.2, on the left side of Page 6, in the second equation which comes after "from Weiss & Marcy (2014) and is given by:", the first condition should be R < 1.5 R_\oplus (i.e. "R < 1.5 R_Earth"), i.e., please eliminate the "R_Earth <=" part on the first line of this equation.
+
+- Section 2.2, left side of Page 6, in the table at the bottom of the page, the column headers for the tables should be:
 $a/{\rm AU} \leq 0.1$ 
 for the second column, and
 $a/{\rm AU} > 0.1$
 for the third column.
 
+- Section 2.2, right side of Page 6, third paragraph:
+[The parameter] I reports the orbital inclination…
+
+- Section 2.10: change "SPSTAR" to "SPTYPE".
+
+- Section 5, 4th paragraph:
+…some fixed percentile), we encourage the [users] to refer to the… 
+
+- Table 1: 
+The table footnotes are missing.
+The third column explaining the meaning of the entry 'RMS' should read "RMS residuals to orbital RV fit" (i.e. RMS all capitals instead of Rms).
+In the meaning for entry 'TEFF', "kelvin" should be "Kelvin", i.e. capitalized initial letter K.
+
+- Figure 1:
+Caption: missing a space before the final sentence.
+
 Additions to the acknowledgement:
 
-1. Please add "(NNA09DA76A)" after "NASA Astrobiology Institute".
+- Please add "(NNA09DA76A)" after "NASA Astrobiology Institute".
 
-2. Please add the following sentence before "We thank the many people...":
+- Please add the following sentence before "We thank the many people...":
 "We thank Jacob Bean for his referee report and suggestions to exoplanets.org."
