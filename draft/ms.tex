@@ -137,7 +137,8 @@ including the Extrasolar Planets Encyclopaedia\footnote{See
   \url{http://exoplanet.eu}.}  \citep{Schneider2011} and the NASA
 Exoplanet Archive\footnote{See
   \url{http://exoplanetarchive.ipac.caltech.edu}.}
-\citep{Akeson2013}.  The natures of these efforts are complementary, and to the
+\citep{Akeson2013}.  The natures of these efforts are largely
+complementary to the EOD, and to the
 degree that they are redundant provide important cross-checking and
 validation.  As described in \cite{Wright2011}, the EOD is
 dedicated to cataloging properties of all \emph{robustly-detected} exoplanets with
@@ -294,12 +295,12 @@ been {\it discovered} via astrometry).
 The {\bf MONTH} field reports the integer month of the
 peer-reviewed paper publication date.
 
-{\bf KEPID} stands for KEPler ID, which is the integer number assigned
+{\bf KEPID} stands for KEPler IDentification, which is the integer number assigned
 for a Kepler host star. KEPID is only available for unconfirmed
 KOI's imported directly from the Exoplanet Archive by the
 exoplanets.org backend. 
 
-{\bf KOI} stands for Kepler Objects of Interest, which is an object
+{\bf KOI} stands for Kepler Object of Interest, which is an object
 with transit signals detected by \kepler\ that have not been validated
 as being due to exoplanets.  The KOI field defined by the \kepler\
 team and shown on the Exoplanet Archive is stored as a floating point
@@ -355,7 +356,10 @@ orbital inclination is not known and the reference for MASS ({\bf
 Also for plotting convenience, for transiting $Kepler$ planets without
 $m\sin{i}$ measured, we estimate their mass using mass-radius
 relations from the literature. We follow a series of relations given
-by \footnote{As of the writing of this manuscript, Kepler planet
+by
+\begin{comment}
+  % no longer true - already updated
+\footnote{As of the writing of this manuscript, Kepler planet
   candidates on exoplanets.org ingested from the Exoplanet Archive
   have their masses estimated in a slightly different manner.  The
   Website uses the \citeauthor{Mordasini2012} relation for planets
@@ -366,6 +370,7 @@ by \footnote{As of the writing of this manuscript, Kepler planet
   be consistent with the EOD (and updating the corresponding MASSREF
   fields for these candidates) is a priority upgrade for
   exoplanets.org.}
+\end{comment}
 
 \[
 M_p=
@@ -385,8 +390,8 @@ overlapping regions of validity. $M_{\rm WM}$ is from \cite{Weiss2014} and is gi
 \[
 \frac{M_{\rm WM}}{\mearth}=
 \begin{cases}
-2.69\left(\frac{R_{p}}{\rearth}\right)^{0.93} &  R<1.5\rearth \\
-0.582\left(0.717+\frac{R_{p}}{\rearth}\right)\left(\frac{R_{p}}{\rearth}\right)^3 &  1.5\rearth\leq R<4\rearth
+0.615\left(0.717+\frac{R_{p}}{\rearth}\right)\left(\frac{R_{p}}{\rearth}\right)^3 &  R<1.5\rearth \\
+2.69\left(\frac{R_{p}}{\rearth}\right)^{0.93} &  1.5\rearth\leq R<4\rearth
 \end{cases}
 \]
 
@@ -413,7 +418,7 @@ value accordingly.  If SEP is not directly measured but the semi-major
 axis ({\bf A}) is available, then we set SEP to A with its reference,
 SEPREF, set to ``Set to A''. 
 
-{\bf I} reports the orbital inclination of the planet. Previously,
+The parameter {\bf I} reports the orbital inclination of the planet. Previously,
 only transiting systems had $i$ measured, but now some non-transiting
 systems have dynamical or astrometric constraints on $i$ (for example,
 the microlensing system OGLE-2006-BLG-109L by \citealt{Bennett2010}
@@ -489,9 +494,11 @@ The {\bf SE} Boolean indicates whether the system has secondary
 eclipse depths measured in any band.  Truth indicates the
 system has at least one secondary eclipse measurement in the EOD.
 
+\begin{comment}
 {\bf SET} is the epoch of secondary eclipse center, normally given in
 BJD but (as with other fields) when the literature reports HJD or UTC
-JD, we do not attempt a conversion to BJD. 
+JD, we do not attempt a conversion to BJD.
+\end{comment}
 
 %------------------------------------------------------------------------------
 \subsection{Stellar Properties}\label{sec:stellarprop}
@@ -587,7 +594,7 @@ and individual discovery papers.
 
 We removed 2 fields since \cite{Wright2011}:
 
-The {\bf SPSTAR} field previously reported the stellar type of the host
+The {\bf SPTYPE} field previously reported the stellar type of the host
 star.  We have removed it since it can be difficult to verify with
 peer-reviewed references, and the field was not well maintained.  We encourage users
 to use TEFF and BMV instead.
@@ -774,7 +781,7 @@ reported when the orbit is consistent with a circular one, and the
 upper limit for K is reported when there is only a null result from
 radial velocities. Since not all authors define the upper limits in the same
 way (e.g. 1$\sigma$ or some fixed percentile), we encourage the
-readers to refer to the original references for more information. We
+users to refer to the original references for more information. We
 will also include proper rendering of upper limits in the EDE Table,
 proper upper limit symbols in the Plotter, and proper handling of
 upper limits in filters and queries in both cases. 
@@ -795,7 +802,7 @@ the award of Keck time for monitoring the orbits of long-period and
 multi-planet systems.
 
 SXW acknowledges support from the Penn State Astrobiology Research
-Center, part of the NASA Astrobiology Institute. The Center for
+Center, part of the NASA Astrobiology Institute (NNA09DA76A). The Center for
 Exoplanets and Habitable Worlds is supported by the 
 Pennsylvania State University, the Eberly College of Science, and the
 Pennsylvania Space Grant Consortium.
@@ -816,6 +823,8 @@ many of the radial velocity plots at exoplanets.org.
 We thank Katie Peek, the information graphics editor at Popular
 Science magazine, for compiling the data to initially populate the
 MONTH field of the EOD and sharing it with us.
+
+We thank Jacob Bean for his referee report and suggestions to exoplanets.org.
 
 We thank the many people who contributed bug reports and data
 errors to \url{datamaster@exoplanets.org}, which continue to improve
@@ -851,12 +860,12 @@ Science, 327, 977 % Kepler instroduction and first results
 \bibitem[Chauvin et al.(2012)]{Chauvin2012} Chauvin, G., et al.\ 2012, 
 \aap, 542, A41 % beta Pic orbital pars
 
-\bibitem[Collier Cameron et al.(2010)]{Collier Cameron2010} Collier 
-Cameron, A., et al.\ 2010, \mnras, 407, 507 % WASP-33b having no RV
+%\bibitem[Collier Cameron et al.(2010)]{Collier Cameron2010} Collier 
+%Cameron, A., et al.\ 2010, \mnras, 407, 507 % WASP-33b having no RV
                                 % detection and K upper limit
 
-\bibitem[Cosentino et al.(2012)]{Cosentino2012} Cosentino, R., et al.\ 
-2012, \procspie, 8446, 1V % HARPS-North
+%\bibitem[Cosentino et al.(2012)]{Cosentino2012} Cosentino, R., et al.\ 
+%2012, \procspie, 8446, 1V % HARPS-North
 
 \bibitem[Dawson \& Murray-Clay(2013)]{Dawson2013} Dawson, R.~I., \&
   Murray-Clay, R.~A.\ 2013, \apjl, 767, L24  % use of EOD
@@ -874,8 +883,8 @@ Hinse, T.~C., \& Tinney, C.~G.\ 2012, \mnras, 425, 749 % dynamic
 \bibitem[Howard(2013)]{Howard2013} Howard, A.~W.\ 2013, Science, 340,
   572 % use of EOD
 
-\bibitem[Johnson et al.(2011)]{Johnson2011} Johnson, J.~A., et al.\ 2011, 
-\apjs, 197, 26 % HD 116029B having ECC upper limit (circular orbit)
+%\bibitem[Johnson et al.(2011)]{Johnson2011} Johnson, J.~A., et al.\ 2011, 
+%\apjs, 197, 26 % HD 116029B having ECC upper limit (circular orbit)
   
 \bibitem[Kane(2014)]{Kane2014} Kane, S.~R.\ 2014, \apj, 782, 111 % use
                                 % of EOD
@@ -893,8 +902,8 @@ Planet Imager instrument team, Planet Imager Exoplanet Survey, G.,
 \& Observatory, G.\ 2014, American Astronomical Society Meeting
 Abstracts, 223, \#229.02  % GPI
 
-\bibitem[Marcy et al.(2014)]{Marcy2014} Marcy, G.~W., et al.\ 2014, \apjs, 
-210, 20 % 42 RV confirmed small Kepler planets
+%\bibitem[Marcy et al.(2014)]{Marcy2014} Marcy, G.~W., et al.\ 2014, \apjs, 
+%210, 20 % 42 RV confirmed small Kepler planets
 
 \bibitem[Mahadevan et al.(2012)]{Mahadevan2012} Mahadevan, S., 
 Ramsey, L., Bender, C., et al.\ 2012, \procspie, 8446, %HPF  
@@ -914,8 +923,8 @@ arXiv:1403.7195 % beta Pic orbit pars
 \bibitem[Ricker(2014)]{Ricker2014} Ricker, G.~R.\ 2014, Journal of the 
 American Association of Variable Star Observers (JAAVSO), 42, 234 % TESS
 
-\bibitem[Rowe et al.(2014)]{Rowe2014} Rowe, J.~F., et al.\ 2014, 
-arXiv:1402.6534 % 715 new Kepler planets (multis)
+%\bibitem[Rowe et al.(2014)]{Rowe2014} Rowe, J.~F., et al.\ 2014, 
+%arXiv:1402.6534 % 715 new Kepler planets (multis)
 
 \bibitem[Sanchis-Ojeda et al.(2012)]{Sanchis-Ojeda2012} Sanchis-Ojeda, R., 
 et al.\ 2012, \nat, 487, 449 % Kepler 30 system lambda measurement
@@ -928,8 +937,8 @@ Le Sidaner, P., Savalle, R., \& Zolotukhin, I.\ 2011, \aap, 532, A79
 \bibitem[Skrutskie et al.(2006)]{Skrutskie2006} Skrutskie, M.~F., et al.\ 
 2006, \aj, 131, 1163 % 2MASS
 
-\bibitem[Sotin et al.(2007)]{Sotin2007} Sotin, C., Grasset, O., 
-\& Mocquet, A.\ 2007, \icarus, 191, 337 % Mass-Radius for M<1Me, R<1Re
+%\bibitem[Sotin et al.(2007)]{Sotin2007} Sotin, C., Grasset, O., 
+%\& Mocquet, A.\ 2007, \icarus, 191, 337 % Mass-Radius for M<1Me, R<1Re
 
 \bibitem[van Leeuwen(2009)]{van Leeuwen2009} van Leeuwen, F.\ 2009, \aap, 
 497, 209 % Hipparcos catalog
@@ -1072,8 +1081,8 @@ SEDEPTH58\dotfill & Float & Secondary eclipse depth in
 \spitzer\ IRAC3 5.8 \micron\ band & -UPPER, etc. & \ref{sec:se} \\
 SEDEPTH80\dotfill & Float & Secondary eclipse depth in
 \spitzer\ IRAC4 8.0 \micron\ band & -UPPER, etc. & \ref{sec:se} \\
-SET\dotfill & Double & Epoch of secondary eclipse center in
-HJD\tablenotemark{c} & -UPPER, etc. & \ref{sec:se} \\
+%SET\dotfill & Double & Epoch of secondary eclipse center in
+%HJD\tablenotemark{c} & -UPPER, etc. & \ref{sec:se} \\
 %
 \sidehead{\textbf{Stellar Properties}}
 STAR\dotfill & String & Standard name for host star & \nodata & W11 \\
